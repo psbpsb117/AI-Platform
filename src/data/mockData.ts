@@ -12,8 +12,8 @@ export const CURRENT_USER: StudentProfile = {
   avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
   roles: ['Backend', 'PM/기획'],
   skills: ['Node.js', 'FastAPI', 'Spring Boot', 'PostgreSQL', 'Docker', 'AWS'],
-  interests: ['도심항공교통(UAM)', 'SW캡스톤', '클라우드 아키텍처', '지역특화 AI'],
-  bio: '경상국립대 4학년 캡스톤디자인 팀장 김개척입니다. 백엔드 시스템 설계와 마이크로서비스 아키텍처 구축을 담당하며 실용적인 산출물 완성을 지향합니다.',
+  interests: ['캠퍼스 라이프 AI', '전공 융합 팀플', '클라우드 아키텍처', '대학생 올인원 서비스'],
+  bio: '경상국립대 4학년 팀장 김개척입니다. 백엔드 시스템 설계와 다학제 전공 융합 팀 프로젝트를 리드하며, 교내 학우들이 체감할 수 있는 실용적인 서비스 완성을 지향합니다.',
   availableHoursWeekly: 20,
   preferredWorkStyle: '가좌캠퍼스 대면 (중앙도서관/과방)',
   githubUrl: 'https://github.com/gnu-pioneer',
@@ -137,7 +137,7 @@ export const INITIAL_MILESTONES: Milestone[] = [
     projectId: 'gnu-proj-001',
     weekNumber: 1,
     title: '팀 빌딩 및 프로젝트 요구사항 정의',
-    description: '경상국립대 캡스톤 1주차: 팀원 R&R 확정, KASA 연계 UAM 관제 시나리오 수립, 개발 환경 설정',
+    description: '경상국립대 1주차: 팀원 R&R 확정, 캠퍼스 메이트 시나리오 수립, 개발 환경 설정',
     startDate: '2026-09-01',
     dueDate: '2026-09-07',
     status: 'COMPLETED',
@@ -146,46 +146,46 @@ export const INITIAL_MILESTONES: Milestone[] = [
     ],
     tasks: [
       { id: 't-1', milestoneId: 'ms-1', title: 'GitHub Organization 및 레포지토리 세팅', assigneeName: '김개척', role: 'Backend', status: 'DONE', priority: 'HIGH', dueDate: '2026-09-03' },
-      { id: 't-2', milestoneId: 'ms-1', title: 'UAM 관제 소프트웨어 요구사항 명세서 작성', assigneeName: '최아름', role: 'PM/기획', status: 'DONE', priority: 'MEDIUM', dueDate: '2026-09-05' },
+      { id: 't-2', milestoneId: 'ms-1', title: '학생 라이프 서비스 요구사항 명세서 작성', assigneeName: '최아름', role: 'PM/기획', status: 'DONE', priority: 'MEDIUM', dueDate: '2026-09-05' },
     ],
-    advisorComment: '우주항공청 설립 취지에 부합하는 매우 시의적절한 주제입니다. 지도 승인합니다.'
+    advisorComment: '전공 융합 팀플의 취지에 부합하는 매우 시의적절한 주제입니다. 지도 승인합니다.'
   },
   {
     id: 'ms-2',
     projectId: 'gnu-proj-001',
     weekNumber: 3,
-    title: '시스템 아키텍처 & 제안서 지도교수 승인',
-    description: '3~4주차: 전체 시스템 블록도 완성, 비행 시뮬레이터 엔진 인터페이스 정의, 캡스톤 승인 심사',
+    title: '사용자 요구사항 정의 & 와이어프레임 확정',
+    description: '3~4주차: 서비스 블록도 완성, 셔틀 및 학식 데이터 인터페이스 정의, 중간 지도 승인',
     startDate: '2026-09-15',
     dueDate: '2026-09-28',
     status: 'COMPLETED',
     deliverables: [
-      { id: 'del-2', title: '캡스톤 정규 제안서 최종본.pdf', type: 'REPORT', status: 'APPROVED', submittedAt: '2026-09-26' },
-      { id: 'del-3', title: '시스템 아키텍처 다이어그램', type: 'DOCUMENT', status: 'APPROVED', submittedAt: '2026-09-27' }
+      { id: 'del-2', title: '팀 프로젝트 정규 제안서 최종본.pdf', type: 'REPORT', status: 'APPROVED', submittedAt: '2026-09-26' },
+      { id: 'del-3', title: 'Figma 와이어프레임 및 시스템 아키텍처 다이어그램', type: 'DOCUMENT', status: 'APPROVED', submittedAt: '2026-09-27' }
     ],
     tasks: [
-      { id: 't-3', milestoneId: 'ms-2', title: 'ROS2 / WebSocket 데이터 브릿지 프로토콜 규격서', assigneeName: '정칠암', role: 'Hardware/Embedded', status: 'DONE', priority: 'HIGH', dueDate: '2026-09-20' },
-      { id: 't-4', milestoneId: 'ms-2', title: '비행경로 생성 AI 알고리즘 수학적 모델링', assigneeName: '박우주', role: 'AI/Data', status: 'DONE', priority: 'HIGH', dueDate: '2026-09-24' }
+      { id: 't-3', milestoneId: 'ms-2', title: '교내 공공데이터 및 정류장 위치 규격서', assigneeName: '정칠암', role: 'Hardware/Embedded', status: 'DONE', priority: 'HIGH', dueDate: '2026-09-20' },
+      { id: 't-4', milestoneId: 'ms-2', title: '셔틀 혼잡도 예측 AI 알고리즘 모델링', assigneeName: '박우주', role: 'AI/Data', status: 'DONE', priority: 'HIGH', dueDate: '2026-09-24' }
     ],
-    advisorComment: '비행 데이터 양이 방대할 수 있으니 메시지 큐(RabbitMQ/Kafka) 도입 검토를 권장함.'
+    advisorComment: '학생 설문조사 결과가 충실히 반영되었습니다. 지속적인 테스트를 권장합니다.'
   },
   {
     id: 'ms-3',
     projectId: 'gnu-proj-001',
     weekNumber: 6,
-    title: '핵심 모듈 1차 프로토타입 구현 (현재 진행 중)',
-    description: '5~7주차: 실시간 3D 뷰어 프론트엔드 연동, 가상 UAM 궤적 생성 백엔드 API 서빙, 중간 발표 준비',
+    title: '1차 MVP 프로토타입 구현 및 교내 FGI (현재)',
+    description: '5~7주차: 실시간 셔틀 노선도 프론트엔드 연동, 식단 및 잔여석 API 서빙, 중간 발표 준비',
     startDate: '2026-10-06',
     dueDate: '2026-10-20',
     status: 'IN_PROGRESS',
     deliverables: [
-      { id: 'del-4', title: '1차 동작 데모 영상 링크', type: 'DEMO_VIDEO', status: 'PENDING' },
-      { id: 'del-5', title: 'GitHub v0.2.0-beta Release', type: 'GITHUB', status: 'PENDING', url: 'https://github.com/gnu-uam-lab/flight-monitor' }
+      { id: 'del-4', title: '1차 MVP 데모 시연 영상', type: 'DEMO_VIDEO', status: 'PENDING' },
+      { id: 'del-5', title: 'GitHub v0.2.0-beta Release', type: 'GITHUB', status: 'PENDING', url: 'https://github.com/gnu-campus-mate/web-app' }
     ],
     tasks: [
-      { id: 't-5', milestoneId: 'ms-3', title: 'Three.js 기반 3D 지형 및 기체 렌더링 뷰어 개발', assigneeName: '이지원', role: 'Frontend', status: 'IN_PROGRESS', priority: 'HIGH', dueDate: '2026-10-14' },
-      { id: 't-6', milestoneId: 'ms-3', title: '실시간 위경도/고도 텔레메트리 백엔드 스트리밍 API', assigneeName: '김개척', role: 'Backend', status: 'IN_PROGRESS', priority: 'HIGH', dueDate: '2026-10-15' },
-      { id: 't-7', milestoneId: 'ms-3', title: '충돌 회피 AI 회귀 모델 1차 가중치 학습', assigneeName: '박우주', role: 'AI/Data', status: 'TODO', priority: 'MEDIUM', dueDate: '2026-10-18' }
+      { id: 't-5', milestoneId: 'ms-3', title: '학생 친화적 반응형 메인 UI & 셔틀 컴포넌트 개발', assigneeName: '이지원', role: 'Frontend', status: 'IN_PROGRESS', priority: 'HIGH', dueDate: '2026-10-14' },
+      { id: 't-6', milestoneId: 'ms-3', title: 'GNU 학생 식당 주간 식단 & 도서관 잔여석 API 연동', assigneeName: '김개척', role: 'Backend', status: 'IN_PROGRESS', priority: 'HIGH', dueDate: '2026-10-15' },
+      { id: 't-7', milestoneId: 'ms-3', title: '학생 맞춤 공강 질문 추천 챗봇 프롬프트 튜닝', assigneeName: '박우주', role: 'AI/Data', status: 'TODO', priority: 'MEDIUM', dueDate: '2026-10-18' }
     ]
   },
   {
@@ -193,7 +193,7 @@ export const INITIAL_MILESTONES: Milestone[] = [
     projectId: 'gnu-proj-001',
     weekNumber: 8,
     title: '중간 평가 및 마일스톤 리뷰 (Midterm Review)',
-    description: '8주차: 경상국립대 캡스톤디자인 중간발표회(포스터/PT), 지도교수 및 산학멘토 피드백 반영',
+    description: '8주차: 경상국립대 캡스톤/팀플 중간발표회(포스터/PT), 지도교수 및 학생 멘토 피드백 반영',
     startDate: '2026-10-21',
     dueDate: '2026-10-27',
     status: 'PENDING',
@@ -209,24 +209,24 @@ export const INITIAL_MILESTONES: Milestone[] = [
     id: 'ms-5',
     projectId: 'gnu-proj-001',
     weekNumber: 12,
-    title: '통합 테스트 및 산학 연계 실증',
-    description: '11~13주차: KAI/KASA 시뮬레이터 데이터셋 검증, 부하 테스트, 예외 케이스 처리',
+    title: '교내 베타 오픈 & 학생 100인 실증 테스트',
+    description: '11~13주차: 가좌/칠암 학생 베타테스터 100인 실증, 사용성 개선, 버그 픽스',
     startDate: '2026-11-10',
     dueDate: '2026-11-24',
     status: 'PENDING',
     deliverables: [
-      { id: 'del-8', title: '테스트 결과 보고서 및 성능 지표', type: 'REPORT', status: 'PENDING' }
+      { id: 'del-8', title: '학생 실증 테스트 결과 보고서 및 설문 분석', type: 'REPORT', status: 'PENDING' }
     ],
     tasks: [
-      { id: 't-9', milestoneId: 'ms-5', title: '가상 UAM 100대 동시 관제 부하 테스트', assigneeName: '김개척', role: 'Backend', status: 'TODO', priority: 'MEDIUM', dueDate: '2026-11-20' }
+      { id: 't-9', milestoneId: 'ms-5', title: '교내 에브리타임/SNS 테스터 모집 및 피드백 수집', assigneeName: '최아름', role: 'PM/기획', status: 'TODO', priority: 'HIGH', dueDate: '2026-11-18' }
     ]
   },
   {
     id: 'ms-6',
     projectId: 'gnu-proj-001',
     weekNumber: 16,
-    title: '최종 캡스톤 페스티벌 출품 & 졸업평가',
-    description: '15~16주차: GNU 개척 캡스톤 페스티벌 부스 운영, 최종 결과보고서, 지식재산권/특허 출원',
+    title: '최종 학술제/캡스톤 페스티벌 출품 & 학점 확정',
+    description: '16주차: 결과보고서 심사, 학술제 부스 전시, 교내 서비스 정식 출시',
     startDate: '2026-12-08',
     dueDate: '2026-12-18',
     status: 'PENDING',
@@ -236,7 +236,7 @@ export const INITIAL_MILESTONES: Milestone[] = [
       { id: 'del-11', title: '최종 시연 영상 (3분 유튜브/드라이브)', type: 'DEMO_VIDEO', status: 'PENDING' }
     ],
     tasks: [
-      { id: 't-10', milestoneId: 'ms-6', title: 'GNU 오픈소스 아카이빙 및 배포 도메인 연결', assigneeName: '김개척', role: 'Backend', status: 'TODO', priority: 'HIGH', dueDate: '2026-12-14' }
+      { id: 't-10', milestoneId: 'ms-6', title: 'GNU 오픈소스 아카이빙 및 서비스 정식 릴리즈', assigneeName: '김개척', role: 'Backend', status: 'TODO', priority: 'HIGH', dueDate: '2026-12-14' }
     ]
   }
 ];
@@ -244,12 +244,12 @@ export const INITIAL_MILESTONES: Milestone[] = [
 export const INITIAL_PROJECTS: Project[] = [
   {
     id: 'gnu-proj-001',
-    title: '경상국립대 KASA 연계 무인 도심항공교통(UAM) 관제 & 비행 시뮬레이터',
-    summary: '사천 우주항공청(KASA) 개청 및 글로컬30 연계, 가상 진주-사천 회랑 UAM 항로 관제 및 충돌 회피 AI 시스템 구축',
-    description: '경상국립대학교 우주항공대학과 IT공과대학의 융합 캡스톤디자인 과제입니다. 실시간 텔레메트리 데이터를 Three.js와 웹소켓으로 관제 화면에 시각화하고, AI 강화학습 모델을 활용하여 공역 내 비행체 간 충돌을 방지하는 알고리즘을 연구합니다.',
-    category: 'GLOCAL30',
+    title: 'GNU 캠퍼스 메이트 — 가좌·칠암 통합 대학생활 & 실시간 셔틀·학식 큐레이션 플랫폼',
+    summary: '경상국립대 4대 캠퍼스 학우들을 위한 올인원 플랫폼! 통학 셔틀 혼잡도 예측, 학식 주간 식단 AI 분석, 공강 소통 공간 구축',
+    description: '경상국립대학교 IT공과대학과 인문사회대학, 경영대학 학우들이 함께하는 다학제 전공 융합 팀 프로젝트입니다. 가좌-칠암 캠퍼스 간 이동 학생들의 셔틀 대기 혼잡도를 예측하고, 매일의 학식 메뉴 평가 및 AI 추천, 교내 학우 간 공강 스터디 매칭을 제공합니다.',
+    category: 'SW_CONTEST',
     campus: '가좌(본원)',
-    department: '항공우주소프트웨어전공 & 컴퓨터공학부',
+    department: '컴퓨터공학부 & 미디어커뮤니케이션학과 & 경영정보학과',
     leadStudent: CURRENT_USER,
     teamMembers: [
       { student: CURRENT_USER, role: 'Backend', joinedAt: '2026-09-01' },
@@ -262,78 +262,71 @@ export const INITIAL_PROJECTS: Project[] = [
         role: 'UI/UX Design',
         count: 1,
         currentCount: 0,
-        requiredSkills: ['Figma', '대시보드 디자인', '디자인 시스템'],
-        description: '실시간 관제 대시보드 및 조종사 인터페이스의 고도화된 UI 디자인을 전담할 팀원을 모십니다.'
+        requiredSkills: ['Figma', '사용자 리서치', '디자인 시스템'],
+        description: '학생 친화적인 모바일 반응형 인터페이스 디자인 및 사용자 리서치를 담당할 팀원을 모십니다.'
       }
     ],
     currentWeek: 6,
     totalWeeks: 16,
-    advisorName: '이항공 교수',
-    advisorDepartment: '우주항공대학 항공우주및SW공학부',
+    advisorName: '정인공 교수',
+    advisorDepartment: 'IT공과대학 컴퓨터·소프트웨어학부',
     advisorFeedbacks: [
       {
         id: 'fb-1',
-        advisorName: '이항공 교수',
+        advisorName: '정인공 교수',
         advisorTitle: '책임교수',
-        department: '항공우주및소프트웨어공학부',
+        department: '컴퓨터·소프트웨어학부',
         weekNumber: 1,
-        comment: '주제 정의가 우수합니다. 사천-진주 간 UAM 실증 항로의 비행 금지 구역(사천공항 관제권) 데이터를 사전 조사하여 시스템에 반영하세요.',
+        comment: '주제 정의가 우수합니다. 인문사회대와 공대 간의 다학제 융합을 바탕으로 학생들의 실제 통학 불편을 해소하는 접근이 좋습니다.',
         scoreGrade: 'S',
         createdAt: '2026-09-07'
       },
       {
         id: 'fb-2',
-        advisorName: '이항공 교수',
+        advisorName: '정인공 교수',
         advisorTitle: '책임교수',
-        department: '항공우주및소프트웨어공학부',
+        department: '컴퓨터·소프트웨어학부',
         weekNumber: 3,
-        comment: '아키텍처 설계가 체계적입니다. 중간평가 때 실제 KAI 또는 항공청 실무진 멘토링을 주선하도록 하겠습니다.',
+        comment: '3주차 MVP 기획이 체계적입니다. 중간평가 때 교내 학생지원처와의 연계를 검토해보겠습니다.',
         scoreGrade: 'A',
         createdAt: '2026-09-28'
       }
     ],
     milestones: INITIAL_MILESTONES,
     status: 'IN_PROGRESS',
-    tags: ['글로컬30', '우주항공청(KASA)', 'UAM', 'Three.js', 'PyTorch', 'ROS2'],
+    tags: ['다학제팀플', '캠퍼스라이프', '셔틀버스', '학식큐레이션', 'React', 'FastAPI'],
     createdAt: '2026-09-01'
   },
   {
     id: 'gnu-proj-002',
-    title: '캠퍼스 메이트 - GNU 가좌/칠암 통학 셔틀 실시간 혼잡도 예측 & 카풀 플랫폼',
-    summary: '가좌-칠암 캠퍼스 이동 학생들의 불편을 해결하기 위해 AI 버스 승하차 예측 모델과 학생증 인증 카풀 시스템 개발',
-    description: '경상국립대 SW중심대학 해커톤 출품작입니다. 매시간 가좌-칠암 셔틀버스의 대기줄과 혼잡도를 교내 CCTV/정류장 센서와 결합하여 예측하고, 공강 시간에 맞춰 학생들 간 안전한 택시 팟/카풀 매칭을 제공합니다.',
-    category: 'SW_CONTEST',
+    title: '진주시 로컬 크리에이터 & 전통시장 청년 문화 활성화 브랜딩 캡스톤',
+    summary: '진주 중앙시장 및 원도심 상권에 청년층 유입을 촉진하는 로컬 브랜딩 및 팝업 스토어, 온라인 지도 콘텐츠 공동 개발',
+    description: '사회과학대학과 경영대학, 예술대학 학우들이 협력하는 지역 연계 캡스톤디자인 과제입니다. 진주시 청년 문화 활성화를 위한 축제 브랜딩, 로컬 굿즈 제작, 소상공인 인터뷰 아카이빙을 진행합니다.',
+    category: 'CAPSTONE',
     campus: '가좌(본원)',
-    department: '인공지능소프트웨어학과',
-    leadStudent: MOCK_STUDENTS[5],
+    department: '사회학과 & 경영학부 & 의류디자인학과',
+    leadStudent: MOCK_STUDENTS[4],
     teamMembers: [
-      { student: MOCK_STUDENTS[5], role: 'AI/Data', joinedAt: '2026-09-10' },
-      { student: MOCK_STUDENTS[6], role: 'Backend', joinedAt: '2026-09-12' },
+      { student: MOCK_STUDENTS[4], role: 'PM/기획', joinedAt: '2026-09-10' },
+      { student: MOCK_STUDENTS[2], role: 'Frontend', joinedAt: '2026-09-12' },
     ],
     recruitRoles: [
-      {
-        role: 'Frontend',
-        count: 1,
-        currentCount: 0,
-        requiredSkills: ['React Native', 'TypeScript', '카카오 지도 API'],
-        description: '모바일 웹 또는 React Native 기반의 실시간 셔틀 위치 지도 뷰를 개발할 개발자를 찾습니다.'
-      },
       {
         role: 'PM/기획',
         count: 1,
         currentCount: 0,
-        requiredSkills: ['학생 설문조사', '서비스 기획', '노션'],
-        description: '가좌 및 칠암 학생 대상 베타 테스트 기획 및 교내 홍보를 이끌어줄 기획자를 모십니다.'
+        requiredSkills: ['인스타그램 카드뉴스', '홍보 마케팅', '보도자료'],
+        description: '진주 로컬 상권 브랜딩 콘텐츠 기획 및 SNS 홍보를 맡아줄 마케팅/기획자를 모십니다.'
       }
     ],
     currentWeek: 3,
     totalWeeks: 8,
-    advisorName: '정인공 교수',
-    advisorDepartment: 'IT공과대학 인공지능학과',
+    advisorName: '박사회 교수',
+    advisorDepartment: '사회과학대학 사회학과',
     advisorFeedbacks: [],
     milestones: [],
     status: 'RECRUITING',
-    tags: ['SW중심대학', '캠퍼스라이프', '시계열예측', 'React Native', '셔틀버스'],
+    tags: ['지역사회혁신', '로컬브랜딩', '사회과학대', '경영대학', '진주시'],
     createdAt: '2026-09-10'
   },
   {

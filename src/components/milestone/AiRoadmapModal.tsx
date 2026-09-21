@@ -63,7 +63,7 @@ export const AiRoadmapModal: React.FC<AiRoadmapModalProps> = ({
                 rows={3}
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
-                placeholder="예: 경상국립대 KASA 연계 무인 UAM 관제 및 공역 충돌 방지 AI 시뮬레이터 개발"
+                placeholder="예: 경상국립대 캠퍼스 라이프 올인원 셔틀·학식 큐레이션 AI 웹 플랫폼 개발"
                 className="w-full rounded-xl border border-slate-200 p-3 text-xs focus:border-gnu-blue focus:outline-none"
               />
             </div>

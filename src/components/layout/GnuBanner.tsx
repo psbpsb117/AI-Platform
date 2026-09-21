@@ -17,21 +17,21 @@ export const GnuBanner: React.FC<{ onExploreClick: () => void }> = ({ onExploreC
 
           <h1 className="text-2xl sm:text-3xl font-black tracking-tight leading-snug">
             미래를 개척하는 GNU,<br />
-            <span className="text-gnu-accent">AI 기반 융합 팀 빌딩</span>과 <span className="text-amber-300">16주 캡스톤 마일스톤</span>
+            <span className="text-gnu-accent">AI 기반 융합 팀 빌딩</span>과 <span className="text-amber-300">16주 팀플·캡스톤 마일스톤</span>
           </h1>
 
           <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed">
-            가좌·칠암·통영·창원산학 캠퍼스의 경계를 넘어 우주항공, IT공학, 스마트농생명, 인문사회 융합 인재를 AI 시너지 분석으로 즉시 매칭하고, 16주 완성형 산출물 로드맵을 체계적으로 완주하세요.
+            가좌·칠암·통영·창원산학 캠퍼스의 경계를 넘어 인문사회, 경영, 자연과학, IT공학, 스마트농생명 전 분야 융합 인재를 AI 시너지 분석으로 즉시 매칭하고, 16주 완성형 팀플 로드맵을 체계적으로 완주하세요.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-blue-100">
             <div className="flex items-center gap-1.5">
               <CheckCircle className="h-4 w-4 text-gnu-accent" />
-              <span>GNU 웹메일(@gnu.ac.kr) 기반 실명 인증</span>
+              <span>GNU 학생 인증 기반 교내 팀플</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Rocket className="h-4 w-4 text-amber-300" />
-              <span>우주항공청(KASA)·방산 산학 과제</span>
+              <span>전 단과대 다학제 융합 팀플</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Award className="h-4 w-4 text-emerald-300" />

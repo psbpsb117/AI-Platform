@@ -184,7 +184,7 @@ export const AdvisorFeedbackView: React.FC<AdvisorFeedbackViewProps> = ({
               <textarea
                 rows={4}
                 required
-                placeholder="예: 1차 프로토타입 구현도가 양호합니다. 8주차 중간평가 전에 KASA 실무진 피드백을 반영하여 시뮬레이션 지연 시간을 20% 줄이도록 개선하세요."
+                placeholder="예: 1차 MVP 프로토타입 구현도가 양호합니다. 8주차 중간평가 전에 교내 학생 50인 피드백을 반영하여 사용자 사용성을 개선하세요."
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 className="w-full rounded-xl border border-slate-200 p-3 text-xs focus:border-gnu-blue focus:outline-none"
