@@ -54,6 +54,15 @@ export const Header: React.FC<HeaderProps> = ({
               <span>{hasApiKey ? 'Gemini 1.5 Live' : 'GNU 특화 AI (내장)'}</span>
             </button>
 
+            {/* ALIO Mobile Prototype Link */}
+            <a
+              href="/"
+              className="inline-flex items-center space-x-1.5 rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-xs font-bold text-sky-700 hover:bg-sky-100 transition-all shadow-xs"
+              title="ALIO 스타일 모바일 프로토타입 보기"
+            >
+              <span>📱 모바일 뷰</span>
+            </a>
+
             {/* Semester Week Indicator */}
             <div className="hidden lg:flex items-center space-x-2 rounded-lg bg-blue-50/70 border border-blue-100 px-3 py-1.5 text-xs text-blue-900">
               <span className="h-2 w-2 rounded-full bg-blue-500 animate-ping" />
