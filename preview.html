@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>GNU PIONEERS — 경상국립대 AI 팀 빌딩 & 16주 캡스톤 플랫폼</title>
+  <!-- Pretendard Web Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --color-primary: #069fdb;
+      --color-primary-hover: #0587ba;
+      --color-primary-pressed: #04729e;
+      --color-primary-soft: #e8f6fc;
+      --color-primary-border: #b8e3f4;
+      --color-text-primary: #082f49;
+      --color-text-secondary: #526b7b;
+      --color-text-muted: #94a3ad;
+      --color-background: #f7fafc;
+      --color-surface: #ffffff;
+      --color-border: #dfe8ed;
+      --event-deadline: #ef5c46;
+      --event-deadline-light: #fdeae5;
+      --font-primary: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      color: var(--color-text-primary);
+      background: var(--color-background);
+      font-family: var(--font-primary);
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .website {
+      --phone-width: 402px;
+      --phone-height: 874px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100dvh;
+      padding: 20px 16px;
+    }
+
+    .phone-stage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+    }
+
+    .phone-scale-box {
+      width: var(--phone-width);
+      height: var(--phone-height);
+      position: relative;
+    }
+
+    .iphone {
+      width: var(--phone-width);
+      height: var(--phone-height);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: calc(var(--phone-width) / -2);
+      border-radius: 56px;
+      padding: 5px;
+      background: radial-gradient(120% 70% at 22% -8%, #069fdb22, #0000 55%),
+                  linear-gradient(135deg, #beb3a6 0%, #a1968a 20%, #8c8177 45%, #766c63 68%, #5b544c 100%);
+      box-shadow: inset 1px 1px 1px #fff6,
+                  inset -1.5px -2px 2px #00000057,
+                  inset 0 0 0 1px #1e1a1647,
+                  3px 9px 16px #18141042,
+                  0 24px 44px #18141026,
+                  -3px 0 10px #ffffff2e;
+    }
+
+    .iphone-edge {
+      background: #2a241f;
+      border-radius: 51px;
+      width: 100%;
+      height: 100%;
+      padding: 1.2px;
+      overflow: hidden;
+    }
+
+    .iphone-bezel {
+      background: #060606;
+      border-radius: 50px;
+      width: 100%;
+      height: 100%;
+      padding: 3px;
+      overflow: hidden;
+    }
+
+    .iphone-display {
+      background: var(--color-surface);
+      border-radius: 47px;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1px #0000004d;
+    }
+
+    .iphone-display:after {
+      content: "";
+      z-index: 90;
+      pointer-events: none;
+      border-radius: inherit;
+      background: linear-gradient(165deg, #ffffff15 0%, #ffffff08 12%, #0000 24%);
+      position: absolute;
+      inset: 0;
+    }
+
+    /* Side physical buttons */
+    .side-button {
+      z-index: 5;
+      background: linear-gradient(135deg, #beb3a6, #8c8177 55%, #6f6459);
+      position: absolute;
+      box-shadow: inset 0 0 0 1px #0003;
+    }
+    .side-button--action { border-radius: 2px 0 0 2px; width: 3px; height: 26px; top: 108px; left: -1.5px; }
+    .side-button--volume-up { border-radius: 2px 0 0 2px; width: 3px; height: 44px; top: 166px; left: -1.5px; }
+    .side-button--volume-down { border-radius: 2px 0 0 2px; width: 3px; height: 44px; top: 220px; left: -1.5px; }
+    .side-button--power { border-radius: 0 2px 2px 0; width: 3px; height: 68px; top: 186px; right: -1.5px; }
+
+    /* Status Bar */
+    .status-bar {
+      z-index: 50;
+      height: 52px;
+      background: transparent;
+      padding: 0 26px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+    }
+    .status-bar-time {
+      color: var(--color-text-primary);
+      letter-spacing: -0.01em;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .dynamic-island {
+      background: #111;
+      border-radius: 19px;
+      width: 122px;
+      height: 35px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 12px;
+    }
+    .dynamic-island-dot {
+      background: radial-gradient(circle at 35% 35%, #6dd0ff, #0d3a55);
+      border-radius: 50%;
+      width: 9px;
+      height: 9px;
+    }
+    .status-bar-icons {
+      color: var(--color-text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Screen view */
+    .screen {
+      height: 100%;
+      padding-top: 52px;
+      padding-bottom: 78px;
+      background: var(--color-surface);
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+    .screen::-webkit-scrollbar { display: none; }
+
+    /* Onboarding Start Screen */
+    .start-screen {
+      min-height: 100%;
+      padding: 28px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(180deg, var(--color-primary-soft) 0%, #eef7fb 35%, #ffffff 70%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .eyebrow {
+      color: #55666f;
+      letter-spacing: 0.09em;
+      margin-bottom: 8px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+    .start-accent {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 12px;
+    }
+    .start-accent-dash {
+      background: var(--color-primary);
+      border-radius: 999px;
+      width: 22px;
+      height: 4px;
+    }
+    .start-accent-dot {
+      background: var(--color-primary);
+      border-radius: 999px;
+      width: 4px;
+      height: 4px;
+    }
+    .start-title {
+      color: var(--color-text-primary);
+      letter-spacing: -0.03em;
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .start-title em {
+      color: var(--color-primary);
+      font-style: normal;
+    }
+    .start-description {
+      color: #4d5c66;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* Floating Mascot Visual */
+    .mascot-visual {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      min-height: 240px;
+    }
+    .mascot-blob {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--color-primary-soft);
+      animation: blob-pulse 6s ease-in-out infinite;
+    }
+    .mascot-blob-1 { width: 220px; height: 220px; opacity: 0.8; top: 15%; }
+    .mascot-blob-2 { width: 100px; height: 100px; background: var(--color-primary-border); opacity: 0.3; right: 10%; top: 10%; }
+    
+    .mascot-chip {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 9px 13px;
+      box-shadow: 0 8px 20px rgba(8, 47, 73, 0.08);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      z-index: 10;
+      animation: float-chip 3.5s ease-in-out infinite;
+    }
+    .mascot-chip--1 { top: 18%; left: 8%; animation-delay: 0s; }
+    .mascot-chip--2 { top: 48%; right: 6%; animation-delay: -1.8s; }
+    .mascot-chip--3 { bottom: 12%; left: 14%; animation-delay: -0.9s; }
+
+    @keyframes float-chip {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes blob-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    .primary-button {
+      background: var(--color-primary);
+      color: #fff;
+      cursor: pointer;
+      border: 0;
+      border-radius: 16px;
+      width: 100%;
+      padding: 16px 22px;
+      font-weight: 800;
+      font-size: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(6, 159, 219, 0.32);
+      transition: all 0.2s;
+    }
+    .primary-button:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+    .primary-button-icon {
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      right: 18px;
+    }
+
+    /* 5-Column Bottom Navigation Bar */
+    .bottom-navigation {
+      z-index: 40;
+      height: 78px;
+      padding: 8px 8px 20px;
+      border-top: 1px solid var(--color-border);
+      background: #ffffff;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .bottom-nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      color: #83939d;
+      font-size: 10px;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    .bottom-nav-btn.active {
+      color: var(--color-primary);
+      font-weight: 800;
+    }
+    .bottom-nav-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* D-Day badge */
+    .d-day-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2.5px 7px;
+      border-radius: 7px;
+      font-size: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .d-day-badge--warm { background: #ffdcdc; color: #dc2626; }
+    .d-day-badge--calm { background: var(--color-primary-soft); color: var(--color-primary-pressed); }
+    .d-day-badge--mint { background: #e6f6f0; color: #1f9d72; }
+
+    /* Desktop reset button */
+    .prototype-reset-btn {
+      position: absolute;
+      top: -38px;
+      right: 0;
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .prototype-reset-btn:hover {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+    .desktop-note {
+      color: var(--color-text-muted);
+      margin-top: 18px;
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* In-App Modal Overlay inside screen */
+    .in-app-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 47, 73, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 80;
+      display: flex;
+      align-items: flex-end;
+    }
+    .in-app-modal-sheet {
+      background: #ffffff;
+      width: 100%;
+      border-top-left-radius: 28px;
+      border-top-right-radius: 28px;
+      padding: 20px;
+      max-height: 85%;
+      overflow-y: auto;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+      animation: sheet-up 0.25s ease-out;
+    }
+    @keyframes sheet-up {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="website">
+    <div class="phone-stage">
+      <div class="phone-scale-box">
+
+        <!-- Desktop Reset Button -->
+        <button onclick="resetToStart()" class="prototype-reset-btn" title="온보딩으로 이동">
+          <span>↺</span>
+          <span>시작 화면으로</span>
+        </button>
+
+        <!-- iPhone Chassis -->
+        <div class="iphone">
+          <div class="iphone-edge">
+            <div class="iphone-bezel">
+              <div class="iphone-display">
+
+                <!-- iOS Status Bar -->
+                <div class="status-bar">
+                  <span class="status-bar-time">9:41</span>
+                  <div class="dynamic-island">
+                    <span class="dynamic-island-dot"></span>
+                  </div>
+                  <div class="status-bar-icons">
+                    <svg viewBox="0 0 18 12" class="w-4 h-3 fill-current"><rect x="0" y="7" width="3" height="5" rx="0.8"></rect><rect x="5" y="5" width="3" height="7" rx="0.8"></rect><rect x="10" y="3" width="3" height="9" rx="0.8"></rect><rect x="15" y="0" width="3" height="12" rx="0.8"></rect></svg>
+                    <svg viewBox="0 0 17 13" class="w-4 h-3 fill-current"><path d="M8.5 12.3a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6Z"></path><path d="M4.6 7.8a5.6 5.6 0 0 1 7.8 0L11 9.2a3.6 3.6 0 0 0-5 0L4.6 7.8Z"></path><path d="M1.4 4.6a10 10 0 0 1 14.2 0l-1.4 1.4a8 8 0 0 0-11.4 0L1.4 4.6Z"></path></svg>
+                    <svg viewBox="0 0 25 12" class="w-5 h-3 fill-current"><rect x="0.75" y="0.75" width="20.5" height="10.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4"></rect><rect x="2.5" y="2.5" width="16" height="7" rx="1.3"></rect><rect x="22.5" y="4" width="1.8" height="4" rx="0.8" opacity="0.4"></rect></svg>
+                  </div>
+                </div>
+
+                <!-- VIEW 1: ONBOARDING START SCREEN (ALIO STYLE) -->
+                <div id="view-start" class="screen">
+                  <section class="start-screen">
+                    <div class="start-copy">
+                      <div class="start-accent">
+                        <span class="start-accent-dash"></span>
+                        <span class="start-accent-dot"></span>
+                      </div>
+                      <p class="eyebrow">GNU PIONEERS · AI TEAM & MILESTONE</p>
+                      <h1 class="start-title">
+                        <span>팀 빌딩은 AI가,</span>
+                        <span>캡스톤 관리는 <em>PIONEERS</em>가.</span>
+                      </h1>
+                      <p class="start-description">
+                        가좌·칠암·통영·창원산학 캠퍼스의 융합 인재를 AI가 매칭하고, 16주 캡스톤 학사일정과 산출물 제출을 자동으로 정리해드려요.
+                      </p>
+                    </div>
+
+                    <!-- Floating Visual -->
+                    <div class="mascot-visual">
+                      <div class="mascot-blob mascot-blob-1"></div>
+                      <div class="mascot-blob mascot-blob-2"></div>
+
+                      <!-- Chip 1: AI Synergy -->
+                      <div class="mascot-chip mascot-chip--1">
+                        <div class="w-7 h-7 rounded-full bg-blue-50 text-[#069fdb] flex items-center justify-center font-bold text-xs">
+                          ✨
+                        </div>
+                        <div>
+                          <span class="text-[9px] text-slate-400 font-bold block">AI 매칭 시너지</span>
+                          <span class="text-xs font-black text-[#082f49]">96% 역량 보완</span>
+                        </div>
+                      </div>
+
+                      <!-- Chip 2: 16-Week Milestone -->
+                      <div class="mascot-chip mascot-chip--2">
+                        <div class="w-7 h-7 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-xs">
+                          📅
+                        </div>
+                        <div>
+                          <span class="text-[9px] text-slate-400 font-bold block">정규 16주 캡스톤</span>
+                          <span class="text-xs font-black text-slate-800">중간평가 D-14</span>
+                        </div>
+                      </div>
+
+                      <!-- Chip 3: KASA Aerospace -->
+                      <div class="mascot-chip mascot-chip--3">
+                        <div class="w-7 h-7 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-xs">
+                          🚀
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-700">우주항공청 글로컬30</span>
+                      </div>
+
+                      <!-- Emblem -->
+                      <div class="relative z-10 w-28 h-28 rounded-3xl bg-gradient-to-br from-[#002855] via-[#004b91] to-[#069fdb] flex flex-col items-center justify-center text-white shadow-xl shadow-blue-500/25 border-2 border-white/40">
+                        <span class="text-2xl font-black tracking-tight">GNU</span>
+                        <span class="text-[10px] font-bold tracking-widest text-cyan-200">개척자 허브</span>
+                      </div>
+                    </div>
+
+                    <!-- Start Button -->
+                    <div>
+                      <button onclick="enterApp()" class="primary-button">
+                        <span>시작하기</span>
+                        <span class="primary-button-icon">
+                          <svg viewBox="0 0 16 16" fill="none" class="w-3.5 h-3.5 stroke-current stroke-2"><path d="M3.5 8h9M8.5 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </span>
+                      </button>
+                      <p class="text-center text-[10px] text-slate-400 mt-2.5">
+                        경상국립대학교 웹메일 인증 기반 · @gnu.ac.kr
+                      </p>
+                    </div>
+                  </section>
+                </div>
+
+                <!-- VIEW 2: MAIN APP CONTAINER -->
+                <div id="view-app" class="screen hidden">
+
+                  <!-- TAB 1: 교내 프로젝트 탐색 (PROJECTS) -->
+                  <div id="screen-projects" class="p-4 space-y-3.5">
+                    <!-- Header -->
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-[10px] font-extrabold text-[#069fdb] uppercase tracking-wider">GNU CAMPUS PROJECTS</p>
+                        <h2 class="text-lg font-black text-[#082f49] leading-tight">교내 프로젝트 탐색</h2>
+                      </div>
+                      <button onclick="openNewProjectModal()" class="px-2.5 py-1 rounded-full bg-[#082f49] text-white text-[11px] font-bold shadow-xs">
+                        + 과제 개설
+                      </button>
+                    </div>
+
+                    <!-- Campus Pill Filters -->
+                    <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-bold scrollbar-none">
+                      <button onclick="filterCampusPill('ALL')" class="campus-f-btn px-2.5 py-1 rounded-full bg-[#082f49] text-white shrink-0">전체</button>
+                      <button onclick="filterCampusPill('가좌')" class="campus-f-btn px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0">📍 가좌(본원)</button>
+                      <button onclick="filterCampusPill('칠암')" class="campus-f-btn px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0">📍 칠암</button>
+                      <button onclick="filterCampusPill('통영')" class="campus-f-btn px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0">📍 통영</button>
+                    </div>
+
+                    <!-- Projects List -->
+                    <div id="project-cards-container" class="space-y-3">
+                      <!-- Project 1: UAM (글로컬30) -->
+                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetail('p1')">
+                        <div class="flex items-center justify-between">
+                          <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-blue-50 text-[#069fdb]">글로컬30 우주항공</span>
+                          <span class="d-day-badge d-day-badge--warm">D-14 중간평가</span>
+                        </div>
+                        <h3 class="text-xs font-bold text-[#082f49] leading-snug">
+                          경상국립대 KASA 연계 무인 도심항공교통(UAM) 관제 & 비행 시뮬레이터
+                        </h3>
+                        <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
+                          사천 우주항공청(KASA) 개청 연계, 진주-사천 공역 내 실시간 UAM 3D 관제 및 충돌 방지 AI 구축
+                        </p>
+                        <div class="flex flex-wrap gap-1 text-[9px]">
+                          <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">#우주항공청</span>
+                          <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">#Three.js</span>
+                          <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">#PyTorch</span>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
+                          <span class="text-slate-400">지도: 이항공 책임교수 (우주항공대)</span>
+                          <span class="font-extrabold text-[#069fdb] flex items-center gap-0.5">UI/UX 구인 중 →</span>
+                        </div>
+                      </div>
+
+                      <!-- Project 2: Shuttle (SW중심대) -->
+                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetail('p2')">
+                        <div class="flex items-center justify-between">
+                          <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700">SW중심대학</span>
+                          <span class="d-day-badge d-day-badge--calm">모집 중</span>
+                        </div>
+                        <h3 class="text-xs font-bold text-[#082f49] leading-snug">
+                          캠퍼스 메이트 - GNU 가좌/칠암 통학 셔틀 실시간 혼잡도 예측 & 카풀
+                        </h3>
+                        <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
+                          가좌-칠암 셔틀 대기줄과 혼잡도를 교내 데이터로 예측하고, 공강 맞춤 카풀 매칭 제공
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
+                          <span class="text-slate-400">지도: 정인공 교수 (IT공과대)</span>
+                          <span class="font-bold text-slate-700">팀원 2명 활동</span>
+                        </div>
+                      </div>
+
+                      <!-- Project 3: Smart Farm (LINC 3.0) -->
+                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2">
+                        <div class="flex items-center justify-between">
+                          <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800">LINC 3.0 산학</span>
+                          <span class="d-day-badge d-day-badge--mint">진행 중</span>
+                        </div>
+                        <h3 class="text-xs font-bold text-[#082f49] leading-snug">
+                          경남 서부권 스마트팜 농작물(파프리카) 병충해 비전 AI 감지 드론
+                        </h3>
+                        <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
+                          진주 문산/금산 시설원예 농가 실증, 온디바이스 AI 드론을 활용한 온실 내부 자동 순찰
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
+                          <span class="text-slate-400">지도: 박생명 교수 (농생대)</span>
+                          <span class="text-slate-500">📍 칠암캠퍼스 메카</span>
+                        </div>
+                      </div>
+
+                      <!-- Project 4: Marine Robot (통영) -->
+                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2">
+                        <div class="flex items-center justify-between">
+                          <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-sky-50 text-sky-700">캡스톤디자인</span>
+                          <span class="d-day-badge d-day-badge--calm">팀 빌딩</span>
+                        </div>
+                        <h3 class="text-xs font-bold text-[#082f49] leading-snug">
+                          통영 스마트 양식장 수중 유영 로봇 및 환경 모니터링 시스템
+                        </h3>
+                        <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
+                          해양과학대학 통영캠퍼스 실증, 수중 센서 및 로봇 비전을 결합한 양식 어류 자동 감시
+                        </p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
+                          <span class="text-slate-400">지도: 최해양 교수 (해양과학대)</span>
+                          <span class="text-slate-500">📍 통영캠퍼스</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- TAB 2: AI 팀 빌딩 & 매칭 (TEAM MATCHER) -->
+                  <div id="screen-teambuilding" class="p-4 space-y-3.5 hidden">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-[10px] font-extrabold text-[#069fdb] uppercase tracking-wider">AI SYNERGY MATCHMAKER</p>
+                        <h2 class="text-lg font-black text-[#082f49]">팀 빌딩 & AI 시너지</h2>
+                      </div>
+                      <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-[#069fdb]">UAM 과제</span>
+                    </div>
+
+                    <!-- 6 Roles Balance Matrix -->
+                    <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between text-xs">
+                        <span class="font-bold text-slate-800">6대 R&R 포지션 커버리지</span>
+                        <span id="role-pill-main" class="text-[10px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">
+                          UI/UX 공백 감지
+                        </span>
+                      </div>
+                      <div class="grid grid-cols-3 gap-1.5 text-center text-xs">
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
+                          <span class="text-[9px] text-[#069fdb] font-bold block">기획/PM</span>
+                          <span class="font-extrabold text-slate-800 text-[10px]">김개척 ✓</span>
+                        </div>
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
+                          <span class="text-[9px] text-[#069fdb] font-bold block">프론트엔드</span>
+                          <span class="font-extrabold text-slate-800 text-[10px]">이지원 ✓</span>
+                        </div>
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
+                          <span class="text-[9px] text-[#069fdb] font-bold block">백엔드</span>
+                          <span class="font-extrabold text-slate-800 text-[10px]">김개척 ✓</span>
+                        </div>
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
+                          <span class="text-[9px] text-[#069fdb] font-bold block">AI/데이터</span>
+                          <span class="font-extrabold text-slate-800 text-[10px]">박우주 ✓</span>
+                        </div>
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
+                          <span class="text-[9px] text-[#069fdb] font-bold block">HW/임베디드</span>
+                          <span class="font-extrabold text-slate-800 text-[10px]">정칠암 ✓</span>
+                        </div>
+                        <div id="uiux-status-box" class="p-2 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 animate-pulse">
+                          <span class="text-[9px] font-bold block">UI/UX 디자인</span>
+                          <span class="font-extrabold text-[10px]">영입 필요!</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Pending Applicant Card with AI Synergy -->
+                    <div id="app-applicant-box" class="p-3.5 rounded-2xl bg-gradient-to-br from-blue-50/70 via-indigo-50/30 to-white border border-blue-200 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between">
+                        <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-blue-100 text-[#069fdb]">도착한 지원서</span>
+                        <div class="text-right">
+                          <span class="text-[9px] text-slate-400 font-bold block leading-tight">AI 시너지</span>
+                          <span class="text-base font-black text-[#082f49]">96%</span>
+                        </div>
+                      </div>
+
+                      <div class="flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" class="w-10 h-10 rounded-2xl object-cover ring-2 ring-blue-300" />
+                        <div>
+                          <div class="flex items-center space-x-1.5">
+                            <span class="text-xs font-bold text-slate-900">최아름 학생</span>
+                            <span class="text-[10px] font-mono text-slate-400">(2023050012)</span>
+                          </div>
+                          <span class="text-[11px] text-slate-500 block">미디어커뮤니케이션 3 · 📍 가좌 본원</span>
+                        </div>
+                      </div>
+
+                      <div class="p-2 rounded-xl bg-white/90 border border-slate-200 text-slate-700 text-[11px] leading-relaxed space-y-0.5">
+                        <p class="font-bold text-[#069fdb]">💡 AI 시너지 심사 의견</p>
+                        <p class="text-slate-600">
+                          "현재 팀에 공백인 UI/UX 디자인 역량을 100% 채워주며, 가좌캠퍼스 소속으로 대면 스터디룸 협업에 완벽히 부합합니다."
+                        </p>
+                      </div>
+
+                      <div class="flex gap-2 pt-0.5">
+                        <button onclick="openApplicantDetailModal()" class="flex-1 py-1.5 rounded-xl text-xs font-bold border border-slate-200 text-slate-600 hover:bg-slate-100">
+                          상세 심사
+                        </button>
+                        <button onclick="acceptApplicantInApp()" class="flex-1 py-1.5 rounded-xl text-xs font-bold bg-[#069fdb] text-white shadow-xs">
+                          팀원으로 영입
+                        </button>
+                      </div>
+                    </div>
+
+                    <div id="app-applicant-success" class="hidden p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-bold flex items-center justify-between">
+                      <span>✓ 최아름 학생이 UI/UX 팀원으로 합류하여 팀 R&R 구성이 100% 완료되었습니다!</span>
+                    </div>
+
+                    <!-- GNU Talent Pool -->
+                    <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2.5">
+                      <span class="text-xs font-bold text-slate-800 block">교내 인재 추천 풀 (GNU Pioneer Pool)</span>
+                      <div class="space-y-2">
+                        <!-- Candidate 1 -->
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                          <div>
+                            <div class="flex items-center gap-1.5">
+                              <span class="font-bold text-slate-900">박우주 (항공우주 3)</span>
+                              <span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">98% 매칭</span>
+                            </div>
+                            <span class="text-[10px] text-slate-500 block mt-0.5">PyTorch · ROS2 · 비전AI</span>
+                          </div>
+                          <button onclick="alert('박우주 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
+                        </div>
+                        <!-- Candidate 2 -->
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                          <div>
+                            <div class="flex items-center gap-1.5">
+                              <span class="font-bold text-slate-900">정칠암 (메카트로닉스 4)</span>
+                              <span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800">94% 매칭</span>
+                            </div>
+                            <span class="text-[10px] text-slate-500 block mt-0.5">칠암캠퍼스 · STM32 · CAN통신</span>
+                          </div>
+                          <button onclick="alert('정칠암 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- TAB 3: 16주 마일스톤 & 로드맵 (MILESTONES) -->
+                  <div id="screen-milestones" class="p-4 space-y-3.5 hidden">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-[10px] font-extrabold text-[#069fdb] uppercase tracking-wider">CAPSTONE ROADMAP</p>
+                        <h2 class="text-lg font-black text-[#082f49]">16주 마일스톤 & 칸반</h2>
+                      </div>
+                      <span class="px-2.5 py-1 rounded-full bg-blue-50 text-[#069fdb] text-[10px] font-extrabold">
+                        현재 6주차 진행 중
+                      </span>
+                    </div>
+
+                    <!-- Progress overview card -->
+                    <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2">
+                      <div class="flex items-center justify-between text-xs font-bold text-slate-800">
+                        <span>학사 캡스톤 전체 진척도</span>
+                        <span class="text-[#069fdb]">50% 완료</span>
+                      </div>
+                      <div class="w-full bg-slate-100 rounded-full h-2">
+                        <div class="bg-[#069fdb] h-2 rounded-full" style="width: 50%"></div>
+                      </div>
+                      <span class="text-[10px] text-slate-400 block">8주차 중간평가까지 D-14 · PoC 데모 준비 필요</span>
+                    </div>
+
+                    <!-- Milestone Subtabs: Timeline vs Kanban -->
+                    <div class="flex rounded-xl bg-slate-100 p-1 text-xs font-bold">
+                      <button onclick="switchMilestoneSubView('timeline')" id="subview-btn-timeline" class="flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900">
+                        16주 간트 타임라인
+                      </button>
+                      <button onclick="switchMilestoneSubView('kanban')" id="subview-btn-kanban" class="flex-1 py-1.5 rounded-lg text-slate-500">
+                        실무 칸반보드
+                      </button>
+                    </div>
+
+                    <!-- Subview 1: Timeline -->
+                    <div id="subview-timeline" class="space-y-2">
+                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between text-xs font-bold text-emerald-900">
+                        <span>W1 팀 빌딩 및 연구계획서 승인</span>
+                        <span class="text-emerald-700 text-[10px]">완료 ✓</span>
+                      </div>
+                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between text-xs font-bold text-emerald-900">
+                        <span>W3 시스템 아키텍처 지도교수 승인</span>
+                        <span class="text-emerald-700 text-[10px]">완료 ✓</span>
+                      </div>
+                      <div class="p-2.5 rounded-xl bg-blue-50 border border-blue-200 flex justify-between text-xs font-bold text-[#069fdb]">
+                        <span>W6 1차 핵심 프로토타입 구현 (현재)</span>
+                        <span class="d-day-badge d-day-badge--warm text-[10px]">진행 중</span>
+                      </div>
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500">
+                        <span>W8 경상국립대 캡스톤 중간발표 평가</span>
+                        <span class="text-[10px] font-bold text-slate-600">D-14</span>
+                      </div>
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500">
+                        <span>W12 통합 테스트 및 KAI/KASA 실증</span>
+                        <span class="text-[10px]">11월</span>
+                      </div>
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500">
+                        <span>W16 최종 캡스톤 페스티벌 출품 & 졸업</span>
+                        <span class="text-[10px]">12월</span>
+                      </div>
+
+                      <button onclick="alert('GNU 16주 캡스톤 로드맵이 AI에 의해 최신 학사일정에 맞춰 재설계되었습니다!')" class="w-full py-2.5 rounded-xl bg-[#082f49] hover:bg-[#069fdb] text-white text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1.5 mt-2">
+                        <span>✨</span>
+                        <span>AI 16주 로드맵 자동 재설계</span>
+                      </button>
+                    </div>
+
+                    <!-- Subview 2: Kanban Board -->
+                    <div id="subview-kanban" class="space-y-2.5 hidden">
+                      <div class="flex items-center justify-between text-xs font-bold text-slate-800">
+                        <span>태스크 상태 전환</span>
+                        <button onclick="promptNewTask()" class="text-[#069fdb] text-[11px] font-bold">+ 태스크 추가</button>
+                      </div>
+
+                      <div id="mobile-kanban-list" class="space-y-2">
+                        <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs">
+                          <div class="flex items-center justify-between text-[10px]">
+                            <span class="font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">진행 중</span>
+                            <span class="text-slate-400">이지원 (FE)</span>
+                          </div>
+                          <h4 class="font-bold text-slate-900 leading-snug">Three.js 기반 3D 비행체 및 가상 지형 렌더링</h4>
+                          <div class="flex justify-end pt-1 border-t border-slate-50">
+                            <button onclick="toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
+                          </div>
+                        </div>
+
+                        <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs">
+                          <div class="flex items-center justify-between text-[10px]">
+                            <span class="font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-800">할 일</span>
+                            <span class="text-slate-400">박우주 (AI)</span>
+                          </div>
+                          <h4 class="font-bold text-slate-900 leading-snug">비행 충돌 회피 AI 강화학습 1차 가중치 학습</h4>
+                          <div class="flex justify-end pt-1 border-t border-slate-50">
+                            <button onclick="toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-blue-50 text-[#069fdb] text-[10px] font-bold">진행 중 이동 ▶</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- TAB 4: 지도교수 멘토링 평가 (ADVISOR) -->
+                  <div id="screen-advisor" class="p-4 space-y-3.5 hidden">
+                    <div>
+                      <p class="text-[10px] font-extrabold text-[#069fdb] uppercase tracking-wider">FACULTY MENTORING</p>
+                      <h2 class="text-lg font-black text-[#082f49]">지도교수 피드백</h2>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-3">
+                      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                        <div>
+                          <span class="text-xs font-bold text-slate-900">이항공 책임교수</span>
+                          <span class="text-[10px] text-slate-400 block">우주항공대학 항공우주소프트웨어</span>
+                        </div>
+                        <span class="d-day-badge d-day-badge--warm">평가: S등급</span>
+                      </div>
+
+                      <div class="p-3 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-slate-700 leading-relaxed space-y-1">
+                        <span class="font-bold text-[#069fdb] block">3주차 아키텍처 점검 코멘트</span>
+                        <p class="text-[11px]">
+                          "사천 우주항공청 개청 취지에 부합하는 UAM 관제 경로 계획이 매우 체계적입니다. 8주차 중간평가 때 KAI 실무진 자문을 주선하겠습니다."
+                        </p>
+                        <span class="text-[9px] text-slate-400 block pt-1">2026-09-28 작성 · 공식 승인 완료</span>
+                      </div>
+
+                      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed space-y-1">
+                        <span class="font-bold text-slate-800 block">1주차 캡스톤 연구계획서 승인</span>
+                        <p class="text-[11px]">
+                          "우주항공대와 IT공대 간 다학제 융합 캡스톤 기획 승인 완료합니다. 성실한 완주를 기대합니다."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- TAB 5: 내 개척자 프로필 (PROFILE) -->
+                  <div id="screen-profile" class="p-4 space-y-3.5 hidden">
+                    <div>
+                      <p class="text-[10px] font-extrabold text-[#069fdb] uppercase tracking-wider">PIONEER PROFILE</p>
+                      <h2 class="text-lg font-black text-[#082f49]">내 개척자 프로필</h2>
+                    </div>
+
+                    <!-- Profile Card -->
+                    <div class="p-4 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-3">
+                      <div class="flex items-center space-x-3 pb-3 border-b border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" class="w-12 h-12 rounded-2xl object-cover ring-2 ring-[#069fdb]" />
+                        <div>
+                          <div class="flex items-center space-x-1.5">
+                            <span class="text-sm font-bold text-slate-900">김개척</span>
+                            <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">팀장</span>
+                          </div>
+                          <span class="text-xs text-slate-500 block">IT공과대학 컴퓨터공학부 4학년</span>
+                          <span class="text-[10px] font-mono text-slate-400">2021010892 · pioneer.kim@gnu.ac.kr</span>
+                        </div>
+                      </div>
+
+                      <div class="space-y-2 text-xs">
+                        <div>
+                          <span class="text-[10px] font-bold text-slate-400 block mb-1">소속 캠퍼스</span>
+                          <span class="font-bold text-slate-800">📍 가좌캠퍼스 (본원)</span>
+                        </div>
+                        <div>
+                          <span class="text-[10px] font-bold text-slate-400 block mb-1">주요 역할 & 가용시간</span>
+                          <span class="font-bold text-slate-800">백엔드 / PM (주당 20시간 몰입 가능)</span>
+                        </div>
+                        <div>
+                          <span class="text-[10px] font-bold text-slate-400 block mb-1">보유 기술 스택</span>
+                          <div class="flex flex-wrap gap-1">
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">Node.js</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">FastAPI</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">PostgreSQL</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">Docker</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">AWS</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button onclick="alert('프로필 수정 화면이 준비되었습니다.')" class="w-full py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50">
+                        프로필 및 협업 스타일 수정
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- In-App Modal: Applicant Detail Review -->
+                  <div id="modal-applicant" class="in-app-modal-backdrop hidden">
+                    <div class="in-app-modal-sheet space-y-3">
+                      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                        <h4 class="text-sm font-bold text-slate-900">지원자 정밀 AI 시너지 심사</h4>
+                        <button onclick="closeApplicantDetailModal()" class="text-slate-400 hover:text-slate-600 text-sm font-bold">✕</button>
+                      </div>
+
+                      <div class="p-3 rounded-xl bg-blue-50 border border-blue-200 text-xs space-y-1">
+                        <div class="flex items-center justify-between">
+                          <span class="font-bold text-[#069fdb]">최아름 (미디어커뮤니케이션 3)</span>
+                          <span class="font-black text-sm text-[#082f49]">AI 96%</span>
+                        </div>
+                        <p class="text-[11px] text-slate-600">
+                          "Figma 대시보드 컴포넌트 시스템 구축 경험 보유. 가좌 중앙도서관 대면 모임 언제든 가능합니다!"
+                        </p>
+                      </div>
+
+                      <div class="text-xs space-y-1 text-slate-600">
+                        <p><strong>우대 스택:</strong> Figma, 사용자 리서치, 와이어프레임</p>
+                        <p><strong>주당 가용시간:</strong> 16시간</p>
+                        <p><strong>캠퍼스 적합도:</strong> 가좌 ↔ 가좌 (이동 시간 없음)</p>
+                      </div>
+
+                      <div class="flex gap-2 pt-2">
+                        <button onclick="closeApplicantDetailModal()" class="flex-1 py-2 rounded-xl text-xs font-bold border border-slate-200 text-slate-600">
+                          닫기
+                        </button>
+                        <button onclick="acceptApplicantInApp(); closeApplicantDetailModal();" class="flex-1 py-2 rounded-xl text-xs font-bold bg-[#069fdb] text-white">
+                          팀원으로 수락
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 5-Column Bottom Navigation Bar -->
+                  <div class="bottom-navigation">
+                    <button onclick="switchTabNav('projects')" id="nav-btn-projects" class="bottom-nav-btn active">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="14" width="7" height="7" rx="2"></rect><rect x="3" y="14" width="7" height="7" rx="2"></rect></svg>
+                      <span>프로젝트</span>
+                    </button>
+                    <button onclick="switchTabNav('teambuilding')" id="nav-btn-teambuilding" class="bottom-nav-btn">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                      <span>AI 매칭</span>
+                    </button>
+                    <button onclick="switchTabNav('milestones')" id="nav-btn-milestones" class="bottom-nav-btn">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <span>마일스톤</span>
+                    </button>
+                    <button onclick="switchTabNav('advisor')" id="nav-btn-advisor" class="bottom-nav-btn">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                      <span>멘토링</span>
+                    </button>
+                    <button onclick="switchTabNav('profile')" id="nav-btn-profile" class="bottom-nav-btn">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      <span>내 프로필</span>
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Physical side buttons -->
+          <span class="side-button side-button--action"></span>
+          <span class="side-button side-button--volume-up"></span>
+          <span class="side-button side-button--volume-down"></span>
+          <span class="side-button side-button--power"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop caption note -->
+    <p class="desktop-note">GNU PIONEERS 모바일 프로토타입 · 화면 속 버튼을 직접 눌러 체험해보세요</p>
+  </main>
+
+  <script>
+    // Navigation
+    function enterApp() {
+      document.getElementById('view-start').classList.add('hidden');
+      document.getElementById('view-app').classList.remove('hidden');
+      switchTabNav('projects');
+    }
+
+    function resetToStart() {
+      document.getElementById('view-app').classList.add('hidden');
+      document.getElementById('view-start').classList.remove('hidden');
+    }
+
+    function switchTabNav(tab) {
+      ['projects', 'teambuilding', 'milestones', 'advisor', 'profile'].forEach(id => {
+        const screen = document.getElementById('screen-' + id);
+        const btn = document.getElementById('nav-btn-' + id);
+        if (screen && btn) {
+          if (id === tab) {
+            screen.classList.remove('hidden');
+            btn.classList.add('active');
+          } else {
+            screen.classList.add('hidden');
+            btn.classList.remove('active');
+          }
+        }
+      });
+    }
+
+    function openProjectDetail(id) {
+      switchTabNav('teambuilding');
+    }
+
+    function filterCampusPill(campus) {
+      document.querySelectorAll('.campus-f-btn').forEach(btn => {
+        if (btn.innerText.includes(campus)) {
+          btn.className = 'campus-f-btn px-2.5 py-1 rounded-full bg-[#082f49] text-white shrink-0';
+        } else {
+          btn.className = 'campus-f-btn px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0';
+        }
+      });
+    }
+
+    function openNewProjectModal() {
+      const name = prompt('개설할 캡스톤 과제명을 입력하세요:');
+      if (name && name.trim()) {
+        alert(`[${name.trim()}] 프로젝트가 등록되었습니다! AI 팀 빌딩 매칭이 시작됩니다.`);
+        switchTabNav('teambuilding');
+      }
+    }
+
+    // Team Building Actions
+    function acceptApplicantInApp() {
+      document.getElementById('app-applicant-box').classList.add('hidden');
+      document.getElementById('app-applicant-success').classList.remove('hidden');
+
+      const box = document.getElementById('uiux-status-box');
+      box.className = 'p-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800';
+      box.innerHTML = '<span class="text-[9px] font-bold block">UI/UX 디자인</span><span class="font-extrabold text-[10px]">최아름 ✓</span>';
+
+      const pill = document.getElementById('role-status-pill');
+      if (pill) {
+        pill.className = 'text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full';
+        pill.innerText = '팀 6대 R&R 100% 충족';
+      }
+      const pillMain = document.getElementById('role-pill-main');
+      if (pillMain) {
+        pillMain.className = 'text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full';
+        pillMain.innerText = '팀 6대 R&R 100% 충족';
+      }
+    }
+
+    function openApplicantDetailModal() {
+      document.getElementById('modal-applicant').classList.remove('hidden');
+    }
+
+    function closeApplicantDetailModal() {
+      document.getElementById('modal-applicant').classList.add('hidden');
+    }
+
+    // Milestones subview
+    function switchMilestoneSubView(type) {
+      if (type === 'timeline') {
+        document.getElementById('subview-timeline').classList.remove('hidden');
+        document.getElementById('subview-kanban').classList.add('hidden');
+        document.getElementById('subview-btn-timeline').className = 'flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900';
+        document.getElementById('subview-btn-kanban').className = 'flex-1 py-1.5 rounded-lg text-slate-500';
+      } else {
+        document.getElementById('subview-timeline').classList.add('hidden');
+        document.getElementById('subview-kanban').classList.remove('hidden');
+        document.getElementById('subview-btn-timeline').className = 'flex-1 py-1.5 rounded-lg text-slate-500';
+        document.getElementById('subview-btn-kanban').className = 'flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900';
+      }
+    }
+
+    function toggleMobileTask(btn) {
+      const card = btn.closest('.space-y-1.5');
+      const badge = card.querySelector('span');
+      if (badge.innerText.includes('진행')) {
+        badge.className = 'text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800';
+        badge.innerText = '완료 ✓';
+        btn.innerText = '되돌리기';
+        btn.className = 'px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-bold';
+      } else {
+        badge.className = 'text-[10px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]';
+        badge.innerText = '진행 중';
+        btn.innerText = '완료 처리 ✓';
+        btn.className = 'px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold';
+      }
+    }
+
+    function promptNewTask() {
+      const title = prompt('새 캡스톤 태스크명을 입력하세요:');
+      if (title && title.trim()) {
+        const container = document.getElementById('mobile-kanban-list');
+        const card = document.createElement('div');
+        card.className = 'p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs';
+        card.innerHTML = `
+          <div class="flex items-center justify-between text-[10px]">
+            <span class="font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">진행 중</span>
+            <span class="text-slate-400">김개척 (BE)</span>
+          </div>
+          <h4 class="font-bold text-slate-900 leading-snug">${title.trim()}</h4>
+          <div class="flex justify-end pt-1 border-t border-slate-50">
+            <button onclick="toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
+          </div>
+        `;
+        container.prepend(card);
+      }
+    }
+  </script>
+</body>
+</html>
