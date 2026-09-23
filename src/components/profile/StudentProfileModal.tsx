@@ -3,7 +3,7 @@ import { Modal } from '../common/Modal';
 import { StudentProfile, GnuCampus, GnuCollege, RoleType, WorkStyle } from '../../types';
 import { GNU_CAMPUSES, GNU_COLLEGES_MAP, ROLE_LABELS, WORK_STYLE_OPTIONS, DEFAULT_GNU_TECH_STACKS } from '../../data/gnuConstants';
 import { CampusBadge, RoleBadge } from '../common/Badge';
-import { Save, User, Clock, ShieldCheck, Mail, BookOpen } from 'lucide-react';
+import { Save, User, Clock, ShieldCheck, Mail, BookOpen, LogOut } from 'lucide-react';
 
 interface StudentProfileModalProps {
   isOpen: boolean;
@@ -266,21 +266,36 @@ export const StudentProfileModal: React.FC<StudentProfileModalProps> = ({
           />
         </div>
 
-        <div className="flex justify-end gap-2 pt-2 border-t border-slate-100">
+        <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-100">
           <button
             type="button"
-            onClick={onClose}
-            className="rounded-xl border border-slate-200 px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-100"
+            onClick={() => {
+              if (window.confirm('로그아웃 하시겠습니까?\n로그아웃 시 시작 화면으로 이동합니다.')) {
+                window.location.href = '/';
+              }
+            }}
+            className="inline-flex items-center gap-1.5 rounded-xl border border-rose-200 bg-rose-50 px-3.5 py-2 text-xs font-bold text-rose-600 hover:bg-rose-100 transition-colors"
           >
-            닫기
+            <LogOut className="h-3.5 w-3.5" />
+            <span>로그아웃</span>
           </button>
-          <button
-            type="submit"
-            className="inline-flex items-center gap-1.5 rounded-xl bg-gnu-navy px-5 py-2 text-xs font-bold text-white shadow-md hover:bg-gnu-blue"
-          >
-            <Save className="h-4 w-4" />
-            <span>프로필 저장</span>
-          </button>
+
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="rounded-xl border border-slate-200 px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-100"
+            >
+              닫기
+            </button>
+            <button
+              type="submit"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-gnu-navy px-5 py-2 text-xs font-bold text-white shadow-md hover:bg-gnu-blue"
+            >
+              <Save className="h-4 w-4" />
+              <span>프로필 저장</span>
+            </button>
+          </div>
         </div>
       </form>
     </Modal>

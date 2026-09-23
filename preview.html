@@ -534,14 +534,23 @@
                       </div>
                     </div>
 
-                    <!-- Start Button -->
-                    <div>
-                      <button onclick="enterApp()" class="primary-button">
-                        <span>시작하기</span>
+                    <!-- Auth & Start Buttons -->
+                    <div class="space-y-2">
+                      <button onclick="openAuthModal('login')" class="primary-button">
+                        <span>로그인</span>
                         <span class="primary-button-icon">
                           <svg viewBox="0 0 16 16" fill="none" class="w-3.5 h-3.5 stroke-current stroke-2"><path d="M3.5 8h9M8.5 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </span>
                       </button>
+                      <button onclick="openAuthModal('signup')" class="w-full py-3 px-4 rounded-2xl bg-white border border-[#069fdb] text-[#069fdb] font-extrabold text-sm hover:bg-[#e8f6fc] transition-all flex items-center justify-center gap-1.5 shadow-xs">
+                        <span>GNU 학생 회원가입</span>
+                        <span class="text-xs">→</span>
+                      </button>
+                      <div class="text-center pt-0.5">
+                        <button onclick="quickGuestStart()" class="text-[11px] font-semibold text-slate-400 hover:text-slate-600 transition-colors">
+                          체험 모드로 바로 시작하기
+                        </button>
+                      </div>
                     </div>
                   </section>
                 </div>
@@ -961,22 +970,22 @@
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" class="w-12 h-12 rounded-2xl object-cover ring-2 ring-[#069fdb]" />
                         <div>
                           <div class="flex items-center space-x-1.5">
-                            <span class="text-sm font-bold text-slate-900">김개척</span>
-                            <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">팀장</span>
+                            <span id="profile-user-name" class="text-sm font-bold text-slate-900">김개척</span>
+                            <span id="profile-user-role-badge" class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">팀장</span>
                           </div>
-                          <span class="text-xs text-slate-500 block">IT공과대학 컴퓨터공학부 4학년</span>
-                          <span class="text-[10px] font-mono text-slate-400">2021010892 · pioneer.kim@gnu.ac.kr</span>
+                          <span id="profile-user-dept" class="text-xs text-slate-500 block">IT공과대학 컴퓨터공학부 4학년</span>
+                          <span id="profile-user-meta" class="text-[10px] font-mono text-slate-400">2021010892 · pioneer.kim@gnu.ac.kr</span>
                         </div>
                       </div>
 
                       <div class="space-y-2 text-xs">
                         <div>
                           <span class="text-[10px] font-bold text-slate-400 block mb-1">소속 캠퍼스</span>
-                          <span class="font-bold text-slate-800">📍 가좌캠퍼스 (본원)</span>
+                          <span id="profile-user-campus" class="font-bold text-slate-800">📍 가좌캠퍼스 (본원)</span>
                         </div>
                         <div>
                           <span class="text-[10px] font-bold text-slate-400 block mb-1">주요 역할 & 가용시간</span>
-                          <span class="font-bold text-slate-800">백엔드 / PM (주당 20시간 몰입 가능)</span>
+                          <span id="profile-user-roles" class="font-bold text-slate-800">백엔드 / PM (주당 20시간 몰입 가능)</span>
                         </div>
                         <div>
                           <span class="text-[10px] font-bold text-slate-400 block mb-1">보유 기술 스택</span>
@@ -992,6 +1001,28 @@
 
                       <button onclick="alert('프로필 수정 화면이 준비되었습니다.')" class="w-full py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50">
                         프로필 및 협업 스타일 수정
+                      </button>
+                    </div>
+
+                    <!-- Account Management & Logout Card -->
+                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between text-xs">
+                        <div class="flex items-center space-x-1.5">
+                          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+                          <span class="font-bold text-slate-800">계정 및 보안 관리</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 font-semibold">GNU 실명 인증됨</span>
+                      </div>
+
+                      <div class="text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded-xl flex items-center justify-between">
+                        <span class="text-slate-400">접속 계정</span>
+                        <span id="profile-account-email" class="font-bold text-slate-700">pioneer.kim@gnu.ac.kr</span>
+                      </div>
+
+                      <!-- Logout Button -->
+                      <button onclick="handleLogout()" class="w-full py-2.5 rounded-xl border border-rose-200 bg-rose-50/70 hover:bg-rose-100 text-xs font-bold text-rose-600 transition-all flex items-center justify-center gap-1.5 shadow-xs cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span>로그아웃</span>
                       </button>
                     </div>
                   </div>
@@ -1057,6 +1088,121 @@
 
                 </div>
 
+                <!-- In-App Modal: Auth (Login & Sign-Up Sheet) -->
+                <div id="modal-auth" class="in-app-modal-backdrop hidden" onclick="if(event.target === this) closeAuthModal()">
+                  <div class="in-app-modal-sheet space-y-3" onclick="event.stopPropagation()">
+                    <!-- Sheet Header -->
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                      <div class="flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-lg bg-blue-100 text-[#069fdb] flex items-center justify-center font-black text-[11px]">GNU</span>
+                        <h4 id="auth-modal-title" class="text-xs font-black text-slate-900">경상국립대 통합 로그인</h4>
+                      </div>
+                      <button type="button" onclick="closeAuthModal()" class="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold transition-colors">✕</button>
+                    </div>
+
+                    <!-- Segmented Auth Tabs -->
+                    <div class="flex bg-slate-100 p-1 rounded-xl gap-1">
+                      <button id="auth-tab-btn-login" type="button" onclick="switchAuthTab('login')" class="flex-1 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-slate-900 shadow-xs">
+                        로그인
+                      </button>
+                      <button id="auth-tab-btn-signup" type="button" onclick="switchAuthTab('signup')" class="flex-1 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-500 hover:text-slate-800">
+                        회원가입
+                      </button>
+                    </div>
+
+                    <!-- TAB 1: LOGIN FORM -->
+                    <form id="auth-form-login" onsubmit="handleLoginSubmit(event)" class="space-y-2.5">
+                      <div class="space-y-1">
+                        <label class="text-[10px] font-bold text-slate-700">학번 또는 GNU 웹메일</label>
+                        <input id="login-id" type="text" required placeholder="예: 2021014582 또는 pioneer.kim@gnu.ac.kr" value="2021014582" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800" />
+                      </div>
+
+                      <div class="space-y-1">
+                        <div class="flex items-center justify-between">
+                          <label class="text-[10px] font-bold text-slate-700">비밀번호</label>
+                          <a href="javascript:void(0)" onclick="alert('차세대정보시스템 또는 GNU 포털에서 비밀번호 초기화를 진행하세요.')" class="text-[10px] text-[#069fdb] font-semibold">비밀번호 찾기</a>
+                        </div>
+                        <input id="login-pw" type="password" required placeholder="비밀번호를 입력하세요" value="password123!" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800" />
+                      </div>
+
+                      <div class="pt-1 space-y-2">
+                        <button type="submit" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#002855] via-[#004b91] to-[#069fdb] text-white text-xs font-extrabold shadow-md hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-1.5">
+                          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                          <span>로그인</span>
+                        </button>
+
+                        <!-- 1-Click Fast Demo Login -->
+                        <button type="button" onclick="loginAsDemo()" class="w-full py-2 rounded-xl border border-blue-200 bg-blue-50/80 hover:bg-blue-100 text-[11px] font-bold text-[#069fdb] transition-all flex items-center justify-center gap-1">
+                          <span>🚀</span>
+                          <span>김개척 (컴공 4학년) 계정으로 빠른 체험</span>
+                        </button>
+                      </div>
+
+                      <p class="text-[10px] text-center text-slate-400 pt-0.5">
+                        경상국립대(GNU) 개척인증 시스템으로 보호됩니다.
+                      </p>
+                    </form>
+
+                    <!-- TAB 2: SIGNUP FORM -->
+                    <form id="auth-form-signup" onsubmit="handleSignupSubmit(event)" class="space-y-2 hidden">
+                      <div class="grid grid-cols-2 gap-2">
+                        <div class="space-y-0.5">
+                          <label class="text-[10px] font-bold text-slate-700">이름 <span class="text-rose-500">*</span></label>
+                          <input id="signup-name" type="text" required placeholder="예: 박개척" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800" />
+                        </div>
+                        <div class="space-y-0.5">
+                          <label class="text-[10px] font-bold text-slate-700">학번 <span class="text-rose-500">*</span></label>
+                          <input id="signup-id" type="text" required placeholder="예: 2024012345" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800" />
+                        </div>
+                      </div>
+
+                      <div class="space-y-0.5">
+                        <label class="text-[10px] font-bold text-slate-700">소속 캠퍼스 <span class="text-rose-500">*</span></label>
+                        <select id="signup-campus" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800">
+                          <option value="가좌캠퍼스 (본원)">가좌캠퍼스 (본원 · 공대/자연대/인문대/사회대/경영대)</option>
+                          <option value="칠암캠퍼스">칠암캠퍼스 (의과대/간호대/융합기술공대)</option>
+                          <option value="통영캠퍼스">통영캠퍼스 (해양과학대학)</option>
+                          <option value="창원산학캠퍼스">창원산학캠퍼스</option>
+                        </select>
+                      </div>
+
+                      <div class="space-y-0.5">
+                        <label class="text-[10px] font-bold text-slate-700">단과대학 및 학과 <span class="text-rose-500">*</span></label>
+                        <input id="signup-dept" type="text" required placeholder="예: 경영대학 경영정보학과" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800" />
+                      </div>
+
+                      <div class="space-y-0.5">
+                        <label class="text-[10px] font-bold text-slate-700">희망 팀플 역할 <span class="text-rose-500">*</span></label>
+                        <select id="signup-role" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800">
+                          <option value="기획 / PM & 비즈니스">📋 기획 / PM & 비즈니스</option>
+                          <option value="풀스택 / 소프트웨어 개발">💻 풀스택 / 소프트웨어 개발</option>
+                          <option value="UI/UX 디자인 & 브랜드">🎨 UI/UX 디자인 & 브랜드</option>
+                          <option value="데이터 분석 & AI 엔지니어링">📊 데이터 분석 & AI</option>
+                          <option value="임베디드 / 하드웨어 제어">⚙️ 임베디드 / HW 제어</option>
+                          <option value="홍보마케팅 & 전략">📢 홍보마케팅 & 전략</option>
+                        </select>
+                      </div>
+
+                      <div class="space-y-0.5">
+                        <label class="text-[10px] font-bold text-slate-700">GNU 웹메일 <span class="text-rose-500">*</span></label>
+                        <input id="signup-email" type="email" required placeholder="pioneer@gnu.ac.kr" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800" />
+                      </div>
+
+                      <div class="space-y-0.5">
+                        <label class="text-[10px] font-bold text-slate-700">비밀번호 <span class="text-rose-500">*</span></label>
+                        <input id="signup-pw" type="password" required placeholder="비밀번호 설정" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800" />
+                      </div>
+
+                      <div class="pt-1">
+                        <button type="submit" class="w-full py-2.5 rounded-xl bg-[#069fdb] hover:bg-[#004b91] text-white text-xs font-bold shadow-md active:scale-[0.99] transition-all flex items-center justify-center gap-1">
+                          <span>GNU 개척자 회원가입 완료</span>
+                          <span class="text-xs">✓</span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -1075,6 +1221,181 @@
   </main>
 
   <script>
+    // User State & Auth
+    let currentUser = {
+      name: '김개척',
+      studentId: '2021014582',
+      email: 'pioneer.kim@gnu.ac.kr',
+      campus: '가좌캠퍼스 (본원)',
+      dept: '공과대학 소프트웨어공학과 4학년',
+      role: '풀스택 개발자 (팀 빌더)',
+      roleBadge: '팀장'
+    };
+
+    function openAuthModal(tab) {
+      const modal = document.getElementById('modal-auth');
+      if (modal) {
+        modal.classList.remove('hidden');
+        switchAuthTab(tab || 'login');
+      }
+    }
+
+    function closeAuthModal() {
+      const modal = document.getElementById('modal-auth');
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function switchAuthTab(tab) {
+      const loginForm = document.getElementById('auth-form-login');
+      const signupForm = document.getElementById('auth-form-signup');
+      const loginTabBtn = document.getElementById('auth-tab-btn-login');
+      const signupTabBtn = document.getElementById('auth-tab-btn-signup');
+      const title = document.getElementById('auth-modal-title');
+
+      if (tab === 'signup') {
+        if (loginForm) loginForm.classList.add('hidden');
+        if (signupForm) signupForm.classList.remove('hidden');
+        if (loginTabBtn) {
+          loginTabBtn.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-500 hover:text-slate-800';
+        }
+        if (signupTabBtn) {
+          signupTabBtn.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-slate-900 shadow-xs';
+        }
+        if (title) title.innerText = '경상국립대 학생 회원가입';
+      } else {
+        if (loginForm) loginForm.classList.remove('hidden');
+        if (signupForm) signupForm.classList.add('hidden');
+        if (loginTabBtn) {
+          loginTabBtn.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all bg-white text-slate-900 shadow-xs';
+        }
+        if (signupTabBtn) {
+          signupTabBtn.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-500 hover:text-slate-800';
+        }
+        if (title) title.innerText = '경상국립대 통합 로그인';
+      }
+    }
+
+    function handleLoginSubmit(event) {
+      if (event) event.preventDefault();
+      const idInput = document.getElementById('login-id');
+      const val = idInput ? idInput.value.trim() : '';
+      if (!val) {
+        alert('학번 또는 웹메일을 입력해주세요.');
+        return;
+      }
+
+      if (val.includes('@')) {
+        currentUser.email = val;
+        currentUser.studentId = '2021014582';
+      } else {
+        currentUser.studentId = val;
+        currentUser.email = val + '@gnu.ac.kr';
+      }
+      currentUser.name = '김개척';
+      currentUser.roleBadge = '팀장';
+
+      closeAuthModal();
+      updateProfileUI();
+      enterApp();
+    }
+
+    function loginAsDemo() {
+      currentUser = {
+        name: '김개척',
+        studentId: '2021014582',
+        email: 'pioneer.kim@gnu.ac.kr',
+        campus: '가좌캠퍼스 (본원)',
+        dept: '공과대학 소프트웨어공학과 4학년',
+        role: '풀스택 개발자 (팀 빌더)',
+        roleBadge: '팀장'
+      };
+      closeAuthModal();
+      updateProfileUI();
+      enterApp();
+    }
+
+    function quickGuestStart() {
+      currentUser = {
+        name: '게스트 개척자',
+        studentId: '2026-GUEST',
+        email: 'guest@gnu.ac.kr',
+        campus: '가좌캠퍼스 (자유전공)',
+        dept: '경상국립대학교 융합학부',
+        role: '프로젝트 탐색자',
+        roleBadge: '체험자'
+      };
+      updateProfileUI();
+      enterApp();
+    }
+
+    function handleSignupSubmit(event) {
+      if (event) event.preventDefault();
+      const name = document.getElementById('signup-name')?.value.trim();
+      const sId = document.getElementById('signup-id')?.value.trim();
+      const campus = document.getElementById('signup-campus')?.value;
+      const dept = document.getElementById('signup-dept')?.value.trim();
+      const role = document.getElementById('signup-role')?.value;
+      const email = document.getElementById('signup-email')?.value.trim();
+
+      if (!name || !sId || !dept) {
+        alert('필수 항목(이름, 학번, 소속 단과대/학과)을 모두 입력해주세요.');
+        return;
+      }
+
+      currentUser = {
+        name: name,
+        studentId: sId,
+        email: email || `${sId}@gnu.ac.kr`,
+        campus: campus || '가좌캠퍼스 (본원)',
+        dept: dept,
+        role: role || '팀원',
+        roleBadge: '신규 개척자'
+      };
+
+      alert(`환영합니다, ${name} 학생! 경상국립대 팀플 허브 가입이 완료되었습니다.`);
+      closeAuthModal();
+      updateProfileUI();
+      enterApp();
+    }
+
+    function updateProfileUI() {
+      const nameEl = document.getElementById('profile-user-name');
+      const deptEl = document.getElementById('profile-user-dept');
+      const metaEl = document.getElementById('profile-user-meta');
+      const emailEl = document.getElementById('profile-account-email');
+      const campusEl = document.getElementById('profile-user-campus');
+      const roleBadgeEl = document.getElementById('profile-user-role-badge');
+      const rolesEl = document.getElementById('profile-user-roles');
+
+      if (nameEl) nameEl.innerText = currentUser.name;
+      if (deptEl) deptEl.innerText = currentUser.dept;
+      if (metaEl) metaEl.innerText = `${currentUser.studentId} · ${currentUser.email}`;
+      if (emailEl) emailEl.innerText = currentUser.email;
+      if (campusEl) campusEl.innerText = `📍 ${currentUser.campus}`;
+      if (roleBadgeEl) roleBadgeEl.innerText = currentUser.roleBadge || '팀원';
+      if (rolesEl) rolesEl.innerText = `${currentUser.role} (주당 15~20시간 몰입 가능)`;
+    }
+
+    function handleLogout() {
+      const confirmed = confirm('로그아웃 하시겠습니까?\n로그아웃하면 시작 화면으로 돌아갑니다.');
+      if (confirmed) {
+        currentUser = {
+          name: '김개척',
+          studentId: '2021014582',
+          email: 'pioneer.kim@gnu.ac.kr',
+          campus: '가좌캠퍼스 (본원)',
+          dept: '공과대학 소프트웨어공학과 4학년',
+          role: '풀스택 개발자 (팀 빌더)',
+          roleBadge: '팀장'
+        };
+        updateProfileUI();
+        switchTabNav('projects');
+        resetToStart();
+      }
+    }
+
     // Navigation
     function enterApp() {
       document.getElementById('view-start').classList.add('hidden');
