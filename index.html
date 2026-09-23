@@ -1237,17 +1237,19 @@
                         </p>
                       </div>
                     </div>
-                    </div>
                   </div>
 
-                  <!-- TAB 5: 내 개척자 프로필 (PROFILE) -->
+                  <!-- TAB 5: 내 개척자 프로필 / 마이페이지 (PROFILE & MYPAGE) -->
                   <div id="screen-profile" class="p-4 space-y-3.5 hidden">
-                    <div>
-                      <p class="text-[10px] font-extrabold text-[#069fdb] uppercase tracking-wider">PIONEER PROFILE</p>
-                      <h2 class="text-lg font-black text-[#082f49]">내 개척자 프로필</h2>
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-[10px] font-extrabold text-[#069fdb] uppercase tracking-wider">PIONEER PROFILE & MYPAGE</p>
+                        <h2 class="text-lg font-black text-[#082f49]">내 개척자 프로필</h2>
+                      </div>
+                      <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">GNU 실명인증 ✓</span>
                     </div>
 
-                    <!-- Profile Card -->
+                    <!-- 1. Student Identity & Role Card -->
                     <div class="p-4 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-3">
                       <div class="flex items-center space-x-3 pb-3 border-b border-slate-100">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" class="w-12 h-12 rounded-2xl object-cover ring-2 ring-[#069fdb]" />
@@ -1257,44 +1259,147 @@
                             <span id="profile-user-role-badge" class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">팀장</span>
                           </div>
                           <span id="profile-user-dept" class="text-xs text-slate-500 block">IT공과대학 컴퓨터공학부 4학년</span>
-                          <span id="profile-user-meta" class="text-[10px] font-mono text-slate-400">2021010892 · pioneer.kim@gnu.ac.kr</span>
+                          <span id="profile-user-meta" class="text-[10px] font-mono text-slate-400">2021014582 · pioneer.kim@gnu.ac.kr</span>
                         </div>
                       </div>
 
-                      <div class="space-y-2 text-xs">
+                      <!-- Conditions: Skills, Roles, Available Hours, Campus -->
+                      <div class="space-y-2.5 text-xs">
                         <div>
-                          <span class="text-[10px] font-bold text-slate-400 block mb-1">소속 캠퍼스</span>
-                          <span id="profile-user-campus" class="font-bold text-slate-800">📍 가좌캠퍼스 (본원)</span>
+                          <span class="text-[10px] font-bold text-slate-400 block mb-0.5">📍 소속 캠퍼스 & 협업 동선</span>
+                          <span id="profile-user-campus" class="font-bold text-slate-800">가좌캠퍼스 (본원 · 도서관 대면 및 칠암/통영 병행 가능)</span>
                         </div>
                         <div>
-                          <span class="text-[10px] font-bold text-slate-400 block mb-1">주요 역할 & 가용시간</span>
-                          <span id="profile-user-roles" class="font-bold text-slate-800">백엔드 / PM (주당 20시간 몰입 가능)</span>
+                          <span class="text-[10px] font-bold text-slate-400 block mb-0.5">⏱️ 선호 역할(R&R) & 주당 활동 가능 시간</span>
+                          <span id="profile-user-roles" class="font-bold text-slate-800">백엔드 / PM (주당 20시간 몰입 가능 · 평일 야간/주말)</span>
                         </div>
                         <div>
-                          <span class="text-[10px] font-bold text-slate-400 block mb-1">보유 기술 스택</span>
+                          <span class="text-[10px] font-bold text-slate-400 block mb-1">💻 보유 기술 스택 & 숙련도</span>
                           <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">Node.js</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">FastAPI</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-50 text-[10px] font-bold text-[#069fdb]">Node.js (상)</span>
+                            <span class="px-2 py-0.5 rounded bg-blue-50 text-[10px] font-bold text-[#069fdb]">FastAPI (상)</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">React (중)</span>
                             <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">PostgreSQL</span>
                             <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">Docker</span>
                             <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">AWS</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">Python</span>
                           </div>
                         </div>
                       </div>
 
-                      <button onclick="alert('프로필 수정 화면이 준비되었습니다.')" class="w-full py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50">
+                      <button onclick="alert('프로필 및 협업 스타일 수정 기능이 준비되었습니다.')" class="w-full py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 transition-colors">
                         프로필 및 협업 스타일 수정
                       </button>
                     </div>
 
-                    <!-- Account Management & Logout Card -->
+                    <!-- 2. Project Progress & Personal Contribution Tracking Card -->
+                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between text-xs">
+                        <div class="flex items-center gap-1.5">
+                          <span class="text-[#069fdb] font-bold">📊 프로젝트 진행 & 기여도 추적</span>
+                        </div>
+                        <span class="text-[10px] font-bold text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-full">팀 내 기여도 1위</span>
+                      </div>
+
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                          <div>
+                            <span class="font-bold text-slate-900 block text-[11px]">GNU 스마트 캠퍼스 라이프 플랫폼</span>
+                            <span class="text-[10px] text-slate-400">현재 6주차 진행 중 (진척도 50%)</span>
+                          </div>
+                          <span class="text-base font-black text-[#069fdb]">38%</span>
+                        </div>
+
+                        <!-- 4 Metric Mini Grid -->
+                        <div class="grid grid-cols-4 gap-1 text-center pt-1 text-[9px]">
+                          <div class="p-1.5 rounded-lg bg-white border border-slate-200">
+                            <span class="text-slate-400 block">완료 태스크</span>
+                            <span class="font-bold text-slate-800 text-[10px]">9건</span>
+                          </div>
+                          <div class="p-1.5 rounded-lg bg-white border border-slate-200">
+                            <span class="text-slate-400 block">Git 커밋</span>
+                            <span class="font-bold text-slate-800 text-[10px]">42회</span>
+                          </div>
+                          <div class="p-1.5 rounded-lg bg-white border border-slate-200">
+                            <span class="text-slate-400 block">코드 볼륨</span>
+                            <span class="font-bold text-slate-800 text-[10px]">3.4k LoC</span>
+                          </div>
+                          <div class="p-1.5 rounded-lg bg-white border border-slate-200">
+                            <span class="text-slate-400 block">기획 산출물</span>
+                            <span class="font-bold text-slate-800 text-[10px]">8건</span>
+                          </div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-[9px] text-slate-400 pt-1">
+                          <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>WebSocket 실시간 동기화 상태: 정상</span>
+                          <span class="font-mono text-[#069fdb]">14ms 지연</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 3. Peer Review Rating & Free-Rider Outlier Validation Card -->
+                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between text-xs">
+                        <div class="flex items-center gap-1.5">
+                          <span class="font-bold text-slate-900">⭐ 피어 리뷰 & 무임승차 이상치 검증</span>
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">상위 15% 성실 개척자</span>
+                      </div>
+
+                      <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-100 space-y-2 text-xs">
+                        <div class="flex items-center justify-between">
+                          <div>
+                            <span class="font-bold text-slate-800 text-[11px] block">동료 360° 다면평가 평균</span>
+                            <span class="text-[9px] text-slate-500">팀원 4명 익명 평가 완료</span>
+                          </div>
+                          <span class="text-base font-black text-emerald-700">4.9 / 5.0 ★</span>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-1 text-center text-[9px]">
+                          <div class="p-1.5 rounded-lg bg-white/90">
+                            <span class="text-slate-400 block">기술·마감준수</span>
+                            <span class="font-bold text-slate-800">5.0 ★</span>
+                          </div>
+                          <div class="p-1.5 rounded-lg bg-white/90">
+                            <span class="text-slate-400 block">소통·회의참여</span>
+                            <span class="font-bold text-slate-800">4.8 ★</span>
+                          </div>
+                          <div class="p-1.5 rounded-lg bg-white/90">
+                            <span class="text-slate-400 block">협업·팀워크</span>
+                            <span class="font-bold text-slate-800">4.9 ★</span>
+                          </div>
+                        </div>
+
+                        <!-- Outlier Verification Status -->
+                        <div class="pt-1 border-t border-emerald-100/70 text-[10px] flex items-center justify-between text-slate-600">
+                          <span>무임승차 이상치 검증 지수:</span>
+                          <span class="font-bold font-mono text-emerald-700">Z = +0.81 (이상치 위험도: 0%)</span>
+                        </div>
+                        <p class="text-[9px] text-slate-500 italic bg-white/70 p-2 rounded-lg">
+                          "API를 기한보다 빠르게 배포해주어 프론트 작업이 매우 수월했습니다. 적극적인 소통 덕분에 팀 일정이 앞당겨졌습니다."
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 4. Pilot Test & Academic Thesis Validation Card -->
+                    <div class="p-3.5 rounded-2xl bg-gradient-to-r from-blue-50/60 to-indigo-50/40 border border-blue-200/80 shadow-xs space-y-2 text-xs">
+                      <div class="flex items-center justify-between">
+                        <span class="font-bold text-[#082f49]">🎓 학내 파일럿 실증 테스트 참여 현황</span>
+                        <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-[#069fdb]">실험군 A팀</span>
+                      </div>
+                      <p class="text-[10px] text-slate-600 leading-relaxed">
+                        경상국립대 캡스톤 논문 실증 연구 대상자로 참여 중이며, 시스템 사용성 지수(SUS) 94점 및 팀 스택 적합도 96%를 입증하고 있습니다.
+                      </p>
+                    </div>
+
+                    <!-- 5. Account Management & Logout Card -->
                     <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
                       <div class="flex items-center justify-between text-xs">
                         <div class="flex items-center space-x-1.5">
                           <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
                           <span class="font-bold text-slate-800">계정 및 보안 관리</span>
                         </div>
-                        <span class="text-[10px] text-slate-400 font-semibold">GNU 실명 인증됨</span>
+                        <span class="text-[10px] text-slate-400 font-semibold">GNU 개척인증 활성</span>
                       </div>
 
                       <div class="text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded-xl flex items-center justify-between">
