@@ -431,6 +431,47 @@
       to { transform: translateY(0); }
     }
 
+    /* Icon-first UI styling */
+    .feature-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .feature-icon-box-sm {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .icon-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: 600;
+      background: #f1f5f9;
+      color: #334155;
+    }
+    .clean-action-card {
+      transition: all 0.18s ease-in-out;
+    }
+    .clean-action-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(6, 159, 219, 0.1);
+    }
+
+
     @media (max-width: 440px) {
       .website {
         padding: 8px 4px !important;
@@ -582,103 +623,132 @@
                     <!-- Projects List -->
                     <div id="project-cards-container" class="space-y-3">
                       <!-- Project 1: Campus Mate (캠퍼스 라이프 AI 융합) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p1')">
-                        <div class="flex items-center justify-between">
-                          <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-blue-50 text-[#069fdb]">캠퍼스 라이프 AI 융합</span>
-                          <span class="d-day-badge d-day-badge--warm">D-14 중간평가</span>
+                      <div class="p-3.5 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs clean-action-card cursor-pointer space-y-2.5" onclick="openProjectDetailModal('p1')">
+                        <div class="flex items-start gap-3">
+                          <div class="feature-icon-box bg-blue-100 text-[#069fdb] shadow-xs">🚌</div>
+                          <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-1 mb-1">
+                              <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-blue-50 text-[#069fdb]">캠퍼스 라이프 AI</span>
+                              <span class="d-day-badge d-day-badge--warm">D-14 중간평가</span>
+                            </div>
+                            <h3 class="text-xs font-bold text-[#082f49] leading-snug truncate">
+                              GNU 캠퍼스 메이트 (셔틀·학식)
+                            </h3>
+                          </div>
                         </div>
-                        <h3 class="text-xs font-bold text-[#082f49] leading-snug">
-                          GNU 캠퍼스 메이트 — 가좌·칠암 통합 대학생활 & 실시간 셔틀·학식 큐레이션
-                        </h3>
-                        <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
-                          경상국립대 4대 캠퍼스 학우들을 위한 올인원 플랫폼! 통학 셔틀 혼잡도 예측, 학식 주간 식단 AI 분석, 공강 소통 공간 구축
-                        </p>
-                        <div class="flex flex-wrap gap-1 text-[9px]">
-                          <span class="px-1.5 py-0.2 rounded bg-blue-50 text-blue-700">#다학제팀플</span>
-                          <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">#가좌·칠암연계</span>
-                          <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">#React</span>
-                          <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">#FastAPI</span>
+                        <div class="flex flex-wrap gap-1.5 pt-0.5">
+                          <span class="icon-chip">👥 4/5명</span>
+                          <span class="icon-chip">📈 72% 진척</span>
+                          <span class="icon-chip">📍 가좌·칠암</span>
+                          <span class="icon-chip">💻 React·FastAPI</span>
                         </div>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
-                          <span class="text-slate-400">지도: 정인공 교수 (IT공대) · 자문: 김경영 교수</span>
-                          <span class="font-extrabold text-[#069fdb] flex items-center gap-0.5">상세보기 및 R&R →</span>
+                          <span class="text-slate-400 flex items-center gap-1">👨‍🏫 정인공 지도교수</span>
+                          <span class="font-bold text-[#069fdb] flex items-center gap-0.5">상세보기 ›</span>
                         </div>
                       </div>
 
                       <!-- Project 2: Jinju Local Culture (인문/사회/경영 융합) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p2')">
-                        <div class="flex items-center justify-between">
-                          <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700">인문·사회·경영 융합</span>
-                          <span class="d-day-badge d-day-badge--calm">팀원 모집 중</span>
+                      <div class="p-3.5 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs clean-action-card cursor-pointer space-y-2.5" onclick="openProjectDetailModal('p2')">
+                        <div class="flex items-start gap-3">
+                          <div class="feature-icon-box bg-indigo-100 text-indigo-700 shadow-xs">🎨</div>
+                          <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-1 mb-1">
+                              <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700">로컬 브랜딩</span>
+                              <span class="d-day-badge d-day-badge--calm">팀원 모집 중</span>
+                            </div>
+                            <h3 class="text-xs font-bold text-[#082f49] leading-snug truncate">
+                              진주 중앙시장 로컬 크리에이터 캡스톤
+                            </h3>
+                          </div>
                         </div>
-                        <h3 class="text-xs font-bold text-[#082f49] leading-snug">
-                          진주시 로컬 크리에이터 & 전통시장 청년 문화 활성화 브랜딩 캡스톤
-                        </h3>
-                        <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
-                          진주 중앙시장 및 원도심 상권에 청년층 유입을 촉진하는 로컬 브랜딩 및 팝업 스토어, 온라인 지도 콘텐츠 공동 개발
-                        </p>
-                        <div class="flex flex-wrap gap-1 text-[9px]">
-                          <span class="px-1.5 py-0.2 rounded bg-indigo-50 text-indigo-700">#지역사회혁신</span>
-                          <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">#사회과학대</span>
-                          <span class="px-1.5 py-0.2 rounded bg-slate-100 text-slate-600">#경영대학</span>
+                        <div class="flex flex-wrap gap-1.5 pt-0.5">
+                          <span class="icon-chip">👥 3/5명</span>
+                          <span class="icon-chip">📈 45% 진척</span>
+                          <span class="icon-chip">📍 칠암·원도심</span>
+                          <span class="icon-chip">💡 사회·경영</span>
                         </div>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
-                          <span class="text-slate-400">지도: 박사회 교수 (사회과학대)</span>
-                          <span class="font-bold text-slate-700 flex items-center gap-0.5">상세보기 및 R&R →</span>
+                          <span class="text-slate-400 flex items-center gap-1">👨‍🏫 박사회 지도교수</span>
+                          <span class="font-bold text-indigo-700 flex items-center gap-0.5">상세보기 ›</span>
                         </div>
                       </div>
 
                       <!-- Project 3: Smart Farm (농생대 LINC 3.0) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p3')">
-                        <div class="flex items-center justify-between">
-                          <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800">농생대 LINC 3.0</span>
-                          <span class="d-day-badge d-day-badge--mint">진행 중</span>
+                      <div class="p-3.5 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs clean-action-card cursor-pointer space-y-2.5" onclick="openProjectDetailModal('p3')">
+                        <div class="flex items-start gap-3">
+                          <div class="feature-icon-box bg-emerald-100 text-emerald-800 shadow-xs">🍓</div>
+                          <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-1 mb-1">
+                              <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800">스마트 농업</span>
+                              <span class="d-day-badge d-day-badge--mint">진행 중</span>
+                            </div>
+                            <h3 class="text-xs font-bold text-[#082f49] leading-snug truncate">
+                              경남 서부권 스마트팜 직거래 플랫폼
+                            </h3>
+                          </div>
                         </div>
-                        <h3 class="text-xs font-bold text-[#082f49] leading-snug">
-                          경남 서부권 스마트팜 농작물(파프리카·딸기) 생육 관리 & 유통 직거래 플랫폼
-                        </h3>
-                        <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
-                          진주 문산/금산 시설원예 농가 실증, 농생대 원예생명공학 지식과 앱 서비스를 결합한 지역 농산물 소비 촉진 프로젝트
-                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-0.5">
+                          <span class="icon-chip">👥 5/5명</span>
+                          <span class="icon-chip">📈 80% 진척</span>
+                          <span class="icon-chip">📍 가좌(농생대)</span>
+                          <span class="icon-chip">🌱 IoT·유통</span>
+                        </div>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
-                          <span class="text-slate-400">지도: 박생명 교수 (농업생명과학대)</span>
-                          <span class="font-bold text-emerald-700 flex items-center gap-0.5">상세보기 및 R&R →</span>
+                          <span class="text-slate-400 flex items-center gap-1">👨‍🏫 박생명 지도교수</span>
+                          <span class="font-bold text-emerald-700 flex items-center gap-0.5">상세보기 ›</span>
                         </div>
                       </div>
 
                       <!-- Project 4: Smart Campus Mobility (공학 융합) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p4')">
-                        <div class="flex items-center justify-between">
-                          <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-amber-50 text-amber-800">공학 융합 캡스톤</span>
-                          <span class="d-day-badge d-day-badge--warm">팀 빌딩 중</span>
+                      <div class="p-3.5 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs clean-action-card cursor-pointer space-y-2.5" onclick="openProjectDetailModal('p4')">
+                        <div class="flex items-start gap-3">
+                          <div class="feature-icon-box bg-amber-100 text-amber-800 shadow-xs">🤖</div>
+                          <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-1 mb-1">
+                              <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-amber-50 text-amber-800">자율주행 모빌리티</span>
+                              <span class="d-day-badge d-day-badge--warm">팀 빌딩 중</span>
+                            </div>
+                            <h3 class="text-xs font-bold text-[#082f49] leading-snug truncate">
+                              GNU 야간 안심 귀가 자율주행 배송봇
+                            </h3>
+                          </div>
                         </div>
-                        <h3 class="text-xs font-bold text-[#082f49] leading-snug">
-                          GNU 캠퍼스 야간 안심 귀가 & 도서관 물품 배송 자율주행 모빌리티
-                        </h3>
-                        <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
-                          가좌캠퍼스 기숙사 및 중앙도서관 인근 야간 보행 안전 지원과 교내 이동 편의를 위한 자율주행 모빌리티 프로젝트
-                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-0.5">
+                          <span class="icon-chip">👥 2/4명</span>
+                          <span class="icon-chip">📈 35% 진척</span>
+                          <span class="icon-chip">📍 가좌(공대)</span>
+                          <span class="icon-chip">⚙️ ROS·LiDAR</span>
+                        </div>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
-                          <span class="text-slate-400">지도: 강기계 교수 (공과대학)</span>
-                          <span class="font-bold text-amber-800 flex items-center gap-0.5">상세보기 및 R&R →</span>
+                          <span class="text-slate-400 flex items-center gap-1">👨‍🏫 강기계 지도교수</span>
+                          <span class="font-bold text-amber-800 flex items-center gap-0.5">상세보기 ›</span>
                         </div>
                       </div>
 
                       <!-- Project 5: Marine Robot (통영 해양) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p5')">
-                        <div class="flex items-center justify-between">
-                          <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-sky-50 text-sky-700">해양생태 캡스톤</span>
-                          <span class="d-day-badge d-day-badge--calm">진행 중</span>
+                      <div class="p-3.5 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs clean-action-card cursor-pointer space-y-2.5" onclick="openProjectDetailModal('p5')">
+                        <div class="flex items-start gap-3">
+                          <div class="feature-icon-box bg-sky-100 text-sky-700 shadow-xs">🐟</div>
+                          <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between gap-1 mb-1">
+                              <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-sky-50 text-sky-700">해양 모니터링</span>
+                              <span class="d-day-badge d-day-badge--calm">진행 중</span>
+                            </div>
+                            <h3 class="text-xs font-bold text-[#082f49] leading-snug truncate">
+                              통영 스마트 양식장 수중 유영 로봇
+                            </h3>
+                          </div>
                         </div>
-                        <h3 class="text-xs font-bold text-[#082f49] leading-snug">
-                          통영 스마트 양식장 수중 유영 로봇 및 환경 모니터링 시스템
-                        </h3>
-                        <p class="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
-                          해양과학대학 통영캠퍼스 실증, 수중 센서 및 로봇 비전을 결합한 양식 어류 자동 감시
-                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-0.5">
+                          <span class="icon-chip">👥 4/5명</span>
+                          <span class="icon-chip">📈 60% 진척</span>
+                          <span class="icon-chip">📍 통영(해양대)</span>
+                          <span class="icon-chip">🌊 수중비전</span>
+                        </div>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
-                          <span class="text-slate-400">지도: 최해양 교수 (해양과학대)</span>
-                          <span class="font-bold text-sky-700 flex items-center gap-0.5">상세보기 및 R&R →</span>
+                          <span class="text-slate-400 flex items-center gap-1">👨‍🏫 최해양 지도교수</span>
+                          <span class="font-bold text-sky-700 flex items-center gap-0.5">상세보기 ›</span>
                         </div>
                       </div>
                     </div>
@@ -695,33 +765,37 @@
                     </div>
 
                     <!-- Multi-Attribute Algorithm Matcher Card -->
-                    <div class="p-3 rounded-2xl bg-gradient-to-r from-slate-900 via-[#082f49] to-[#002855] text-white shadow-xs space-y-2">
-                      <div class="flex items-center justify-between text-xs">
-                        <div class="flex items-center gap-1.5">
-                          <span class="px-1.5 py-0.5 rounded bg-cyan-400/20 text-cyan-300 font-black text-[9px]">ALGORITHM</span>
-                          <span class="font-bold text-slate-100">다속성 가중치 매칭 엔진</span>
+                    <div class="p-3.5 rounded-2xl bg-gradient-to-r from-slate-900 via-[#082f49] to-[#002855] text-white shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                          <span class="w-7 h-7 rounded-lg bg-cyan-400/20 text-cyan-300 flex items-center justify-center font-bold text-xs">⚡</span>
+                          <div>
+                            <span class="font-bold text-slate-100 text-xs block">AI 다속성 매칭 엔진</span>
+                            <span class="text-[9px] text-cyan-200">역량·역할·시간·동선 정밀 합성</span>
+                          </div>
                         </div>
-                        <span class="text-[9px] font-mono text-cyan-200">Σ w_k = 1.0</span>
+                        <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-cyan-200">Σw=1.0</span>
                       </div>
-                      <p class="text-[10px] text-slate-300 leading-relaxed">
-                        기술 스택(40%) + 선호 역할(25%) + 가용시간(20%) + 캠퍼스 이동(15%) 4대 다속성 가중치 모델로 최적의 융합 팀원을 자동 매칭합니다.
-                      </p>
-                      <div class="grid grid-cols-4 gap-1 pt-0.5 text-center text-[9px] font-bold">
-                        <div class="p-1.5 rounded-lg bg-white/10">
-                          <span class="text-cyan-300 block">스택 40%</span>
-                          <span class="text-white text-[10px]">기술역량</span>
+                      <div class="grid grid-cols-4 gap-1.5 pt-0.5 text-center">
+                        <div class="p-2 rounded-xl bg-white/10 flex flex-col items-center">
+                          <span class="text-base mb-0.5">💻</span>
+                          <span class="text-cyan-300 font-bold text-[10px]">스택 40%</span>
+                          <span class="text-slate-300 text-[9px]">기술역량</span>
                         </div>
-                        <div class="p-1.5 rounded-lg bg-white/10">
-                          <span class="text-cyan-300 block">역할 25%</span>
-                          <span class="text-white text-[10px]">R&R 공백</span>
+                        <div class="p-2 rounded-xl bg-white/10 flex flex-col items-center">
+                          <span class="text-base mb-0.5">🎯</span>
+                          <span class="text-cyan-300 font-bold text-[10px]">역할 25%</span>
+                          <span class="text-slate-300 text-[9px]">R&R 공백</span>
                         </div>
-                        <div class="p-1.5 rounded-lg bg-white/10">
-                          <span class="text-cyan-300 block">시간 20%</span>
-                          <span class="text-white text-[10px]">주당가용</span>
+                        <div class="p-2 rounded-xl bg-white/10 flex flex-col items-center">
+                          <span class="text-base mb-0.5">⏱️</span>
+                          <span class="text-cyan-300 font-bold text-[10px]">시간 20%</span>
+                          <span class="text-slate-300 text-[9px]">주당가용</span>
                         </div>
-                        <div class="p-1.5 rounded-lg bg-white/10">
-                          <span class="text-cyan-300 block">캠퍼스 15%</span>
-                          <span class="text-white text-[10px]">오프동선</span>
+                        <div class="p-2 rounded-xl bg-white/10 flex flex-col items-center">
+                          <span class="text-base mb-0.5">📍</span>
+                          <span class="text-cyan-300 font-bold text-[10px]">동선 15%</span>
+                          <span class="text-slate-300 text-[9px]">오프라인</span>
                         </div>
                       </div>
                     </div>
@@ -729,34 +803,42 @@
                     <!-- 6 Roles Balance Matrix -->
                     <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2.5">
                       <div class="flex items-center justify-between text-xs">
-                        <span class="font-bold text-slate-800">6대 R&R 포지션 커버리지</span>
+                        <span class="font-bold text-slate-800 flex items-center gap-1.5">
+                          <span>🧩</span> 6대 R&R 포지션 커버리지
+                        </span>
                         <span id="role-pill-main" class="text-[10px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">
                           UI/UX 공백 감지
                         </span>
                       </div>
                       <div class="grid grid-cols-3 gap-1.5 text-center text-xs">
-                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
-                          <span class="text-[9px] text-[#069fdb] font-bold block">기획/PM</span>
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100 flex flex-col items-center">
+                          <span class="text-sm">💡</span>
+                          <span class="text-[9px] text-[#069fdb] font-bold">기획/PM</span>
                           <span class="font-extrabold text-slate-800 text-[10px]">김개척 ✓</span>
                         </div>
-                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
-                          <span class="text-[9px] text-[#069fdb] font-bold block">프론트엔드</span>
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100 flex flex-col items-center">
+                          <span class="text-sm">💻</span>
+                          <span class="text-[9px] text-[#069fdb] font-bold">프론트엔드</span>
                           <span class="font-extrabold text-slate-800 text-[10px]">이지원 ✓</span>
                         </div>
-                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
-                          <span class="text-[9px] text-[#069fdb] font-bold block">백엔드</span>
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100 flex flex-col items-center">
+                          <span class="text-sm">⚙️</span>
+                          <span class="text-[9px] text-[#069fdb] font-bold">백엔드</span>
                           <span class="font-extrabold text-slate-800 text-[10px]">김개척 ✓</span>
                         </div>
-                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
-                          <span class="text-[9px] text-[#069fdb] font-bold block">AI/데이터</span>
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100 flex flex-col items-center">
+                          <span class="text-sm">🧠</span>
+                          <span class="text-[9px] text-[#069fdb] font-bold">AI/데이터</span>
                           <span class="font-extrabold text-slate-800 text-[10px]">박데이터 ✓</span>
                         </div>
-                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100">
-                          <span class="text-[9px] text-[#069fdb] font-bold block">서비스/비즈니스</span>
+                        <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100 flex flex-col items-center">
+                          <span class="text-sm">📊</span>
+                          <span class="text-[9px] text-[#069fdb] font-bold">비즈니스</span>
                           <span class="font-extrabold text-slate-800 text-[10px]">이경영 ✓</span>
                         </div>
-                        <div id="uiux-status-box" class="p-2 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 animate-pulse">
-                          <span class="text-[9px] font-bold block">UI/UX 디자인</span>
+                        <div id="uiux-status-box" class="p-2 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 animate-pulse flex flex-col items-center">
+                          <span class="text-sm">🎨</span>
+                          <span class="text-[9px] font-bold">UI/UX</span>
                           <span class="font-extrabold text-[10px]">영입 필요!</span>
                         </div>
                       </div>
@@ -765,10 +847,10 @@
                     <!-- Pending Applicant Card with AI Synergy -->
                     <div id="app-applicant-box" class="p-3.5 rounded-2xl bg-gradient-to-br from-blue-50/70 via-indigo-50/30 to-white border border-blue-200 shadow-xs space-y-2.5">
                       <div class="flex items-center justify-between">
-                        <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-blue-100 text-[#069fdb]">도착한 지원서</span>
+                        <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-blue-100 text-[#069fdb] flex items-center gap-1">📩 도착한 지원서</span>
                         <div class="text-right">
-                          <span class="text-[9px] text-slate-400 font-bold block leading-tight">다속성 AI 시너지</span>
-                          <span class="text-base font-black text-[#082f49]">96%</span>
+                          <span class="text-[9px] text-slate-400 font-bold block leading-tight">다속성 시너지</span>
+                          <span class="text-base font-black text-[#082f49]">✨ 96%</span>
                         </div>
                       </div>
 
@@ -783,60 +865,39 @@
                         </div>
                       </div>
 
-                      <!-- Multi-Attribute Breakdown -->
-                      <div class="p-2.5 rounded-xl bg-white border border-slate-200 space-y-1.5 text-[10px]">
-                        <span class="font-bold text-slate-800 block text-[10px]">📊 4대 속성별 정밀 점수</span>
-                        <div class="space-y-1">
-                          <div class="flex items-center justify-between text-[9px]">
-                            <span class="text-slate-600">기술 스택 (Figma, UX 리서치)</span>
-                            <span class="font-bold text-[#069fdb]">98점 (가중치 40%)</span>
-                          </div>
-                          <div class="w-full bg-slate-100 rounded-full h-1.5">
-                            <div class="bg-[#069fdb] h-1.5 rounded-full" style="width: 98%"></div>
-                          </div>
+                      <!-- 4 Multi-Attribute Icon Chips -->
+                      <div class="grid grid-cols-2 gap-1.5 text-[10px]">
+                        <div class="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
+                          <span class="text-slate-600 flex items-center gap-1">💻 Figma·UX</span>
+                          <span class="font-bold text-[#069fdb]">98점</span>
                         </div>
-                        <div class="space-y-1">
-                          <div class="flex items-center justify-between text-[9px]">
-                            <span class="text-slate-600">역할 공백 해결 (UI/UX 100% 충족)</span>
-                            <span class="font-bold text-emerald-600">100점 (가중치 25%)</span>
-                          </div>
-                          <div class="w-full bg-slate-100 rounded-full h-1.5">
-                            <div class="bg-emerald-500 h-1.5 rounded-full" style="width: 100%"></div>
-                          </div>
+                        <div class="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
+                          <span class="text-slate-600 flex items-center gap-1">🎯 UI/UX충족</span>
+                          <span class="font-bold text-emerald-600">100점</span>
                         </div>
-                        <div class="space-y-1">
-                          <div class="flex items-center justify-between text-[9px]">
-                            <span class="text-slate-600">가용 시간 (주당 16시간)</span>
-                            <span class="font-bold text-indigo-600">92점 (가중치 20%)</span>
-                          </div>
-                          <div class="w-full bg-slate-100 rounded-full h-1.5">
-                            <div class="bg-indigo-500 h-1.5 rounded-full" style="width: 92%"></div>
-                          </div>
+                        <div class="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
+                          <span class="text-slate-600 flex items-center gap-1">⏱️ 주 16시간</span>
+                          <span class="font-bold text-indigo-600">92점</span>
                         </div>
-                        <div class="space-y-1">
-                          <div class="flex items-center justify-between text-[9px]">
-                            <span class="text-slate-600">캠퍼스 동선 (가좌 중앙도서관 대면)</span>
-                            <span class="font-bold text-cyan-600">95점 (가중치 15%)</span>
-                          </div>
-                          <div class="w-full bg-slate-100 rounded-full h-1.5">
-                            <div class="bg-cyan-500 h-1.5 rounded-full" style="width: 95%"></div>
-                          </div>
+                        <div class="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
+                          <span class="text-slate-600 flex items-center gap-1">📍 가좌 도서관</span>
+                          <span class="font-bold text-cyan-600">95점</span>
                         </div>
                       </div>
 
-                      <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100 text-slate-700 text-[11px] leading-relaxed space-y-0.5">
-                        <p class="font-bold text-[#069fdb]">💡 AI 심사 소견</p>
-                        <p class="text-slate-600">
-                          "기술 스택과 캠퍼스 동선 일치도가 매우 우수하여 팀 R&R을 즉시 완성할 수 있는 최적의 후보자입니다."
+                      <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100 text-slate-700 text-[10px] leading-relaxed flex items-start gap-1.5">
+                        <span>💡</span>
+                        <p class="text-slate-600 font-medium">
+                          스택과 캠퍼스 동선 일치도가 매우 우수하여 UI/UX 공백을 즉시 해소할 최적의 후보자입니다.
                         </p>
                       </div>
 
                       <div class="flex gap-2 pt-0.5">
                         <button onclick="openApplicantDetailModal()" class="flex-1 py-1.5 rounded-xl text-xs font-bold border border-slate-200 text-slate-600 hover:bg-slate-100">
-                          상세 심사
+                          🔍 상세 심사
                         </button>
                         <button onclick="acceptApplicantInApp()" class="flex-1 py-1.5 rounded-xl text-xs font-bold bg-[#069fdb] text-white shadow-xs">
-                          팀원으로 영입
+                          🤝 팀원으로 영입
                         </button>
                       </div>
                     </div>
@@ -847,38 +908,61 @@
 
                     <!-- GNU Talent Pool -->
                     <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2.5">
-                      <span class="text-xs font-bold text-slate-800 block">교내 인재 추천 풀 (GNU Pioneer Pool)</span>
+                      <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                        <span>👥</span> 교내 인재 추천 풀 (GNU Pioneer Pool)
+                      </span>
                       <div class="space-y-2">
                         <!-- Candidate 1 -->
                         <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openMemberDetailModal('박데이터')">
-                          <div>
-                            <div class="flex items-center gap-1.5">
-                              <span class="font-bold text-slate-900">박데이터 (데이터사이언스 3)</span>
-                              <span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">98% 매칭</span>
+                          <div class="flex items-center gap-2.5">
+                            <div class="feature-icon-box-sm bg-blue-100 text-[#069fdb]">🧠</div>
+                            <div>
+                              <div class="flex items-center gap-1.5">
+                                <span class="font-bold text-slate-900">박데이터</span>
+                                <span class="text-[9px] text-slate-400">데이터사이언스 3</span>
+                                <span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">98% 매칭</span>
+                              </div>
+                              <div class="flex gap-1 mt-0.5">
+                                <span class="icon-chip text-[9px] py-0 px-1.5">💻 FastAPI</span>
+                                <span class="icon-chip text-[9px] py-0 px-1.5">📊 AI추천</span>
+                              </div>
                             </div>
-                            <span class="text-[10px] text-slate-500 block mt-0.5">추천 알고리즘 · FastAPI · 데이터분석</span>
                           </div>
                           <button onclick="event.stopPropagation(); alert('박데이터 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
                         </div>
                         <!-- Candidate 2 -->
                         <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openMemberDetailModal('이경영')">
-                          <div>
-                            <div class="flex items-center gap-1.5">
-                              <span class="font-bold text-slate-900">이경영 (경영학 3)</span>
-                              <span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-indigo-100 text-indigo-800">95% 매칭</span>
+                          <div class="flex items-center gap-2.5">
+                            <div class="feature-icon-box-sm bg-indigo-100 text-indigo-700">📊</div>
+                            <div>
+                              <div class="flex items-center gap-1.5">
+                                <span class="font-bold text-slate-900">이경영</span>
+                                <span class="text-[9px] text-slate-400">경영학 3</span>
+                                <span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-indigo-100 text-indigo-800">95% 매칭</span>
+                              </div>
+                              <div class="flex gap-1 mt-0.5">
+                                <span class="icon-chip text-[9px] py-0 px-1.5">💡 서비스기획</span>
+                                <span class="icon-chip text-[9px] py-0 px-1.5">📍 가좌</span>
+                              </div>
                             </div>
-                            <span class="text-[10px] text-slate-500 block mt-0.5">가좌캠퍼스 · 서비스 기획 · 마케팅 홍보</span>
                           </div>
                           <button onclick="event.stopPropagation(); alert('이경영 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
                         </div>
                         <!-- Candidate 3 -->
                         <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openMemberDetailModal('정칠암')">
-                          <div>
-                            <div class="flex items-center gap-1.5">
-                              <span class="font-bold text-slate-900">정칠암 (메카트로닉스 4)</span>
-                              <span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800">93% 매칭</span>
+                          <div class="flex items-center gap-2.5">
+                            <div class="feature-icon-box-sm bg-emerald-100 text-emerald-800">⚙️</div>
+                            <div>
+                              <div class="flex items-center gap-1.5">
+                                <span class="font-bold text-slate-900">정칠암</span>
+                                <span class="text-[9px] text-slate-400">메카트로닉스 4</span>
+                                <span class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800">93% 매칭</span>
+                              </div>
+                              <div class="flex gap-1 mt-0.5">
+                                <span class="icon-chip text-[9px] py-0 px-1.5">⚙️ 센서연동</span>
+                                <span class="icon-chip text-[9px] py-0 px-1.5">📍 칠암</span>
+                              </div>
                             </div>
-                            <span class="text-[10px] text-slate-500 block mt-0.5">칠암캠퍼스 · 스마트 기기 및 센서 연동</span>
                           </div>
                           <button onclick="event.stopPropagation(); alert('정칠암 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
                         </div>
@@ -899,55 +983,105 @@
                     </div>
 
                     <!-- Progress overview card -->
-                    <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2 cursor-pointer hover:border-[#069fdb] transition-all" onclick="openMilestoneDetailModal('overview')">
-                      <div class="flex items-center justify-between text-xs font-bold text-slate-800">
-                        <span class="flex items-center gap-1">학기 팀플 전체 진척도 <span class="text-[10px] text-[#069fdb]">🔍 상세</span></span>
-                        <span class="text-[#069fdb]">50% 완료</span>
+                    <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs clean-action-card space-y-2.5 cursor-pointer" onclick="openMilestoneDetailModal('overview')">
+                      <div class="flex items-center gap-3">
+                        <div class="feature-icon-box bg-blue-100 text-[#069fdb] shadow-xs">📅</div>
+                        <div class="flex-1 min-w-0">
+                          <div class="flex items-center justify-between text-xs font-bold text-slate-800 mb-1">
+                            <span>16주 팀플 진척도</span>
+                            <span class="text-[#069fdb] font-black">50% 완료</span>
+                          </div>
+                          <div class="w-full bg-slate-100 rounded-full h-2">
+                            <div class="bg-[#069fdb] h-2 rounded-full" style="width: 50%"></div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="w-full bg-slate-100 rounded-full h-2">
-                        <div class="bg-[#069fdb] h-2 rounded-full" style="width: 50%"></div>
+                      <div class="flex items-center justify-between pt-1 border-t border-slate-100 text-[10px]">
+                        <span class="icon-chip">🎯 중간평가 D-14</span>
+                        <span class="icon-chip">⚡ 6주차 진행 중</span>
+                        <span class="font-bold text-[#069fdb]">로드맵 상세 ›</span>
                       </div>
-                      <span class="text-[10px] text-slate-400 block">8주차 중간평가까지 D-14 · MVP 프로토타입 시연 준비</span>
                     </div>
 
                     <!-- Milestone Subtabs: Timeline vs Kanban vs Contrib -->
                     <div class="flex rounded-xl bg-slate-100 p-1 text-xs font-bold gap-1">
-                      <button onclick="switchMilestoneSubView('timeline')" id="subview-btn-timeline" class="flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900 text-[11px]">
-                        16주 타임라인
+                      <button onclick="switchMilestoneSubView('timeline')" id="subview-btn-timeline" class="flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900 text-[11px] flex items-center justify-center gap-1">
+                        <span>🗺️</span> <span>16주 로드맵</span>
                       </button>
-                      <button onclick="switchMilestoneSubView('kanban')" id="subview-btn-kanban" class="flex-1 py-1.5 rounded-lg text-slate-500 text-[11px]">
-                        실무 칸반
+                      <button onclick="switchMilestoneSubView('kanban')" id="subview-btn-kanban" class="flex-1 py-1.5 rounded-lg text-slate-500 text-[11px] flex items-center justify-center gap-1">
+                        <span>📋</span> <span>실무 칸반</span>
                       </button>
-                      <button onclick="switchMilestoneSubView('contrib')" id="subview-btn-contrib" class="flex-1 py-1.5 rounded-lg text-slate-500 text-[11px]">
-                        📊 기여도/커밋
+                      <button onclick="switchMilestoneSubView('contrib')" id="subview-btn-contrib" class="flex-1 py-1.5 rounded-lg text-slate-500 text-[11px] flex items-center justify-center gap-1">
+                        <span>📊</span> <span>기여도/커밋</span>
                       </button>
                     </div>
 
                     <!-- Subview 1: Timeline -->
                     <div id="subview-timeline" class="space-y-2">
-                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between text-xs font-bold text-emerald-900 cursor-pointer hover:border-emerald-400 transition-all" onclick="openMilestoneDetailModal('w1')">
-                        <span>W1 팀 빌딩 및 프로젝트 계획서 승인</span>
-                        <span class="text-emerald-700 text-[10px]">완료 ✓ (열기)</span>
+                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex items-center justify-between text-xs font-bold text-emerald-900 cursor-pointer clean-action-card" onclick="openMilestoneDetailModal('w1')">
+                        <div class="flex items-center gap-2">
+                          <span class="feature-icon-box-sm bg-emerald-100 text-emerald-700">🏁</span>
+                          <div>
+                            <span class="font-bold text-slate-900 text-xs block">W1 팀 빌딩 및 계획서 승인</span>
+                            <span class="text-[9px] text-slate-400">GNU 개척 프로젝트 기획서 확정</span>
+                          </div>
+                        </div>
+                        <span class="text-emerald-700 text-[10px] font-black">완료 ✓</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between text-xs font-bold text-emerald-900 cursor-pointer hover:border-emerald-400 transition-all" onclick="openMilestoneDetailModal('w3')">
-                        <span>W3 사용자 요구사항 정의 & 와이어프레임 확정</span>
-                        <span class="text-emerald-700 text-[10px]">완료 ✓ (열기)</span>
+
+                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex items-center justify-between text-xs font-bold text-emerald-900 cursor-pointer clean-action-card" onclick="openMilestoneDetailModal('w3')">
+                        <div class="flex items-center gap-2">
+                          <span class="feature-icon-box-sm bg-emerald-100 text-emerald-700">📐</span>
+                          <div>
+                            <span class="font-bold text-slate-900 text-xs block">W3 요구사항 정의 & 와이어프레임</span>
+                            <span class="text-[9px] text-slate-400">교내 설문 조사 및 화면 설계</span>
+                          </div>
+                        </div>
+                        <span class="text-emerald-700 text-[10px] font-black">완료 ✓</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-blue-50 border border-blue-200 flex justify-between text-xs font-bold text-[#069fdb] cursor-pointer hover:border-blue-400 transition-all" onclick="openMilestoneDetailModal('w6')">
-                        <span>W6 1차 MVP 프로토타입 구현 및 FGI (현재)</span>
-                        <span class="d-day-badge d-day-badge--warm text-[10px]">진행 중 (열기)</span>
+
+                      <div class="p-2.5 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-between text-xs font-bold text-[#069fdb] cursor-pointer clean-action-card" onclick="openMilestoneDetailModal('w6')">
+                        <div class="flex items-center gap-2">
+                          <span class="feature-icon-box-sm bg-blue-100 text-[#069fdb]">🚀</span>
+                          <div>
+                            <span class="font-bold text-slate-900 text-xs block">W6 1차 MVP 프로토타입 구현 (현재)</span>
+                            <span class="text-[9px] text-slate-400">실시간 셔틀 API & 공강 챗봇 연동</span>
+                          </div>
+                        </div>
+                        <span class="d-day-badge d-day-badge--warm text-[10px]">진행 중 ⚡</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500 cursor-pointer hover:border-slate-400 transition-all" onclick="openMilestoneDetailModal('w8')">
-                        <span>W8 경상국립대 캡스톤/팀플 중간발표 평가</span>
-                        <span class="text-[10px] font-bold text-slate-600">D-14 (열기)</span>
+
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs text-slate-500 cursor-pointer clean-action-card" onclick="openMilestoneDetailModal('w8')">
+                        <div class="flex items-center gap-2">
+                          <span class="feature-icon-box-sm bg-amber-100 text-amber-700">🎯</span>
+                          <div>
+                            <span class="font-bold text-slate-800 text-xs block">W8 캡스톤 중간발표 평가</span>
+                            <span class="text-[9px] text-slate-400">단과대 합동 중간 시연회</span>
+                          </div>
+                        </div>
+                        <span class="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md">D-14</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500 cursor-pointer hover:border-slate-400 transition-all" onclick="openMilestoneDetailModal('w12')">
-                        <span>W12 교내 베타 오픈 & 학생 100인 실증 테스트</span>
-                        <span class="text-[10px]">11월 (열기)</span>
+
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs text-slate-500 cursor-pointer clean-action-card" onclick="openMilestoneDetailModal('w12')">
+                        <div class="flex items-center gap-2">
+                          <span class="feature-icon-box-sm bg-indigo-100 text-indigo-700">🧪</span>
+                          <div>
+                            <span class="font-bold text-slate-800 text-xs block">W12 교내 베타 100인 실증</span>
+                            <span class="text-[9px] text-slate-400">가좌·칠암 학우 대상 SUS 평가</span>
+                          </div>
+                        </div>
+                        <span class="text-[10px] text-slate-400">11월</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500 cursor-pointer hover:border-slate-400 transition-all" onclick="openMilestoneDetailModal('w16')">
-                        <span>W16 최종 학술제/캡스톤 페스티벌 출품 & 학점 확정</span>
-                        <span class="text-[10px]">12월 (열기)</span>
+
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs text-slate-500 cursor-pointer clean-action-card" onclick="openMilestoneDetailModal('w16')">
+                        <div class="flex items-center gap-2">
+                          <span class="feature-icon-box-sm bg-rose-100 text-rose-700">🏆</span>
+                          <div>
+                            <span class="font-bold text-slate-800 text-xs block">W16 캡스톤 페스티벌 & 학술제</span>
+                            <span class="text-[9px] text-slate-400">최종 시제품 발표 및 논문 출품</span>
+                          </div>
+                        </div>
+                        <span class="text-[10px] text-slate-400">12월</span>
                       </div>
 
                       <button onclick="alert('GNU 16주 팀플 로드맵이 AI에 의해 최신 학사일정에 맞춰 재설계되었습니다!')" class="w-full py-2.5 rounded-xl bg-[#082f49] hover:bg-[#069fdb] text-white text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1.5 mt-2">
@@ -959,44 +1093,53 @@
                     <!-- Subview 2: Kanban Board -->
                     <div id="subview-kanban" class="space-y-2.5 hidden">
                       <div class="flex items-center justify-between text-xs font-bold text-slate-800">
-                        <span>실시간 칸반 태스크 상태 (클릭 시 상세/상태변경)</span>
+                        <span class="flex items-center gap-1">📋 실시간 칸반 태스크</span>
                         <button onclick="promptNewTask()" class="text-[#069fdb] text-[11px] font-bold">+ 태스크 추가</button>
                       </div>
 
                       <div id="mobile-kanban-list" class="space-y-2">
-                        <div id="card-task-1" class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openTaskDetailModal('task-1')">
+                        <div id="card-task-1" class="p-3 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2 text-xs cursor-pointer clean-action-card" onclick="openTaskDetailModal('task-1')">
                           <div class="flex items-center justify-between text-[10px]">
-                            <span id="badge-task-1" class="font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">진행 중</span>
-                            <span class="text-slate-400">이지원 (FE)</span>
+                            <div class="flex items-center gap-1.5">
+                              <span class="feature-icon-box-sm bg-blue-100 text-[#069fdb]">🎨</span>
+                              <span class="font-bold text-slate-800">FE · 이지원</span>
+                            </div>
+                            <span id="badge-task-1" class="font-bold px-2 py-0.5 rounded-full bg-blue-100 text-[#069fdb]">진행 중</span>
                           </div>
-                          <h4 class="font-bold text-slate-900 leading-snug">학생 친화적 반응형 메인 UI & 셔틀 노선도 컴포넌트 개발</h4>
-                          <div class="flex justify-between items-center pt-1 border-t border-slate-50 text-[10px]">
-                            <span class="text-slate-400">자세히 보기 &gt;</span>
-                            <button onclick="event.stopPropagation(); toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
+                          <h4 class="font-bold text-slate-900 leading-snug">반응형 메인 UI & 셔틀 노선도 컴포넌트 개발</h4>
+                          <div class="flex justify-between items-center pt-1.5 border-t border-slate-100 text-[10px]">
+                            <span class="text-slate-400">상세보기 ›</span>
+                            <button onclick="event.stopPropagation(); toggleMobileTask(this)" class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
                           </div>
                         </div>
 
-                        <div id="card-task-2" class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openTaskDetailModal('task-2')">
+                        <div id="card-task-2" class="p-3 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2 text-xs cursor-pointer clean-action-card" onclick="openTaskDetailModal('task-2')">
                           <div class="flex items-center justify-between text-[10px]">
-                            <span id="badge-task-2" class="font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">진행 중</span>
-                            <span class="text-slate-400">김개척 (BE)</span>
+                            <div class="flex items-center gap-1.5">
+                              <span class="feature-icon-box-sm bg-cyan-100 text-cyan-800">⚙️</span>
+                              <span class="font-bold text-slate-800">BE · 김개척</span>
+                            </div>
+                            <span id="badge-task-2" class="font-bold px-2 py-0.5 rounded-full bg-blue-100 text-[#069fdb]">진행 중</span>
                           </div>
-                          <h4 class="font-bold text-slate-900 leading-snug">GNU 학생 식당 주간 식단 & 도서관 잔여석 API 연동</h4>
-                          <div class="flex justify-between items-center pt-1 border-t border-slate-50 text-[10px]">
-                            <span class="text-slate-400">자세히 보기 &gt;</span>
-                            <button onclick="event.stopPropagation(); toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
+                          <h4 class="font-bold text-slate-900 leading-snug">GNU 학생 식당 주간 식단 & 도서관 잔여석 API</h4>
+                          <div class="flex justify-between items-center pt-1.5 border-t border-slate-100 text-[10px]">
+                            <span class="text-slate-400">상세보기 ›</span>
+                            <button onclick="event.stopPropagation(); toggleMobileTask(this)" class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
                           </div>
                         </div>
 
-                        <div id="card-task-3" class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openTaskDetailModal('task-3')">
+                        <div id="card-task-3" class="p-3 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2 text-xs cursor-pointer clean-action-card" onclick="openTaskDetailModal('task-3')">
                           <div class="flex items-center justify-between text-[10px]">
-                            <span id="badge-task-3" class="font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-800">할 일</span>
-                            <span class="text-slate-400">박데이터 (AI)</span>
+                            <div class="flex items-center gap-1.5">
+                              <span class="feature-icon-box-sm bg-purple-100 text-purple-800">🧠</span>
+                              <span class="font-bold text-slate-800">AI · 박데이터</span>
+                            </div>
+                            <span id="badge-task-3" class="font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">할 일</span>
                           </div>
                           <h4 class="font-bold text-slate-900 leading-snug">학생 맞춤 공강 질문 추천 챗봇 프롬프트 튜닝</h4>
-                          <div class="flex justify-between items-center pt-1 border-t border-slate-50 text-[10px]">
-                            <span class="text-slate-400">자세히 보기 &gt;</span>
-                            <button onclick="event.stopPropagation(); toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-blue-50 text-[#069fdb] text-[10px] font-bold">진행 중 이동 ▶</button>
+                          <div class="flex justify-between items-center pt-1.5 border-t border-slate-100 text-[10px]">
+                            <span class="text-slate-400">상세보기 ›</span>
+                            <button onclick="event.stopPropagation(); toggleMobileTask(this)" class="px-2.5 py-1 rounded-lg bg-blue-50 text-[#069fdb] text-[10px] font-bold">진행 중 이동 ▶</button>
                           </div>
                         </div>
                       </div>
@@ -1008,115 +1151,153 @@
                       <div class="p-2.5 rounded-xl bg-slate-900 text-white flex items-center justify-between text-[10px] shadow-xs">
                         <div class="flex items-center gap-1.5">
                           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                          <span class="font-bold text-slate-100">WebSocket 실시간 협업 동기화</span>
+                          <span class="font-bold text-slate-100">WebSocket 실시간 동기화</span>
                         </div>
-                        <span class="font-mono text-cyan-300 text-[9px]">14ms · 12초 전 수신</span>
+                        <span class="font-mono text-cyan-300 text-[9px]">14ms 지연 · 12초 전</span>
                       </div>
 
                       <!-- Contribution Overview by Member -->
                       <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
                         <div class="flex items-center justify-between text-xs">
-                          <span class="font-bold text-slate-900">팀원별 정량 기여도 분석 (클릭 시 세부 분석)</span>
-                          <span class="text-[10px] font-bold text-[#069fdb]">총 4명 활동 중</span>
+                          <span class="font-bold text-slate-900 flex items-center gap-1">📊 팀원별 정량 기여도</span>
+                          <span class="text-[10px] font-bold text-[#069fdb]">4명 활동 중</span>
                         </div>
 
-                        <div class="space-y-2.5 text-xs">
+                        <div class="space-y-2 text-xs">
                           <!-- Member 1: 김개척 -->
-                          <div class="space-y-1 p-1.5 rounded-xl hover:bg-slate-50 cursor-pointer transition-all border border-transparent hover:border-slate-200" onclick="openMemberDetailModal('김개척')">
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#069fdb] cursor-pointer transition-all space-y-1.5" onclick="openMemberDetailModal('김개척')">
                             <div class="flex items-center justify-between text-[11px]">
-                              <div class="flex items-center gap-1.5">
-                                <span class="font-bold text-slate-800">김개척 (BE/PM)</span>
-                                <span class="text-[9px] text-slate-400">커밋 42회 · 태스크 9건</span>
+                              <div class="flex items-center gap-2">
+                                <span class="feature-icon-box-sm bg-blue-100 text-[#069fdb]">👑</span>
+                                <div>
+                                  <span class="font-bold text-slate-900 block text-xs">김개척 (BE/PM)</span>
+                                  <div class="flex gap-1">
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">🔀 42회</span>
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">✅ 9건</span>
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">📄 3.4k</span>
+                                  </div>
+                                </div>
                               </div>
-                              <span class="font-black text-[#069fdb]">38%</span>
+                              <span class="font-black text-sm text-[#069fdb]">38%</span>
                             </div>
-                            <div class="w-full bg-slate-100 rounded-full h-2">
-                              <div class="bg-[#069fdb] h-2 rounded-full" style="width: 38%"></div>
+                            <div class="w-full bg-slate-200 rounded-full h-1.5">
+                              <div class="bg-[#069fdb] h-1.5 rounded-full" style="width: 38%"></div>
                             </div>
                           </div>
 
                           <!-- Member 2: 이지원 -->
-                          <div class="space-y-1 p-1.5 rounded-xl hover:bg-slate-50 cursor-pointer transition-all border border-transparent hover:border-slate-200" onclick="openMemberDetailModal('이지원')">
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#069fdb] cursor-pointer transition-all space-y-1.5" onclick="openMemberDetailModal('이지원')">
                             <div class="flex items-center justify-between text-[11px]">
-                              <div class="flex items-center gap-1.5">
-                                <span class="font-bold text-slate-800">이지원 (FE)</span>
-                                <span class="text-[9px] text-slate-400">커밋 31회 · 태스크 7건</span>
+                              <div class="flex items-center gap-2">
+                                <span class="feature-icon-box-sm bg-indigo-100 text-indigo-700">🎨</span>
+                                <div>
+                                  <span class="font-bold text-slate-900 block text-xs">이지원 (FE)</span>
+                                  <div class="flex gap-1">
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">🔀 31회</span>
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">✅ 7건</span>
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">📄 2.1k</span>
+                                  </div>
+                                </div>
                               </div>
-                              <span class="font-black text-indigo-600">28%</span>
+                              <span class="font-black text-sm text-indigo-600">28%</span>
                             </div>
-                            <div class="w-full bg-slate-100 rounded-full h-2">
-                              <div class="bg-indigo-500 h-2 rounded-full" style="width: 28%"></div>
+                            <div class="w-full bg-slate-200 rounded-full h-1.5">
+                              <div class="bg-indigo-500 h-1.5 rounded-full" style="width: 28%"></div>
                             </div>
                           </div>
 
                           <!-- Member 3: 박데이터 -->
-                          <div class="space-y-1 p-1.5 rounded-xl hover:bg-slate-50 cursor-pointer transition-all border border-transparent hover:border-slate-200" onclick="openMemberDetailModal('박데이터')">
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#069fdb] cursor-pointer transition-all space-y-1.5" onclick="openMemberDetailModal('박데이터')">
                             <div class="flex items-center justify-between text-[11px]">
-                              <div class="flex items-center gap-1.5">
-                                <span class="font-bold text-slate-800">박데이터 (AI)</span>
-                                <span class="text-[9px] text-slate-400">커밋 22회 · 태스크 5건</span>
+                              <div class="flex items-center gap-2">
+                                <span class="feature-icon-box-sm bg-cyan-100 text-cyan-800">🧠</span>
+                                <div>
+                                  <span class="font-bold text-slate-900 block text-xs">박데이터 (AI)</span>
+                                  <div class="flex gap-1">
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">🔀 22회</span>
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">✅ 5건</span>
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">📄 1.8k</span>
+                                  </div>
+                                </div>
                               </div>
-                              <span class="font-black text-cyan-600">20%</span>
+                              <span class="font-black text-sm text-cyan-600">20%</span>
                             </div>
-                            <div class="w-full bg-slate-100 rounded-full h-2">
-                              <div class="bg-cyan-500 h-2 rounded-full" style="width: 20%"></div>
+                            <div class="w-full bg-slate-200 rounded-full h-1.5">
+                              <div class="bg-cyan-500 h-1.5 rounded-full" style="width: 20%"></div>
                             </div>
                           </div>
 
                           <!-- Member 4: 이경영 -->
-                          <div class="space-y-1 p-1.5 rounded-xl hover:bg-slate-50 cursor-pointer transition-all border border-transparent hover:border-slate-200" onclick="openMemberDetailModal('이경영')">
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 hover:border-[#069fdb] cursor-pointer transition-all space-y-1.5" onclick="openMemberDetailModal('이경영')">
                             <div class="flex items-center justify-between text-[11px]">
-                              <div class="flex items-center gap-1.5">
-                                <span class="font-bold text-slate-800">이경영 (기획)</span>
-                                <span class="text-[9px] text-slate-400">산출물 15건 · 태스크 4건</span>
+                              <div class="flex items-center gap-2">
+                                <span class="feature-icon-box-sm bg-emerald-100 text-emerald-800">📊</span>
+                                <div>
+                                  <span class="font-bold text-slate-900 block text-xs">이경영 (기획)</span>
+                                  <div class="flex gap-1">
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">🔀 15건</span>
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">✅ 4건</span>
+                                    <span class="icon-chip text-[9px] py-0 px-1.5">📄 1.2k</span>
+                                  </div>
+                                </div>
                               </div>
-                              <span class="font-black text-emerald-600">14%</span>
+                              <span class="font-black text-sm text-emerald-600">14%</span>
                             </div>
-                            <div class="w-full bg-slate-100 rounded-full h-2">
-                              <div class="bg-emerald-500 h-2 rounded-full" style="width: 14%"></div>
+                            <div class="w-full bg-slate-200 rounded-full h-1.5">
+                              <div class="bg-emerald-500 h-1.5 rounded-full" style="width: 14%"></div>
                             </div>
                           </div>
                         </div>
 
-                        <p class="text-[10px] text-slate-400 pt-1 border-t border-slate-100">
-                          * 깃허브 커밋 수(30%), 칸반 태스크 완료율(35%), 기획 문서(20%), 코드 볼륨(15%)이 실시간 합성됩니다.
-                        </p>
+                        <div class="flex items-center justify-between text-[9px] text-slate-400 pt-1 border-t border-slate-100">
+                          <span>커밋(30%) · 태스크(35%) · 문서(20%) · 코드량(15%)</span>
+                          <span class="font-bold text-[#069fdb]">기여도 모델</span>
+                        </div>
                       </div>
 
                       <!-- Git Recent Commit Logs -->
                       <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
                         <div class="flex items-center justify-between text-xs">
-                          <span class="font-bold text-slate-900">최신 깃허브 커밋 활동 (클릭 시 세부 검증)</span>
-                          <span class="text-[10px] font-mono text-slate-400">branch: main</span>
+                          <span class="font-bold text-slate-900 flex items-center gap-1">🔀 최근 Git 활동</span>
+                          <span class="text-[10px] font-mono text-slate-400">main</span>
                         </div>
                         <div class="space-y-1.5 text-[11px]">
                           <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between cursor-pointer hover:border-[#069fdb] transition-all" onclick="openCommitDetailModal('d67f760')">
-                            <div>
-                              <div class="flex items-center gap-1">
-                                <span class="font-mono text-[10px] text-[#069fdb] font-bold">d67f760</span>
-                                <span class="font-semibold text-slate-800">feat: auth modal & mypage logout</span>
+                            <div class="flex items-center gap-2">
+                              <span class="feature-icon-box-sm bg-blue-100 text-[#069fdb]">🔀</span>
+                              <div>
+                                <div class="flex items-center gap-1">
+                                  <span class="font-mono text-[10px] text-[#069fdb] font-bold">d67f760</span>
+                                  <span class="font-semibold text-slate-800">feat: auth & mypage</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">김개척 · 10분 전</span>
                               </div>
-                              <span class="text-[9px] text-slate-400">김개척 · 10분 전</span>
                             </div>
                             <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified ✓</span>
                           </div>
                           <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between cursor-pointer hover:border-[#069fdb] transition-all" onclick="openCommitDetailModal('b2d0491')">
-                            <div>
-                              <div class="flex items-center gap-1">
-                                <span class="font-mono text-[10px] text-[#069fdb] font-bold">b2d0491</span>
-                                <span class="font-semibold text-slate-800">feat: websocket state sync event</span>
+                            <div class="flex items-center gap-2">
+                              <span class="feature-icon-box-sm bg-blue-100 text-[#069fdb]">🔀</span>
+                              <div>
+                                <div class="flex items-center gap-1">
+                                  <span class="font-mono text-[10px] text-[#069fdb] font-bold">b2d0491</span>
+                                  <span class="font-semibold text-slate-800">feat: websocket state</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">이지원 · 42분 전</span>
                               </div>
-                              <span class="text-[9px] text-slate-400">이지원 · 42분 전</span>
                             </div>
                             <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified ✓</span>
                           </div>
                           <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between cursor-pointer hover:border-[#069fdb] transition-all" onclick="openCommitDetailModal('a09e512')">
-                            <div>
-                              <div class="flex items-center gap-1">
-                                <span class="font-mono text-[10px] text-[#069fdb] font-bold">a09e512</span>
-                                <span class="font-semibold text-slate-800">feat: multi-attribute matching weight engine</span>
+                            <div class="flex items-center gap-2">
+                              <span class="feature-icon-box-sm bg-blue-100 text-[#069fdb]">🔀</span>
+                              <div>
+                                <div class="flex items-center gap-1">
+                                  <span class="font-mono text-[10px] text-[#069fdb] font-bold">a09e512</span>
+                                  <span class="font-semibold text-slate-800">feat: matching engine</span>
+                                </div>
+                                <span class="text-[9px] text-slate-400">박데이터 · 1시간 전</span>
                               </div>
-                              <span class="text-[9px] text-slate-400">박데이터 · 1시간 전</span>
                             </div>
                             <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified ✓</span>
                           </div>
@@ -1135,43 +1316,114 @@
                       <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">무임승차 지수: 정상</span>
                     </div>
 
+                    <!-- Free-Rider & Outlier Detection Card -->
+                    <div class="p-3.5 rounded-2xl bg-gradient-to-br from-white via-emerald-50/20 to-emerald-50/50 border border-emerald-200 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                          <div class="feature-icon-box bg-emerald-100 text-emerald-800 shadow-xs">🛡️</div>
+                          <div>
+                            <span class="font-bold text-slate-900 text-xs block">무임승차 이상치 조기 탐지</span>
+                            <span class="text-[9px] text-emerald-700 font-bold">Z-Score 기반 실시간 감시</span>
+                          </div>
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">정상 (위험 0%)</span>
+                      </div>
+
+                      <div class="grid grid-cols-3 gap-1.5 text-center text-[10px]">
+                        <div class="p-1.5 rounded-xl bg-white border border-emerald-100">
+                          <span class="text-slate-400 block text-[9px]">참여 지수</span>
+                          <span class="font-bold font-mono text-emerald-700">Z = +0.81</span>
+                        </div>
+                        <div class="p-1.5 rounded-xl bg-white border border-emerald-100">
+                          <span class="text-slate-400 block text-[9px]">이상치 탐지</span>
+                          <span class="font-bold text-emerald-700">0건 (안전)</span>
+                        </div>
+                        <div class="p-1.5 rounded-xl bg-white border border-emerald-100">
+                          <span class="text-slate-400 block text-[9px]">경보 임계치</span>
+                          <span class="font-bold font-mono text-slate-600">Z &lt; -1.65</span>
+                        </div>
+                      </div>
+
+                      <div class="p-2 rounded-xl bg-white border border-emerald-100 space-y-1">
+                        <div class="flex justify-between items-center text-[10px] font-bold text-slate-700">
+                          <span>팀원 참여도 정상 분포</span>
+                          <span class="text-emerald-600">100% 정상</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                          <div class="bg-emerald-500 h-1.5 rounded-full" style="width: 100%"></div>
+                        </div>
+                      </div>
+
+                      <button onclick="simulateOutlierDetection()" class="w-full py-2 rounded-xl border border-emerald-200 bg-white hover:bg-emerald-50 text-emerald-800 text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-xs">
+                        <span>⚡</span>
+                        <span>이상치 감지 및 비공개 알림 시뮬레이션</span>
+                      </button>
+                    </div>
+
                     <!-- Peer Review 360 Card -->
                     <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
                       <div class="flex items-center justify-between text-xs">
-                        <div class="flex items-center gap-1.5">
-                          <span class="font-bold text-slate-900">동료 피어 리뷰 (360° 상호 평가)</span>
-                        </div>
+                        <span class="font-bold text-slate-900 flex items-center gap-1.5">
+                          <span>⭐</span> 동료 360° 상호 피어 리뷰
+                        </span>
                         <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-[#069fdb]">팀 평균 4.8 / 5.0</span>
                       </div>
 
                       <div class="grid grid-cols-2 gap-2 text-xs">
-                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1 cursor-pointer hover:border-blue-400 transition-all" onclick="openMemberDetailModal('이지원')">
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 cursor-pointer hover:border-[#069fdb] transition-all clean-action-card" onclick="openMemberDetailModal('이지원')">
                           <div class="flex items-center justify-between">
-                            <span class="font-bold text-slate-800 text-[11px]">이지원 (FE)</span>
-                            <span class="text-[#069fdb] font-bold text-[10px]">4.8 ★</span>
+                            <div class="flex items-center gap-1.5">
+                              <span class="text-sm">🎨</span>
+                              <span class="font-bold text-slate-800 text-[11px]">이지원 (FE)</span>
+                            </div>
+                            <span class="text-[#069fdb] font-black text-xs">4.8★</span>
                           </div>
-                          <span class="text-[9px] text-slate-500 block leading-tight">"반응형 UI 마감 기한을 철저히 준수함"</span>
+                          <div class="flex gap-1">
+                            <span class="icon-chip text-[9px] py-0 px-1.5">🛠️ 기술 5.0</span>
+                            <span class="icon-chip text-[9px] py-0 px-1.5">💬 소통 4.8</span>
+                          </div>
                         </div>
-                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1 cursor-pointer hover:border-blue-400 transition-all" onclick="openMemberDetailModal('박데이터')">
+
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 cursor-pointer hover:border-[#069fdb] transition-all clean-action-card" onclick="openMemberDetailModal('박데이터')">
                           <div class="flex items-center justify-between">
-                            <span class="font-bold text-slate-800 text-[11px]">박데이터 (AI)</span>
-                            <span class="text-[#069fdb] font-bold text-[10px]">4.7 ★</span>
+                            <div class="flex items-center gap-1.5">
+                              <span class="text-sm">🧠</span>
+                              <span class="font-bold text-slate-800 text-[11px]">박데이터 (AI)</span>
+                            </div>
+                            <span class="text-[#069fdb] font-black text-xs">4.7★</span>
                           </div>
-                          <span class="text-[9px] text-slate-500 block leading-tight">"FastAPI 알고리즘 배포 적극적 지원"</span>
+                          <div class="flex gap-1">
+                            <span class="icon-chip text-[9px] py-0 px-1.5">🛠️ 기술 4.8</span>
+                            <span class="icon-chip text-[9px] py-0 px-1.5">💬 소통 4.6</span>
+                          </div>
                         </div>
-                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1 cursor-pointer hover:border-blue-400 transition-all" onclick="openMemberDetailModal('이경영')">
+
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 cursor-pointer hover:border-[#069fdb] transition-all clean-action-card" onclick="openMemberDetailModal('이경영')">
                           <div class="flex items-center justify-between">
-                            <span class="font-bold text-slate-800 text-[11px]">이경영 (기획)</span>
-                            <span class="text-[#069fdb] font-bold text-[10px]">4.8 ★</span>
+                            <div class="flex items-center gap-1.5">
+                              <span class="text-sm">📊</span>
+                              <span class="font-bold text-slate-800 text-[11px]">이경영 (기획)</span>
+                            </div>
+                            <span class="text-[#069fdb] font-black text-xs">4.8★</span>
                           </div>
-                          <span class="text-[9px] text-slate-500 block leading-tight">"학생 인터뷰 기획 및 협업 원활"</span>
+                          <div class="flex gap-1">
+                            <span class="icon-chip text-[9px] py-0 px-1.5">💡 기획 4.9</span>
+                            <span class="icon-chip text-[9px] py-0 px-1.5">🤝 협업 4.8</span>
+                          </div>
                         </div>
-                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1 cursor-pointer hover:border-blue-400 transition-all" onclick="openMemberDetailModal('김개척')">
+
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 cursor-pointer hover:border-[#069fdb] transition-all clean-action-card" onclick="openMemberDetailModal('김개척')">
                           <div class="flex items-center justify-between">
-                            <span class="font-bold text-slate-800 text-[11px]">김개척 (BE)</span>
-                            <span class="text-[#069fdb] font-bold text-[10px]">4.9 ★</span>
+                            <div class="flex items-center gap-1.5">
+                              <span class="text-sm">👑</span>
+                              <span class="font-bold text-slate-800 text-[11px]">김개척 (BE)</span>
+                            </div>
+                            <span class="text-[#069fdb] font-black text-xs">4.9★</span>
                           </div>
-                          <span class="text-[9px] text-slate-500 block leading-tight">"팀 아키텍처 리딩 및 일정 관리 우수"</span>
+                          <div class="flex gap-1">
+                            <span class="icon-chip text-[9px] py-0 px-1.5">🛠️ 기술 5.0</span>
+                            <span class="icon-chip text-[9px] py-0 px-1.5">🤝 리딩 4.9</span>
+                          </div>
                         </div>
                       </div>
 
@@ -1181,69 +1433,43 @@
                       </button>
                     </div>
 
-                    <!-- Free-Rider & Outlier Detection Card -->
-                    <div class="p-3.5 rounded-2xl bg-gradient-to-br from-white via-emerald-50/20 to-emerald-50/50 border border-emerald-200 shadow-xs space-y-2.5">
-                      <div class="flex items-center justify-between text-xs">
-                        <div class="flex items-center gap-1.5">
-                          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                          <span class="font-bold text-slate-900">무임승차 이상치(Outlier) 조기 탐지</span>
-                        </div>
-                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">안전 (이상치 없음)</span>
-                      </div>
-
-                      <p class="text-[11px] text-slate-600 leading-relaxed">
-                        통계 모델 <code class="font-mono text-[10px] bg-slate-100 px-1 rounded text-slate-800">Z = (C_i - μ) / σ</code> 기반으로 태스크 완료율·커밋·피어리뷰가 하위 5%(Z &lt; -1.65)로 이탈하는 이상치를 조기 탐지합니다.
-                      </p>
-
-                      <div class="p-2.5 rounded-xl bg-white border border-emerald-100 space-y-1 text-[10px]">
-                        <div class="flex justify-between items-center font-semibold text-slate-700">
-                          <span>전체 팀원 참여도 상태 분포</span>
-                          <span class="text-emerald-600 font-bold">100% 정상 범위 활동</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-2 flex overflow-hidden">
-                          <div class="bg-emerald-500 h-2" style="width: 100%" title="정상 활동"></div>
-                        </div>
-                        <div class="flex justify-between text-[9px] text-slate-400">
-                          <span>위험도 지수: 0.02 (안전)</span>
-                          <span>자동 개입 기준: Z &lt; -1.65</span>
-                        </div>
-                      </div>
-
-                      <button onclick="simulateOutlierDetection()" class="w-full py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold transition-all flex items-center justify-center gap-1.5">
-                        <span>🔍</span>
-                        <span>이상치 감지 및 비공개 지도교수 알림 시뮬레이션</span>
-                      </button>
-                    </div>
-
                     <!-- Faculty Mentoring Feedback Card -->
-                    <div class="p-4 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-3">
+                    <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2.5">
                       <div class="flex items-center justify-between pb-2 border-b border-slate-100">
-                        <div>
-                          <span class="text-xs font-bold text-slate-900">정인공 지도교수</span>
-                          <span class="text-[10px] text-slate-400 block">IT공과대학 컴퓨터·소프트웨어학부</span>
+                        <div class="flex items-center gap-2">
+                          <div class="feature-icon-box-sm bg-blue-100 text-[#069fdb]">👨‍🏫</div>
+                          <div>
+                            <span class="text-xs font-bold text-slate-900 block">정인공 지도교수</span>
+                            <span class="text-[10px] text-slate-400">IT공대 컴퓨터공학부</span>
+                          </div>
                         </div>
                         <span class="d-day-badge d-day-badge--warm">평가: S등급</span>
                       </div>
 
-                      <div class="p-3 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-slate-700 leading-relaxed space-y-1 cursor-pointer hover:border-blue-300 transition-all" onclick="openMilestoneDetailModal('w3')">
-                        <div class="flex items-center justify-between">
-                          <span class="font-bold text-[#069fdb] block">3주차 MVP 기획 점검 코멘트</span>
-                          <span class="text-[10px] text-[#069fdb] font-bold">마일스톤 보기 &gt;</span>
+                      <div class="space-y-2">
+                        <div class="p-2.5 rounded-xl bg-blue-50/60 border border-blue-100 text-xs text-slate-700 cursor-pointer clean-action-card space-y-1" onclick="openMilestoneDetailModal('w3')">
+                          <div class="flex items-center justify-between">
+                            <span class="font-bold text-[#069fdb] flex items-center gap-1 text-[11px]">
+                              <span>💬</span> 3주차 MVP 기획 점검 소견
+                            </span>
+                            <span class="text-[10px] text-[#069fdb] font-bold">상세 ›</span>
+                          </div>
+                          <p class="text-[11px] text-slate-600 line-clamp-2">
+                            "인문사회대(미디어커뮤니케이션)와 IT공대 간 다학제 팀 구성 시너지가 훌륭합니다. 기여도 시각화와 피어 리뷰 체계가 잘 잡혀 있어 팀원 간 불화 없이 안정적으로 진행되고 있습니다."
+                          </p>
                         </div>
-                        <p class="text-[11px]">
-                          "인문사회대(미디어커뮤니케이션)와 IT공대 간 다학제 팀 구성 시너지가 훌륭합니다. 기여도 시각화와 피어 리뷰 체계가 잘 잡혀 있어 팀원 간 불화 없이 안정적으로 진행되고 있습니다."
-                        </p>
-                        <span class="text-[9px] text-slate-400 block pt-1">2026-09-28 작성 · 공식 승인 완료</span>
-                      </div>
 
-                      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed space-y-1 cursor-pointer hover:border-slate-300 transition-all" onclick="openMilestoneDetailModal('w1')">
-                        <div class="flex items-center justify-between">
-                          <span class="font-bold text-slate-800 block">1주차 팀플 제안서 승인</span>
-                          <span class="text-[10px] text-slate-500 font-bold">마일스톤 보기 &gt;</span>
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 cursor-pointer clean-action-card space-y-1" onclick="openMilestoneDetailModal('w1')">
+                          <div class="flex items-center justify-between">
+                            <span class="font-bold text-slate-800 flex items-center gap-1 text-[11px]">
+                              <span>💬</span> 1주차 팀플 제안서 공식 승인
+                            </span>
+                            <span class="text-[10px] text-slate-500 font-bold">상세 ›</span>
+                          </div>
+                          <p class="text-[11px] text-slate-600 line-clamp-2">
+                            "전공 융합 팀플 기획 승인 완료. 다속성 매칭을 통해 구성된 팀인 만큼 완성도 높은 결과물을 기대합니다."
+                          </p>
                         </div>
-                        <p class="text-[11px]">
-                          "전공 융합 팀플 기획 승인 완료. 다속성 매칭을 통해 구성된 팀인 만큼 완성도 높은 결과물을 기대합니다."
-                        </p>
                       </div>
                     </div>
                   </div>
@@ -1262,158 +1488,116 @@
                     <div class="p-4 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-3">
                       <div class="flex items-center space-x-3 pb-3 border-b border-slate-100">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" class="w-12 h-12 rounded-2xl object-cover ring-2 ring-[#069fdb]" />
-                        <div>
+                        <div class="flex-1 min-w-0">
                           <div class="flex items-center space-x-1.5">
                             <span id="profile-user-name" class="text-sm font-bold text-slate-900">김개척</span>
                             <span id="profile-user-role-badge" class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">팀장</span>
                           </div>
-                          <span id="profile-user-dept" class="text-xs text-slate-500 block">IT공과대학 컴퓨터공학부 4학년</span>
-                          <span id="profile-user-meta" class="text-[10px] font-mono text-slate-400">2021014582 · pioneer.kim@gnu.ac.kr</span>
+                          <span id="profile-user-dept" class="text-xs text-slate-500 block truncate">IT공과대학 컴퓨터공학부 4학년</span>
+                          <span id="profile-user-meta" class="text-[10px] font-mono text-slate-400">2021014582 · 가좌 본원</span>
                         </div>
                       </div>
 
                       <!-- Conditions: Skills, Roles, Available Hours, Campus -->
-                      <div class="space-y-2.5 text-xs">
-                        <div>
-                          <span class="text-[10px] font-bold text-slate-400 block mb-0.5">📍 소속 캠퍼스 & 협업 동선</span>
-                          <span id="profile-user-campus" class="font-bold text-slate-800">가좌캠퍼스 (본원 · 도서관 대면 및 칠암/통영 병행 가능)</span>
-                        </div>
-                        <div>
-                          <span class="text-[10px] font-bold text-slate-400 block mb-0.5">⏱️ 선호 역할(R&R) & 주당 활동 가능 시간</span>
-                          <span id="profile-user-roles" class="font-bold text-slate-800">백엔드 / PM (주당 20시간 몰입 가능 · 평일 야간/주말)</span>
-                        </div>
-                        <div>
-                          <span class="text-[10px] font-bold text-slate-400 block mb-1">💻 보유 기술 스택 & 숙련도</span>
-                          <div class="flex flex-wrap gap-1">
-                            <span class="px-2 py-0.5 rounded bg-blue-50 text-[10px] font-bold text-[#069fdb]">Node.js (상)</span>
-                            <span class="px-2 py-0.5 rounded bg-blue-50 text-[10px] font-bold text-[#069fdb]">FastAPI (상)</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">React (중)</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">PostgreSQL</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">Docker</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">AWS</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-semibold text-slate-700">Python</span>
+                      <div class="grid grid-cols-2 gap-1.5">
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
+                          <span class="text-base">📍</span>
+                          <div class="min-w-0">
+                            <span class="text-[9px] text-slate-400 block">활동 캠퍼스</span>
+                            <span id="profile-user-campus" class="text-xs font-bold text-slate-800 block truncate">가좌 본원</span>
                           </div>
+                        </div>
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
+                          <span class="text-base">⏱️</span>
+                          <div class="min-w-0">
+                            <span class="text-[9px] text-slate-400 block">역할 & 시간</span>
+                            <span id="profile-user-roles" class="text-xs font-bold text-slate-800 block truncate">BE/PM (주 20h)</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Tech Stack Icon Chips -->
+                      <div>
+                        <span class="text-[10px] font-bold text-slate-400 block mb-1">💻 보유 기술 스택</span>
+                        <div class="flex flex-wrap gap-1">
+                          <span class="icon-chip bg-blue-50 text-[#069fdb]">Node.js</span>
+                          <span class="icon-chip bg-blue-50 text-[#069fdb]">FastAPI</span>
+                          <span class="icon-chip">React</span>
+                          <span class="icon-chip">PostgreSQL</span>
+                          <span class="icon-chip">Docker</span>
+                          <span class="icon-chip">AWS</span>
                         </div>
                       </div>
 
                       <button onclick="alert('프로필 및 협업 스타일 수정 기능이 준비되었습니다.')" class="w-full py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 transition-colors">
-                        프로필 및 협업 스타일 수정
+                        ⚙️ 프로필 및 협업 스타일 수정
                       </button>
                     </div>
 
                     <!-- 2. Project Progress & Personal Contribution Tracking Card -->
-                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5 cursor-pointer hover:border-[#069fdb] transition-all" onclick="openProjectDetailModal('p1')">
-                      <div class="flex items-center justify-between text-xs">
-                        <div class="flex items-center gap-1.5">
-                          <span class="text-[#069fdb] font-bold">📊 프로젝트 진행 & 기여도 추적</span>
-                        </div>
-                        <span class="text-[10px] font-bold text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-full flex items-center gap-0.5">상세보기 &gt;</span>
-                      </div>
-
-                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-                        <div class="flex items-center justify-between text-xs">
+                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs clean-action-card cursor-pointer space-y-2" onclick="openProjectDetailModal('p1')">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                          <div class="feature-icon-box bg-blue-100 text-[#069fdb] shadow-xs">📊</div>
                           <div>
-                            <span class="font-bold text-slate-900 block text-[11px]">GNU 스마트 캠퍼스 라이프 플랫폼</span>
-                            <span class="text-[10px] text-slate-400">현재 6주차 진행 중 (진척도 50%)</span>
+                            <span class="font-bold text-slate-900 text-xs block">프로젝트 기여도 추적</span>
+                            <span class="text-[10px] text-slate-400">GNU 스마트 캠퍼스 라이프</span>
                           </div>
+                        </div>
+                        <div class="text-right">
                           <span class="text-base font-black text-[#069fdb]">38%</span>
+                          <span class="text-[10px] text-[#069fdb] font-bold block">상세 ›</span>
                         </div>
-
-                        <!-- 4 Metric Mini Grid -->
-                        <div class="grid grid-cols-4 gap-1 text-center pt-1 text-[9px]">
-                          <div class="p-1.5 rounded-lg bg-white border border-slate-200">
-                            <span class="text-slate-400 block">완료 태스크</span>
-                            <span class="font-bold text-slate-800 text-[10px]">9건</span>
-                          </div>
-                          <div class="p-1.5 rounded-lg bg-white border border-slate-200">
-                            <span class="text-slate-400 block">Git 커밋</span>
-                            <span class="font-bold text-slate-800 text-[10px]">42회</span>
-                          </div>
-                          <div class="p-1.5 rounded-lg bg-white border border-slate-200">
-                            <span class="text-slate-400 block">코드 볼륨</span>
-                            <span class="font-bold text-slate-800 text-[10px]">3.4k LoC</span>
-                          </div>
-                          <div class="p-1.5 rounded-lg bg-white border border-slate-200">
-                            <span class="text-slate-400 block">기획 산출물</span>
-                            <span class="font-bold text-slate-800 text-[10px]">8건</span>
-                          </div>
-                        </div>
-
-                        <div class="flex items-center justify-between text-[9px] text-slate-400 pt-1">
-                          <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>WebSocket 실시간 동기화 상태: 정상</span>
-                          <span class="font-mono text-[#069fdb]">14ms 지연</span>
-                        </div>
+                      </div>
+                      <div class="flex items-center justify-between pt-1 border-t border-slate-100 text-[10px]">
+                        <span class="icon-chip">✅ 태스크 9건</span>
+                        <span class="icon-chip">🔀 커밋 42회</span>
+                        <span class="icon-chip">📄 코드 3.4k</span>
                       </div>
                     </div>
 
                     <!-- 3. Peer Review Rating & Free-Rider Outlier Validation Card -->
-                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5 cursor-pointer hover:border-emerald-300 transition-all" onclick="openMemberDetailModal('김개척')">
-                      <div class="flex items-center justify-between text-xs">
-                        <div class="flex items-center gap-1.5">
-                          <span class="font-bold text-slate-900">⭐ 피어 리뷰 & 무임승차 이상치 검증</span>
-                        </div>
-                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full flex items-center gap-0.5">상세보기 &gt;</span>
-                      </div>
-
-                      <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-100 space-y-2 text-xs">
-                        <div class="flex items-center justify-between">
+                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs clean-action-card cursor-pointer space-y-2" onclick="openMemberDetailModal('김개척')">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                          <div class="feature-icon-box bg-amber-100 text-amber-700 shadow-xs">⭐</div>
                           <div>
-                            <span class="font-bold text-slate-800 text-[11px] block">동료 360° 다면평가 평균</span>
-                            <span class="text-[9px] text-slate-500">팀원 4명 익명 평가 완료</span>
-                          </div>
-                          <span class="text-base font-black text-emerald-700">4.9 / 5.0 ★</span>
-                        </div>
-
-                        <div class="grid grid-cols-3 gap-1 text-center text-[9px]">
-                          <div class="p-1.5 rounded-lg bg-white/90">
-                            <span class="text-slate-400 block">기술·마감준수</span>
-                            <span class="font-bold text-slate-800">5.0 ★</span>
-                          </div>
-                          <div class="p-1.5 rounded-lg bg-white/90">
-                            <span class="text-slate-400 block">소통·회의참여</span>
-                            <span class="font-bold text-slate-800">4.8 ★</span>
-                          </div>
-                          <div class="p-1.5 rounded-lg bg-white/90">
-                            <span class="text-slate-400 block">협업·팀워크</span>
-                            <span class="font-bold text-slate-800">4.9 ★</span>
+                            <span class="font-bold text-slate-900 text-xs block">피어 리뷰 & 무임승차 검증</span>
+                            <span class="text-[10px] text-slate-400">동료 4명 다면평가 완료</span>
                           </div>
                         </div>
-
-                        <!-- Outlier Verification Status -->
-                        <div class="pt-1 border-t border-emerald-100/70 text-[10px] flex items-center justify-between text-slate-600">
-                          <span>무임승차 이상치 검증 지수:</span>
-                          <span class="font-bold font-mono text-emerald-700">Z = +0.81 (이상치 위험도: 0%)</span>
+                        <div class="text-right">
+                          <span class="text-base font-black text-amber-600">4.9★</span>
+                          <span class="text-[10px] text-emerald-700 font-bold block">상세 ›</span>
                         </div>
-                        <p class="text-[9px] text-slate-500 italic bg-white/70 p-2 rounded-lg">
-                          "API를 기한보다 빠르게 배포해주어 프론트 작업이 매우 수월했습니다. 적극적인 소통 덕분에 팀 일정이 앞당겨졌습니다."
-                        </p>
+                      </div>
+                      <div class="flex items-center justify-between pt-1 border-t border-slate-100 text-[10px]">
+                        <span class="icon-chip">🛠️ 기술 5.0</span>
+                        <span class="icon-chip">💬 소통 4.8</span>
+                        <span class="icon-chip">🛡️ 위험도 0%</span>
                       </div>
                     </div>
 
                     <!-- 4. Pilot Test & Academic Thesis Validation Card -->
-                    <div class="p-3.5 rounded-2xl bg-gradient-to-r from-blue-50/60 to-indigo-50/40 border border-blue-200/80 shadow-xs space-y-2 text-xs">
-                      <div class="flex items-center justify-between">
-                        <span class="font-bold text-[#082f49]">🎓 학내 파일럿 실증 테스트 참여 현황</span>
-                        <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-[#069fdb]">실험군 A팀</span>
+                    <div class="p-3.5 rounded-2xl bg-gradient-to-r from-indigo-50/60 to-blue-50/40 border border-indigo-200/80 shadow-xs clean-action-card cursor-pointer flex items-center justify-between" onclick="alert('경상국립대 캡스톤 논문 실증 연구: SUS 시스템 사용성 94점 및 팀 적합도 96% 공식 인증되었습니다.')">
+                      <div class="flex items-center gap-2.5">
+                        <div class="feature-icon-box bg-indigo-100 text-indigo-700 shadow-xs">🎓</div>
+                        <div>
+                          <span class="font-bold text-[#082f49] text-xs block">학내 파일럿 실증 연구</span>
+                          <span class="text-[10px] text-indigo-600">실험군 A팀 · SUS 94점 달성</span>
+                        </div>
                       </div>
-                      <p class="text-[10px] text-slate-600 leading-relaxed">
-                        경상국립대 캡스톤 논문 실증 연구 대상자로 참여 중이며, 시스템 사용성 지수(SUS) 94점 및 팀 스택 적합도 96%를 입증하고 있습니다.
-                      </p>
+                      <span class="text-[10px] font-bold text-indigo-700 bg-white/80 px-2 py-1 rounded-lg">확인 ›</span>
                     </div>
 
                     <!-- 5. Account Management & Logout Card -->
                     <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
                       <div class="flex items-center justify-between text-xs">
-                        <div class="flex items-center space-x-1.5">
-                          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <div class="flex items-center gap-2">
+                          <div class="feature-icon-box-sm bg-rose-100 text-rose-600">🔒</div>
                           <span class="font-bold text-slate-800">계정 및 보안 관리</span>
                         </div>
-                        <span class="text-[10px] text-slate-400 font-semibold">GNU 개척인증 활성</span>
-                      </div>
-
-                      <div class="text-[11px] text-slate-600 bg-slate-50 p-2.5 rounded-xl flex items-center justify-between">
-                        <span class="text-slate-400">접속 계정</span>
-                        <span id="profile-account-email" class="font-bold text-slate-700">pioneer.kim@gnu.ac.kr</span>
+                        <span id="profile-account-email" class="text-[10px] font-mono text-slate-500">pioneer.kim@gnu.ac.kr</span>
                       </div>
 
                       <!-- Logout Button -->
