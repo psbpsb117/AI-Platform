@@ -582,7 +582,7 @@
                     <!-- Projects List -->
                     <div id="project-cards-container" class="space-y-3">
                       <!-- Project 1: Campus Mate (캠퍼스 라이프 AI 융합) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetail('p1')">
+                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p1')">
                         <div class="flex items-center justify-between">
                           <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-blue-50 text-[#069fdb]">캠퍼스 라이프 AI 융합</span>
                           <span class="d-day-badge d-day-badge--warm">D-14 중간평가</span>
@@ -601,12 +601,12 @@
                         </div>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
                           <span class="text-slate-400">지도: 정인공 교수 (IT공대) · 자문: 김경영 교수</span>
-                          <span class="font-extrabold text-[#069fdb] flex items-center gap-0.5">UI/UX 구인 중 →</span>
+                          <span class="font-extrabold text-[#069fdb] flex items-center gap-0.5">상세보기 및 R&R →</span>
                         </div>
                       </div>
 
                       <!-- Project 2: Jinju Local Culture (인문/사회/경영 융합) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetail('p2')">
+                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p2')">
                         <div class="flex items-center justify-between">
                           <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700">인문·사회·경영 융합</span>
                           <span class="d-day-badge d-day-badge--calm">팀원 모집 중</span>
@@ -624,12 +624,12 @@
                         </div>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
                           <span class="text-slate-400">지도: 박사회 교수 (사회과학대)</span>
-                          <span class="font-bold text-slate-700">팀원 3명 활동</span>
+                          <span class="font-bold text-slate-700 flex items-center gap-0.5">상세보기 및 R&R →</span>
                         </div>
                       </div>
 
                       <!-- Project 3: Smart Farm (농생대 LINC 3.0) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2">
+                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p3')">
                         <div class="flex items-center justify-between">
                           <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800">농생대 LINC 3.0</span>
                           <span class="d-day-badge d-day-badge--mint">진행 중</span>
@@ -642,12 +642,12 @@
                         </p>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
                           <span class="text-slate-400">지도: 박생명 교수 (농업생명과학대)</span>
-                          <span class="text-slate-500">📍 칠암캠퍼스 메카</span>
+                          <span class="font-bold text-emerald-700 flex items-center gap-0.5">상세보기 및 R&R →</span>
                         </div>
                       </div>
 
                       <!-- Project 4: Smart Campus Mobility (공학 융합) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2">
+                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p4')">
                         <div class="flex items-center justify-between">
                           <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-amber-50 text-amber-800">공학 융합 캡스톤</span>
                           <span class="d-day-badge d-day-badge--warm">팀 빌딩 중</span>
@@ -660,12 +660,12 @@
                         </p>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
                           <span class="text-slate-400">지도: 강기계 교수 (공과대학)</span>
-                          <span class="text-slate-500">📍 가좌(본원)</span>
+                          <span class="font-bold text-amber-800 flex items-center gap-0.5">상세보기 및 R&R →</span>
                         </div>
                       </div>
 
                       <!-- Project 5: Marine Robot (통영 해양) -->
-                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2">
+                      <div class="p-4 rounded-2xl border border-[var(--color-border)] bg-white shadow-xs hover:border-[#069fdb] transition-all space-y-2 cursor-pointer" onclick="openProjectDetailModal('p5')">
                         <div class="flex items-center justify-between">
                           <span class="text-[10px] font-black px-2 py-0.5 rounded-md bg-sky-50 text-sky-700">해양생태 캡스톤</span>
                           <span class="d-day-badge d-day-badge--calm">진행 중</span>
@@ -678,7 +678,7 @@
                         </p>
                         <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px]">
                           <span class="text-slate-400">지도: 최해양 교수 (해양과학대)</span>
-                          <span class="text-slate-500">📍 통영캠퍼스</span>
+                          <span class="font-bold text-sky-700 flex items-center gap-0.5">상세보기 및 R&R →</span>
                         </div>
                       </div>
                     </div>
@@ -850,7 +850,7 @@
                       <span class="text-xs font-bold text-slate-800 block">교내 인재 추천 풀 (GNU Pioneer Pool)</span>
                       <div class="space-y-2">
                         <!-- Candidate 1 -->
-                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openMemberDetailModal('박데이터')">
                           <div>
                             <div class="flex items-center gap-1.5">
                               <span class="font-bold text-slate-900">박데이터 (데이터사이언스 3)</span>
@@ -858,10 +858,10 @@
                             </div>
                             <span class="text-[10px] text-slate-500 block mt-0.5">추천 알고리즘 · FastAPI · 데이터분석</span>
                           </div>
-                          <button onclick="alert('박데이터 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
+                          <button onclick="event.stopPropagation(); alert('박데이터 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
                         </div>
                         <!-- Candidate 2 -->
-                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openMemberDetailModal('이경영')">
                           <div>
                             <div class="flex items-center gap-1.5">
                               <span class="font-bold text-slate-900">이경영 (경영학 3)</span>
@@ -869,10 +869,10 @@
                             </div>
                             <span class="text-[10px] text-slate-500 block mt-0.5">가좌캠퍼스 · 서비스 기획 · 마케팅 홍보</span>
                           </div>
-                          <button onclick="alert('이경영 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
+                          <button onclick="event.stopPropagation(); alert('이경영 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
                         </div>
                         <!-- Candidate 3 -->
-                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openMemberDetailModal('정칠암')">
                           <div>
                             <div class="flex items-center gap-1.5">
                               <span class="font-bold text-slate-900">정칠암 (메카트로닉스 4)</span>
@@ -880,7 +880,7 @@
                             </div>
                             <span class="text-[10px] text-slate-500 block mt-0.5">칠암캠퍼스 · 스마트 기기 및 센서 연동</span>
                           </div>
-                          <button onclick="alert('정칠암 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
+                          <button onclick="event.stopPropagation(); alert('정칠암 학생에게 영입 제안을 발송했습니다!')" class="px-2.5 py-1 rounded-lg bg-[#082f49] text-white text-[10px] font-bold">제안</button>
                         </div>
                       </div>
                     </div>
@@ -899,9 +899,9 @@
                     </div>
 
                     <!-- Progress overview card -->
-                    <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2">
+                    <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2 cursor-pointer hover:border-[#069fdb] transition-all" onclick="openMilestoneDetailModal('overview')">
                       <div class="flex items-center justify-between text-xs font-bold text-slate-800">
-                        <span>학기 팀플 전체 진척도</span>
+                        <span class="flex items-center gap-1">학기 팀플 전체 진척도 <span class="text-[10px] text-[#069fdb]">🔍 상세</span></span>
                         <span class="text-[#069fdb]">50% 완료</span>
                       </div>
                       <div class="w-full bg-slate-100 rounded-full h-2">
@@ -925,29 +925,29 @@
 
                     <!-- Subview 1: Timeline -->
                     <div id="subview-timeline" class="space-y-2">
-                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between text-xs font-bold text-emerald-900">
+                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between text-xs font-bold text-emerald-900 cursor-pointer hover:border-emerald-400 transition-all" onclick="openMilestoneDetailModal('w1')">
                         <span>W1 팀 빌딩 및 프로젝트 계획서 승인</span>
-                        <span class="text-emerald-700 text-[10px]">완료 ✓</span>
+                        <span class="text-emerald-700 text-[10px]">완료 ✓ (열기)</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between text-xs font-bold text-emerald-900">
+                      <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200 flex justify-between text-xs font-bold text-emerald-900 cursor-pointer hover:border-emerald-400 transition-all" onclick="openMilestoneDetailModal('w3')">
                         <span>W3 사용자 요구사항 정의 & 와이어프레임 확정</span>
-                        <span class="text-emerald-700 text-[10px]">완료 ✓</span>
+                        <span class="text-emerald-700 text-[10px]">완료 ✓ (열기)</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-blue-50 border border-blue-200 flex justify-between text-xs font-bold text-[#069fdb]">
+                      <div class="p-2.5 rounded-xl bg-blue-50 border border-blue-200 flex justify-between text-xs font-bold text-[#069fdb] cursor-pointer hover:border-blue-400 transition-all" onclick="openMilestoneDetailModal('w6')">
                         <span>W6 1차 MVP 프로토타입 구현 및 FGI (현재)</span>
-                        <span class="d-day-badge d-day-badge--warm text-[10px]">진행 중</span>
+                        <span class="d-day-badge d-day-badge--warm text-[10px]">진행 중 (열기)</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500">
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500 cursor-pointer hover:border-slate-400 transition-all" onclick="openMilestoneDetailModal('w8')">
                         <span>W8 경상국립대 캡스톤/팀플 중간발표 평가</span>
-                        <span class="text-[10px] font-bold text-slate-600">D-14</span>
+                        <span class="text-[10px] font-bold text-slate-600">D-14 (열기)</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500">
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500 cursor-pointer hover:border-slate-400 transition-all" onclick="openMilestoneDetailModal('w12')">
                         <span>W12 교내 베타 오픈 & 학생 100인 실증 테스트</span>
-                        <span class="text-[10px]">11월</span>
+                        <span class="text-[10px]">11월 (열기)</span>
                       </div>
-                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500">
+                      <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between text-xs text-slate-500 cursor-pointer hover:border-slate-400 transition-all" onclick="openMilestoneDetailModal('w16')">
                         <span>W16 최종 학술제/캡스톤 페스티벌 출품 & 학점 확정</span>
-                        <span class="text-[10px]">12월</span>
+                        <span class="text-[10px]">12월 (열기)</span>
                       </div>
 
                       <button onclick="alert('GNU 16주 팀플 로드맵이 AI에 의해 최신 학사일정에 맞춰 재설계되었습니다!')" class="w-full py-2.5 rounded-xl bg-[#082f49] hover:bg-[#069fdb] text-white text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1.5 mt-2">
@@ -959,41 +959,44 @@
                     <!-- Subview 2: Kanban Board -->
                     <div id="subview-kanban" class="space-y-2.5 hidden">
                       <div class="flex items-center justify-between text-xs font-bold text-slate-800">
-                        <span>실시간 칸반 태스크 상태</span>
+                        <span>실시간 칸반 태스크 상태 (클릭 시 상세/상태변경)</span>
                         <button onclick="promptNewTask()" class="text-[#069fdb] text-[11px] font-bold">+ 태스크 추가</button>
                       </div>
 
                       <div id="mobile-kanban-list" class="space-y-2">
-                        <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs">
+                        <div id="card-task-1" class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openTaskDetailModal('task-1')">
                           <div class="flex items-center justify-between text-[10px]">
-                            <span class="font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">진행 중</span>
+                            <span id="badge-task-1" class="font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">진행 중</span>
                             <span class="text-slate-400">이지원 (FE)</span>
                           </div>
                           <h4 class="font-bold text-slate-900 leading-snug">학생 친화적 반응형 메인 UI & 셔틀 노선도 컴포넌트 개발</h4>
-                          <div class="flex justify-end pt-1 border-t border-slate-50">
-                            <button onclick="toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
+                          <div class="flex justify-between items-center pt-1 border-t border-slate-50 text-[10px]">
+                            <span class="text-slate-400">자세히 보기 &gt;</span>
+                            <button onclick="event.stopPropagation(); toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
                           </div>
                         </div>
 
-                        <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs">
+                        <div id="card-task-2" class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openTaskDetailModal('task-2')">
                           <div class="flex items-center justify-between text-[10px]">
-                            <span class="font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">진행 중</span>
+                            <span id="badge-task-2" class="font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]">진행 중</span>
                             <span class="text-slate-400">김개척 (BE)</span>
                           </div>
                           <h4 class="font-bold text-slate-900 leading-snug">GNU 학생 식당 주간 식단 & 도서관 잔여석 API 연동</h4>
-                          <div class="flex justify-end pt-1 border-t border-slate-50">
-                            <button onclick="toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
+                          <div class="flex justify-between items-center pt-1 border-t border-slate-50 text-[10px]">
+                            <span class="text-slate-400">자세히 보기 &gt;</span>
+                            <button onclick="event.stopPropagation(); toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold">완료 처리 ✓</button>
                           </div>
                         </div>
 
-                        <div class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs">
+                        <div id="card-task-3" class="p-3 rounded-xl bg-white border border-slate-200 shadow-xs space-y-1.5 text-xs cursor-pointer hover:border-[#069fdb] transition-all" onclick="openTaskDetailModal('task-3')">
                           <div class="flex items-center justify-between text-[10px]">
-                            <span class="font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-800">할 일</span>
+                            <span id="badge-task-3" class="font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-800">할 일</span>
                             <span class="text-slate-400">박데이터 (AI)</span>
                           </div>
                           <h4 class="font-bold text-slate-900 leading-snug">학생 맞춤 공강 질문 추천 챗봇 프롬프트 튜닝</h4>
-                          <div class="flex justify-end pt-1 border-t border-slate-50">
-                            <button onclick="toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-blue-50 text-[#069fdb] text-[10px] font-bold">진행 중 이동 ▶</button>
+                          <div class="flex justify-between items-center pt-1 border-t border-slate-50 text-[10px]">
+                            <span class="text-slate-400">자세히 보기 &gt;</span>
+                            <button onclick="event.stopPropagation(); toggleMobileTask(this)" class="px-2 py-0.5 rounded bg-blue-50 text-[#069fdb] text-[10px] font-bold">진행 중 이동 ▶</button>
                           </div>
                         </div>
                       </div>
@@ -1013,13 +1016,13 @@
                       <!-- Contribution Overview by Member -->
                       <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
                         <div class="flex items-center justify-between text-xs">
-                          <span class="font-bold text-slate-900">팀원별 정량 기여도 분석</span>
+                          <span class="font-bold text-slate-900">팀원별 정량 기여도 분석 (클릭 시 세부 분석)</span>
                           <span class="text-[10px] font-bold text-[#069fdb]">총 4명 활동 중</span>
                         </div>
 
                         <div class="space-y-2.5 text-xs">
                           <!-- Member 1: 김개척 -->
-                          <div class="space-y-1">
+                          <div class="space-y-1 p-1.5 rounded-xl hover:bg-slate-50 cursor-pointer transition-all border border-transparent hover:border-slate-200" onclick="openMemberDetailModal('김개척')">
                             <div class="flex items-center justify-between text-[11px]">
                               <div class="flex items-center gap-1.5">
                                 <span class="font-bold text-slate-800">김개척 (BE/PM)</span>
@@ -1033,7 +1036,7 @@
                           </div>
 
                           <!-- Member 2: 이지원 -->
-                          <div class="space-y-1">
+                          <div class="space-y-1 p-1.5 rounded-xl hover:bg-slate-50 cursor-pointer transition-all border border-transparent hover:border-slate-200" onclick="openMemberDetailModal('이지원')">
                             <div class="flex items-center justify-between text-[11px]">
                               <div class="flex items-center gap-1.5">
                                 <span class="font-bold text-slate-800">이지원 (FE)</span>
@@ -1047,7 +1050,7 @@
                           </div>
 
                           <!-- Member 3: 박데이터 -->
-                          <div class="space-y-1">
+                          <div class="space-y-1 p-1.5 rounded-xl hover:bg-slate-50 cursor-pointer transition-all border border-transparent hover:border-slate-200" onclick="openMemberDetailModal('박데이터')">
                             <div class="flex items-center justify-between text-[11px]">
                               <div class="flex items-center gap-1.5">
                                 <span class="font-bold text-slate-800">박데이터 (AI)</span>
@@ -1061,7 +1064,7 @@
                           </div>
 
                           <!-- Member 4: 이경영 -->
-                          <div class="space-y-1">
+                          <div class="space-y-1 p-1.5 rounded-xl hover:bg-slate-50 cursor-pointer transition-all border border-transparent hover:border-slate-200" onclick="openMemberDetailModal('이경영')">
                             <div class="flex items-center justify-between text-[11px]">
                               <div class="flex items-center gap-1.5">
                                 <span class="font-bold text-slate-800">이경영 (기획)</span>
@@ -1083,11 +1086,11 @@
                       <!-- Git Recent Commit Logs -->
                       <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
                         <div class="flex items-center justify-between text-xs">
-                          <span class="font-bold text-slate-900">최신 깃허브 커밋 활동</span>
+                          <span class="font-bold text-slate-900">최신 깃허브 커밋 활동 (클릭 시 세부 검증)</span>
                           <span class="text-[10px] font-mono text-slate-400">branch: main</span>
                         </div>
                         <div class="space-y-1.5 text-[11px]">
-                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between cursor-pointer hover:border-[#069fdb] transition-all" onclick="openCommitDetailModal('d67f760')">
                             <div>
                               <div class="flex items-center gap-1">
                                 <span class="font-mono text-[10px] text-[#069fdb] font-bold">d67f760</span>
@@ -1095,9 +1098,9 @@
                               </div>
                               <span class="text-[9px] text-slate-400">김개척 · 10분 전</span>
                             </div>
-                            <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified</span>
+                            <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified ✓</span>
                           </div>
-                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between cursor-pointer hover:border-[#069fdb] transition-all" onclick="openCommitDetailModal('b2d0491')">
                             <div>
                               <div class="flex items-center gap-1">
                                 <span class="font-mono text-[10px] text-[#069fdb] font-bold">b2d0491</span>
@@ -1105,9 +1108,9 @@
                               </div>
                               <span class="text-[9px] text-slate-400">이지원 · 42분 전</span>
                             </div>
-                            <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified</span>
+                            <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified ✓</span>
                           </div>
-                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between cursor-pointer hover:border-[#069fdb] transition-all" onclick="openCommitDetailModal('a09e512')">
                             <div>
                               <div class="flex items-center gap-1">
                                 <span class="font-mono text-[10px] text-[#069fdb] font-bold">a09e512</span>
@@ -1115,7 +1118,7 @@
                               </div>
                               <span class="text-[9px] text-slate-400">박데이터 · 1시간 전</span>
                             </div>
-                            <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified</span>
+                            <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified ✓</span>
                           </div>
                         </div>
                       </div>
@@ -1142,28 +1145,28 @@
                       </div>
 
                       <div class="grid grid-cols-2 gap-2 text-xs">
-                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1 cursor-pointer hover:border-blue-400 transition-all" onclick="openMemberDetailModal('이지원')">
                           <div class="flex items-center justify-between">
                             <span class="font-bold text-slate-800 text-[11px]">이지원 (FE)</span>
                             <span class="text-[#069fdb] font-bold text-[10px]">4.8 ★</span>
                           </div>
                           <span class="text-[9px] text-slate-500 block leading-tight">"반응형 UI 마감 기한을 철저히 준수함"</span>
                         </div>
-                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1 cursor-pointer hover:border-blue-400 transition-all" onclick="openMemberDetailModal('박데이터')">
                           <div class="flex items-center justify-between">
                             <span class="font-bold text-slate-800 text-[11px]">박데이터 (AI)</span>
                             <span class="text-[#069fdb] font-bold text-[10px]">4.7 ★</span>
                           </div>
                           <span class="text-[9px] text-slate-500 block leading-tight">"FastAPI 알고리즘 배포 적극적 지원"</span>
                         </div>
-                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1 cursor-pointer hover:border-blue-400 transition-all" onclick="openMemberDetailModal('이경영')">
                           <div class="flex items-center justify-between">
                             <span class="font-bold text-slate-800 text-[11px]">이경영 (기획)</span>
                             <span class="text-[#069fdb] font-bold text-[10px]">4.8 ★</span>
                           </div>
                           <span class="text-[9px] text-slate-500 block leading-tight">"학생 인터뷰 기획 및 협업 원활"</span>
                         </div>
-                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1 cursor-pointer hover:border-blue-400 transition-all" onclick="openMemberDetailModal('김개척')">
                           <div class="flex items-center justify-between">
                             <span class="font-bold text-slate-800 text-[11px]">김개척 (BE)</span>
                             <span class="text-[#069fdb] font-bold text-[10px]">4.9 ★</span>
@@ -1222,16 +1225,22 @@
                         <span class="d-day-badge d-day-badge--warm">평가: S등급</span>
                       </div>
 
-                      <div class="p-3 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-slate-700 leading-relaxed space-y-1">
-                        <span class="font-bold text-[#069fdb] block">3주차 MVP 기획 점검 코멘트</span>
+                      <div class="p-3 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-slate-700 leading-relaxed space-y-1 cursor-pointer hover:border-blue-300 transition-all" onclick="openMilestoneDetailModal('w3')">
+                        <div class="flex items-center justify-between">
+                          <span class="font-bold text-[#069fdb] block">3주차 MVP 기획 점검 코멘트</span>
+                          <span class="text-[10px] text-[#069fdb] font-bold">마일스톤 보기 &gt;</span>
+                        </div>
                         <p class="text-[11px]">
                           "인문사회대(미디어커뮤니케이션)와 IT공대 간 다학제 팀 구성 시너지가 훌륭합니다. 기여도 시각화와 피어 리뷰 체계가 잘 잡혀 있어 팀원 간 불화 없이 안정적으로 진행되고 있습니다."
                         </p>
                         <span class="text-[9px] text-slate-400 block pt-1">2026-09-28 작성 · 공식 승인 완료</span>
                       </div>
 
-                      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed space-y-1">
-                        <span class="font-bold text-slate-800 block">1주차 팀플 제안서 승인</span>
+                      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed space-y-1 cursor-pointer hover:border-slate-300 transition-all" onclick="openMilestoneDetailModal('w1')">
+                        <div class="flex items-center justify-between">
+                          <span class="font-bold text-slate-800 block">1주차 팀플 제안서 승인</span>
+                          <span class="text-[10px] text-slate-500 font-bold">마일스톤 보기 &gt;</span>
+                        </div>
                         <p class="text-[11px]">
                           "전공 융합 팀플 기획 승인 완료. 다속성 매칭을 통해 구성된 팀인 만큼 완성도 높은 결과물을 기대합니다."
                         </p>
@@ -1293,12 +1302,12 @@
                     </div>
 
                     <!-- 2. Project Progress & Personal Contribution Tracking Card -->
-                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5 cursor-pointer hover:border-[#069fdb] transition-all" onclick="openProjectDetailModal('p1')">
                       <div class="flex items-center justify-between text-xs">
                         <div class="flex items-center gap-1.5">
                           <span class="text-[#069fdb] font-bold">📊 프로젝트 진행 & 기여도 추적</span>
                         </div>
-                        <span class="text-[10px] font-bold text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-full">팀 내 기여도 1위</span>
+                        <span class="text-[10px] font-bold text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-full flex items-center gap-0.5">상세보기 &gt;</span>
                       </div>
 
                       <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
@@ -1338,12 +1347,12 @@
                     </div>
 
                     <!-- 3. Peer Review Rating & Free-Rider Outlier Validation Card -->
-                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5 cursor-pointer hover:border-emerald-300 transition-all" onclick="openMemberDetailModal('김개척')">
                       <div class="flex items-center justify-between text-xs">
                         <div class="flex items-center gap-1.5">
                           <span class="font-bold text-slate-900">⭐ 피어 리뷰 & 무임승차 이상치 검증</span>
                         </div>
-                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">상위 15% 성실 개척자</span>
+                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full flex items-center gap-0.5">상세보기 &gt;</span>
                       </div>
 
                       <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-100 space-y-2 text-xs">
@@ -1650,6 +1659,353 @@
                   </div>
                 </div>
 
+                <!-- In-App Modal: Project Detail Sheet -->
+                <div id="modal-project-detail" class="in-app-modal-backdrop hidden" onclick="if(event.target === this) closeProjectDetailModal()">
+                  <div class="in-app-modal-sheet space-y-3" onclick="event.stopPropagation()">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                      <div class="flex items-center gap-2">
+                        <span id="proj-detail-badge" class="px-2 py-0.5 rounded text-[10px] font-black bg-blue-50 text-[#069fdb]">캠퍼스 라이프 AI 융합</span>
+                        <span id="proj-detail-status" class="d-day-badge d-day-badge--warm text-[10px]">진행 중</span>
+                      </div>
+                      <button type="button" onclick="closeProjectDetailModal()" class="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer">✕</button>
+                    </div>
+
+                    <!-- Title & Faculty -->
+                    <div>
+                      <h3 id="proj-detail-title" class="text-sm font-black text-[#082f49] leading-snug">프로젝트 명</h3>
+                      <div class="flex items-center justify-between mt-1 text-[10px] text-slate-500">
+                        <span id="proj-detail-faculty">지도교수 정보</span>
+                        <span id="proj-detail-campus" class="font-bold text-slate-600">📍 가좌 본원</span>
+                      </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 text-xs">
+                      <div class="flex items-center justify-between text-[11px] font-bold">
+                        <span class="text-slate-700">전체 팀플 진척도</span>
+                        <span id="proj-detail-pct" class="text-[#069fdb] font-black">72%</span>
+                      </div>
+                      <div class="w-full bg-slate-200 rounded-full h-2">
+                        <div id="proj-detail-bar" class="bg-[#069fdb] h-2 rounded-full transition-all duration-300" style="width: 72%"></div>
+                      </div>
+                      <div class="flex justify-between text-[10px] text-slate-500 pt-0.5">
+                        <span id="proj-detail-week">6주차 / 16주</span>
+                        <span id="proj-detail-team">팀원 4명 / 정원 5명</span>
+                      </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="space-y-1">
+                      <span class="text-[10px] font-bold text-slate-400 block">📌 프로젝트 개요 및 캡스톤 목표</span>
+                      <p id="proj-detail-desc" class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        설명
+                      </p>
+                    </div>
+
+                    <!-- Stacks -->
+                    <div class="space-y-1">
+                      <span class="text-[10px] font-bold text-slate-400 block">💻 사용 기술 스택</span>
+                      <div id="proj-detail-stacks" class="flex flex-wrap gap-1">
+                        <!-- Rendered dynamically -->
+                      </div>
+                    </div>
+
+                    <!-- Team Members & Vacancy -->
+                    <div class="space-y-1.5">
+                      <span class="text-[10px] font-bold text-slate-400 block">👥 참여 팀원 및 R&R 분담</span>
+                      <div id="proj-detail-members" class="space-y-1 text-xs">
+                        <!-- Rendered dynamically -->
+                      </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="pt-2 border-t border-slate-100 flex gap-2">
+                      <button type="button" onclick="goToKanbanFromProject()" class="flex-1 py-2 rounded-xl bg-[#082f49] hover:bg-[#069fdb] text-white text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1 cursor-pointer">
+                        <span>📋</span>
+                        <span>칸반 보드 이동</span>
+                      </button>
+                      <button type="button" onclick="goToTeambuildingFromProject()" class="flex-1 py-2 rounded-xl bg-blue-50 text-[#069fdb] hover:bg-blue-100 text-xs font-bold transition-all border border-blue-200 flex items-center justify-center gap-1 cursor-pointer">
+                        <span>🤝</span>
+                        <span>팀 매칭 이동</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- In-App Modal: Milestone Detail Sheet -->
+                <div id="modal-milestone-detail" class="in-app-modal-backdrop hidden" onclick="if(event.target === this) closeMilestoneDetailModal()">
+                  <div class="in-app-modal-sheet space-y-3" onclick="event.stopPropagation()">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                      <div class="flex items-center gap-2">
+                        <span id="ms-detail-week" class="px-2 py-0.5 rounded text-[10px] font-black bg-blue-50 text-[#069fdb]">6주차 마일스톤</span>
+                        <span id="ms-detail-status" class="d-day-badge d-day-badge--warm text-[10px]">진행 중</span>
+                      </div>
+                      <button type="button" onclick="closeMilestoneDetailModal()" class="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer">✕</button>
+                    </div>
+
+                    <div>
+                      <h3 id="ms-detail-title" class="text-sm font-black text-[#082f49] leading-snug">마일스톤 주제</h3>
+                      <span id="ms-detail-dday" class="text-[10px] font-bold text-slate-400 block mt-0.5">D-Day 정보</span>
+                    </div>
+
+                    <div class="space-y-1">
+                      <span class="text-[10px] font-bold text-slate-400 block">🎯 주차별 목표 및 주요 과업</span>
+                      <p id="ms-detail-desc" class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        설명
+                      </p>
+                    </div>
+
+                    <!-- Deliverables list -->
+                    <div class="space-y-1.5">
+                      <span class="text-[10px] font-bold text-slate-400 block">📦 제출 및 검토 산출물 (Deliverables)</span>
+                      <div id="ms-detail-deliverables" class="space-y-1 text-xs">
+                        <!-- Rendered dynamically -->
+                      </div>
+                    </div>
+
+                    <!-- Faculty Review / Evaluation -->
+                    <div class="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200 text-amber-900 text-xs space-y-1">
+                      <div class="flex items-center gap-1 font-bold text-[11px] text-amber-800">
+                        <span>👨‍🏫 지도교수 피드백 및 심사 기준</span>
+                      </div>
+                      <p id="ms-detail-faculty-comment" class="text-[11px] text-amber-900 leading-snug">
+                        코멘트
+                      </p>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100 flex gap-2">
+                      <button type="button" onclick="closeMilestoneDetailModal(); switchMilestoneSubView('kanban');" class="w-full py-2 rounded-xl bg-[#069fdb] hover:bg-[#004b91] text-white text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1 cursor-pointer">
+                        <span>연관 칸반 태스크 확인하기</span>
+                        <span>→</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- In-App Modal: Task Detail & Status Sheet -->
+                <div id="modal-task-detail" class="in-app-modal-backdrop hidden" onclick="if(event.target === this) closeTaskDetailModal()">
+                  <div class="in-app-modal-sheet space-y-3" onclick="event.stopPropagation()">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                      <div class="flex items-center gap-2">
+                        <span id="task-detail-id" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-100 text-slate-700">TASK-1</span>
+                        <span id="task-detail-priority" class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-50 text-rose-600">긴급 (P0)</span>
+                      </div>
+                      <button type="button" onclick="closeTaskDetailModal()" class="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer">✕</button>
+                    </div>
+
+                    <!-- Title & Assignee -->
+                    <div>
+                      <h3 id="task-detail-title" class="text-sm font-black text-[#082f49] leading-snug">태스크 제목</h3>
+                      <div class="flex items-center justify-between mt-1 text-[11px] text-slate-500">
+                        <span id="task-detail-assignee">담당자: 김개척 (BE)</span>
+                        <span id="task-detail-sprint" class="font-mono text-slate-400">Sprint 3</span>
+                      </div>
+                    </div>
+
+                    <!-- Status Changer Section -->
+                    <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                      <div class="flex items-center justify-between text-[10px] font-bold text-slate-700">
+                        <span>태스크 진행 상태 변경 (WebSocket 실시간 동기화)</span>
+                        <span id="task-detail-status-pill" class="px-2 py-0.5 rounded font-black text-[10px] bg-blue-100 text-[#069fdb]">진행 중</span>
+                      </div>
+                      <div class="grid grid-cols-3 gap-1 pt-1">
+                        <button id="btn-status-todo" type="button" onclick="setTaskStatusInModal('할 일')" class="py-1.5 rounded-lg border border-slate-200 text-[11px] font-bold bg-white text-slate-600 hover:bg-slate-100 transition-all cursor-pointer">
+                          할 일
+                        </button>
+                        <button id="btn-status-progress" type="button" onclick="setTaskStatusInModal('진행 중')" class="py-1.5 rounded-lg border border-blue-400 text-[11px] font-bold bg-blue-500 text-white shadow-xs transition-all cursor-pointer">
+                          진행 중 ▶
+                        </button>
+                        <button id="btn-status-done" type="button" onclick="setTaskStatusInModal('완료 ✓')" class="py-1.5 rounded-lg border border-slate-200 text-[11px] font-bold bg-white text-slate-600 hover:bg-emerald-50 transition-all cursor-pointer">
+                          완료 ✓
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="space-y-1">
+                      <span class="text-[10px] font-bold text-slate-400 block">📝 상세 요구사항 및 작업 내용</span>
+                      <p id="task-detail-desc" class="text-xs text-slate-600 leading-relaxed bg-white p-2.5 rounded-xl border border-slate-200">
+                        상세 내용
+                      </p>
+                    </div>
+
+                    <!-- Checklist -->
+                    <div class="space-y-1">
+                      <span class="text-[10px] font-bold text-slate-400 block">✅ 완료 기준 (Acceptance Criteria)</span>
+                      <div id="task-detail-checklist" class="space-y-1 text-xs">
+                        <!-- Rendered dynamically -->
+                      </div>
+                    </div>
+
+                    <!-- Git Commit Reference -->
+                    <div class="p-2 rounded-xl bg-slate-900 text-white flex items-center justify-between text-[10px]">
+                      <span class="text-slate-300">연관 커밋:</span>
+                      <span id="task-detail-commit" class="font-mono text-cyan-300 font-bold">d67f760 (김개척)</span>
+                    </div>
+
+                    <!-- Action buttons -->
+                    <div class="pt-2 border-t border-slate-100 flex gap-2">
+                      <button type="button" onclick="saveTaskModalChanges()" class="flex-1 py-2 rounded-xl bg-gradient-to-r from-[#082f49] to-[#069fdb] text-white text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1 cursor-pointer">
+                        <span>상태 저장 완료</span>
+                        <span>✓</span>
+                      </button>
+                      <button type="button" onclick="closeTaskDetailModal()" class="px-4 py-2 rounded-xl border border-slate-200 text-slate-600 text-xs font-bold hover:bg-slate-50 cursor-pointer">
+                        닫기
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- In-App Modal: Member Detail & Contribution Sheet -->
+                <div id="modal-member-detail" class="in-app-modal-backdrop hidden" onclick="if(event.target === this) closeMemberDetailModal()">
+                  <div class="in-app-modal-sheet space-y-3" onclick="event.stopPropagation()">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                      <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <span class="text-[10px] font-bold text-slate-500">GNU PIONEER PRO PROFILE</span>
+                      </div>
+                      <button type="button" onclick="closeMemberDetailModal()" class="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer">✕</button>
+                    </div>
+
+                    <!-- Member Identity Header -->
+                    <div class="flex items-center space-x-3">
+                      <div id="member-avatar-box" class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#082f49] to-[#069fdb] text-white font-black text-lg flex items-center justify-center shadow-xs">
+                        김
+                      </div>
+                      <div>
+                        <div class="flex items-center gap-1.5">
+                          <h3 id="member-detail-name" class="text-sm font-black text-slate-900">김개척</h3>
+                          <span id="member-detail-role-badge" class="px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb] text-[10px] font-bold">팀장 / BE</span>
+                        </div>
+                        <p id="member-detail-dept" class="text-[11px] text-slate-500 mt-0.5">컴퓨터공학과 4학년 · 가좌캠퍼스</p>
+                      </div>
+                    </div>
+
+                    <!-- Quantitative Contribution Grid -->
+                    <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                      <div class="flex items-center justify-between text-xs">
+                        <span class="font-bold text-slate-800">팀 내 정량 기여도 지표</span>
+                        <span id="member-detail-contrib" class="text-base font-black text-[#069fdb]">38% (1위)</span>
+                      </div>
+                      <div class="w-full bg-slate-200 rounded-full h-2">
+                        <div id="member-detail-bar" class="bg-[#069fdb] h-2 rounded-full transition-all duration-300" style="width: 38%"></div>
+                      </div>
+                      <div class="grid grid-cols-4 gap-1 text-center pt-1 text-[9px]">
+                        <div class="p-1 rounded-lg bg-white border border-slate-200">
+                          <span class="text-slate-400 block">커밋</span>
+                          <span id="member-detail-commits" class="font-bold text-slate-800 text-[10px]">42회</span>
+                        </div>
+                        <div class="p-1 rounded-lg bg-white border border-slate-200">
+                          <span class="text-slate-400 block">태스크</span>
+                          <span id="member-detail-tasks" class="font-bold text-slate-800 text-[10px]">9건</span>
+                        </div>
+                        <div class="p-1 rounded-lg bg-white border border-slate-200">
+                          <span class="text-slate-400 block">코드 볼륨</span>
+                          <span id="member-detail-loc" class="font-bold text-slate-800 text-[10px]">3.4k LoC</span>
+                        </div>
+                        <div class="p-1 rounded-lg bg-white border border-slate-200">
+                          <span class="text-slate-400 block">기획 문서</span>
+                          <span id="member-detail-docs" class="font-bold text-slate-800 text-[10px]">8건</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Peer Review & Outlier Status -->
+                    <div class="p-3 rounded-2xl bg-emerald-50/60 border border-emerald-200 space-y-2 text-xs">
+                      <div class="flex items-center justify-between">
+                        <span class="font-bold text-slate-900">360° 피어 리뷰 다면평가</span>
+                        <span id="member-detail-peer-avg" class="font-black text-emerald-700">4.9 / 5.0 ★</span>
+                      </div>
+                      <div class="grid grid-cols-3 gap-1 text-center text-[9px]">
+                        <div class="p-1.5 rounded-lg bg-white">
+                          <span class="text-slate-400 block">기술·마감</span>
+                          <span id="member-detail-score-tech" class="font-bold text-slate-800">5.0 ★</span>
+                        </div>
+                        <div class="p-1.5 rounded-lg bg-white">
+                          <span class="text-slate-400 block">소통·참여</span>
+                          <span id="member-detail-score-comm" class="font-bold text-slate-800">4.8 ★</span>
+                        </div>
+                        <div class="p-1.5 rounded-lg bg-white">
+                          <span class="text-slate-400 block">팀워크</span>
+                          <span id="member-detail-score-team" class="font-bold text-slate-800">4.9 ★</span>
+                        </div>
+                      </div>
+                      <div class="flex items-center justify-between pt-1 border-t border-emerald-100 text-[10px]">
+                        <span class="text-slate-600">무임승차 이상치 검증:</span>
+                        <span id="member-detail-zscore" class="font-mono font-bold text-emerald-800">Z = +0.81 (정상)</span>
+                      </div>
+                      <p id="member-detail-peer-text" class="text-[10px] text-slate-600 italic bg-white/80 p-2 rounded-lg leading-relaxed">
+                        "코멘트"
+                      </p>
+                    </div>
+
+                    <!-- Recent Commits -->
+                    <div class="space-y-1">
+                      <span class="text-[10px] font-bold text-slate-400 block">최근 활동 및 커밋 이력</span>
+                      <div id="member-detail-recent-commits" class="space-y-1 text-[10px]">
+                        <!-- Rendered dynamically -->
+                      </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="pt-2 border-t border-slate-100 flex gap-2">
+                      <button type="button" onclick="openPeerReviewForCurrentMember()" class="flex-1 py-2 rounded-xl bg-[#069fdb] hover:bg-[#004b91] text-white text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1 cursor-pointer">
+                        <span>✍️</span>
+                        <span>이 팀원 상호 피어리뷰 작성</span>
+                      </button>
+                      <button type="button" onclick="closeMemberDetailModal()" class="px-4 py-2 rounded-xl border border-slate-200 text-slate-600 text-xs font-bold hover:bg-slate-50 cursor-pointer">
+                        닫기
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- In-App Modal: Git Commit Detail Sheet -->
+                <div id="modal-commit-detail" class="in-app-modal-backdrop hidden" onclick="if(event.target === this) closeCommitDetailModal()">
+                  <div class="in-app-modal-sheet space-y-3" onclick="event.stopPropagation()">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                      <div class="flex items-center gap-2">
+                        <span id="commit-detail-hash" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-100 text-[#069fdb]">d67f760</span>
+                        <span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[9px]">Verified ✓</span>
+                      </div>
+                      <button type="button" onclick="closeCommitDetailModal()" class="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer">✕</button>
+                    </div>
+
+                    <div>
+                      <h3 id="commit-detail-msg" class="text-xs font-bold text-[#082f49] leading-snug">feat: auth modal & mypage logout</h3>
+                      <div class="flex items-center justify-between mt-1 text-[10px] text-slate-400">
+                        <span id="commit-detail-author">김개척 · 10분 전</span>
+                        <span id="commit-detail-branch" class="font-mono text-slate-500">branch: main</span>
+                      </div>
+                    </div>
+
+                    <div class="space-y-1">
+                      <span class="text-[10px] font-bold text-slate-400 block">커밋 상세 설명</span>
+                      <p id="commit-detail-desc" class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        설명
+                      </p>
+                    </div>
+
+                    <div class="space-y-1.5">
+                      <span class="text-[10px] font-bold text-slate-400 block">변경된 파일 (Diff Stats)</span>
+                      <div id="commit-detail-files" class="space-y-1 text-xs">
+                        <!-- Rendered dynamically -->
+                      </div>
+                    </div>
+
+                    <div class="p-2.5 rounded-xl bg-slate-900 text-white flex items-center justify-between text-[10px]">
+                      <span class="text-slate-300">GitHub 레포지토리:</span>
+                      <span class="font-mono text-cyan-300">psbpsb117/AI-Platform</span>
+                    </div>
+
+                    <div class="pt-2 border-t border-slate-100">
+                      <button type="button" onclick="closeCommitDetailModal()" class="w-full py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all cursor-pointer">
+                        확인 완료
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -1871,8 +2227,806 @@
       });
     }
 
+    // ==========================================
+    // IN-APP DETAIL MODAL DATA STORES & CONTROLLERS
+    // ==========================================
+    const PROJECTS_DATA = {
+      p1: {
+        id: 'p1',
+        title: 'GNU 캠퍼스 메이트 — 가좌·칠암 통합 대학생활 & 실시간 셔틀·학식 큐레이션',
+        badge: '캠퍼스 라이프 AI 융합',
+        badgeColor: 'bg-blue-50 text-[#069fdb]',
+        status: '진행 중 (D-14 중간평가)',
+        faculty: '정인공 교수 (IT공대) · 자문: 김경영 교수',
+        campus: '가좌 본원 & 칠암캠퍼스 연계',
+        pct: 72,
+        week: '6주차 / 16주',
+        team: '팀원 4명 / 정원 5명 (UI/UX 1명 모집 중)',
+        desc: '경상국립대 4대 캠퍼스 학우들을 위한 올인원 대학생활 플랫폼입니다. 통학 셔틀 혼잡도 예측, 학식 주간 식단 AI 분석, 단과대 간 공강 소통 공간을 구축하고 있으며 다속성 가중치 모델을 적용했습니다.',
+        stacks: ['React', 'FastAPI', 'PostgreSQL', 'Docker', 'Tailwind CSS', 'WebSocket'],
+        members: [
+          { name: '김개척', role: '팀장 / 백엔드 & PM', dept: '컴퓨터공학 4' },
+          { name: '이지원', role: '프론트엔드 엔지니어', dept: '컴퓨터과학 3' },
+          { name: '박데이터', role: 'AI & 추천 엔진', dept: '데이터사이언스 3' },
+          { name: '이경영', role: '서비스 기획 / 비즈니스', dept: '경영학 3' },
+          { name: '최아름', role: 'UI/UX 디자이너 (영입 심사 중)', dept: '미디어커뮤니케이션 3' }
+        ]
+      },
+      p2: {
+        id: 'p2',
+        title: '진주시 로컬 크리에이터 & 전통시장 청년 문화 활성화 브랜딩 캡스톤',
+        badge: '인문·사회·경영 융합',
+        badgeColor: 'bg-indigo-50 text-indigo-700',
+        status: '팀원 모집 중',
+        faculty: '박사회 교수 (사회과학대)',
+        campus: '가좌 본원 (진주 원도심 필드워크)',
+        pct: 35,
+        week: '3주차 / 16주',
+        team: '팀원 3명 / 정원 5명',
+        desc: '진주 중앙시장 및 원도심 상권에 청년층 유입을 촉진하는 로컬 브랜딩 및 팝업 스토어, 온라인 지도 콘텐츠를 기획·개발하는 지역사회 문제 해결형 캡스톤입니다.',
+        stacks: ['Figma', 'Next.js', 'Content Branding', 'GIS Map API'],
+        members: [
+          { name: '이진주', role: '팀장 / 기획 & 브랜딩', dept: '사회학과 4' },
+          { name: '강로컬', role: '비즈니스 모델링', dept: '경영학 3' },
+          { name: '송콘텐츠', role: '스토리텔링 & 홍보', dept: '국어국문 3' }
+        ]
+      },
+      p3: {
+        id: 'p3',
+        title: '경남 서부권 스마트팜 농작물(파프리카·딸기) 생육 관리 & 유통 직거래 플랫폼',
+        badge: '농생대 LINC 3.0',
+        badgeColor: 'bg-emerald-50 text-emerald-800',
+        status: '개발 진행 중',
+        faculty: '박생명 교수 (농업생명과학대)',
+        campus: '칠암캠퍼스 메카 & 진주 문산',
+        pct: 58,
+        week: '5주차 / 16주',
+        team: '팀원 4명 / 정원 4명 (모집 완료)',
+        desc: '진주 문산/금산 시설원예 농가 실증, 온·습도 센서 데이터와 작물 생육 모니터링을 결합하여 직거래 판로를 개척하는 LINC 3.0 산학협력 프로젝트입니다.',
+        stacks: ['IoT 센서', 'FastAPI', 'React Native', 'PostgreSQL', 'MQTT'],
+        members: [
+          { name: '정스마트', role: '팀장 / IoT 하드웨어', dept: '메카트로닉스 4' },
+          { name: '최원예', role: '작물 생육 데이터 분석', dept: '원예생명 3' },
+          { name: '오앱개발', role: '모바일 프론트엔드', dept: '컴퓨터공학 3' },
+          { name: '한유통', role: '농가 인터뷰 & 마케팅', dept: '농경제학 4' }
+        ]
+      },
+      p4: {
+        id: 'p4',
+        title: 'GNU 캠퍼스 야간 안심 귀가 & 도서관 물품 배송 자율주행 모빌리티',
+        badge: '공학 융합 캡스톤',
+        badgeColor: 'bg-amber-50 text-amber-800',
+        status: '팀 빌딩 중',
+        faculty: '강기계 교수 (공과대학 기계공학부)',
+        campus: '가좌 본원 (중앙도서관-기숙사)',
+        pct: 25,
+        week: '2주차 / 16주',
+        team: '팀원 2명 / 정원 4명 (ROS2 개발자 모집)',
+        desc: '가좌캠퍼스 학생생활관과 도서관 사이의 야간 귀갓길 안전 지원 및 교내 긴급 물품 배송을 위한 소형 LiDAR 기반 자율주행 모빌리티 로봇 프로토타입 제작 과제입니다.',
+        stacks: ['ROS2', 'LiDAR SLAM', 'Python', 'Raspberry Pi', 'SolidWorks'],
+        members: [
+          { name: '윤로봇', role: '팀장 / 기구 설계 & 제어', dept: '기계공학 4' },
+          { name: '배임베디드', role: '센서 인터페이스', dept: '전자공학 3' }
+        ]
+      },
+      p5: {
+        id: 'p5',
+        title: '통영 스마트 양식장 수중 유영 로봇 및 환경 모니터링 시스템',
+        badge: '해양생태 캡스톤',
+        badgeColor: 'bg-sky-50 text-sky-700',
+        status: '진행 중',
+        faculty: '최해양 교수 (해양과학대)',
+        campus: '통영캠퍼스 (스마트양식 연구센터)',
+        pct: 62,
+        week: '6주차 / 16주',
+        team: '팀원 3명 / 정원 4명',
+        desc: '해양과학대학 통영캠퍼스 실증, 수중 센서 및 컴퓨터 비전을 결합하여 양식 어류의 활동량을 자동 감시하고 수온/용존산소를 모니터링하는 해양 특화 캡스톤입니다.',
+        stacks: ['YOLOv8', 'OpenCV', 'Flask', '수중 센서 모듈', 'React'],
+        members: [
+          { name: '송바다', role: '팀장 / 해양 비전 AI', dept: '해양공학 4' },
+          { name: '임수산', role: '어류 생태 분석', dept: '수산생명 3' },
+          { name: '장소프트', role: '웹 대시보드 구축', dept: '컴퓨터소프트웨어 3' }
+        ]
+      }
+    };
+
+    const MILESTONES_DATA = {
+      overview: {
+        week: '전체 16주 학사 로드맵',
+        status: '6주차 정상 진행 중 (목표 달성률 102%)',
+        statusClass: 'd-day-badge--warm',
+        title: '경상국립대 캡스톤/팀플 전체 진척 현황',
+        dday: '8주차 중간평가까지 D-14 · MVP 시연 준비',
+        desc: '총 16주차로 구성된 캡스톤디자인 정규 로드맵 중 1~6주차 개발이 성공적으로 완료되었습니다. 기술 스택 불균형 없는 다속성 매칭 팀 구성으로 이상치 없이 안정적 진척을 보이고 있습니다.',
+        deliverables: [
+          { name: 'W1~W3: 팀 빌딩, 기획안, 와이어프레임', status: '승인 완료 ✓' },
+          { name: 'W4~W6: 핵심 API 연동 및 반응형 웹 UI 구축', status: '배포 완료 ✓' },
+          { name: 'W7~W8: 중간 발표자료 및 MVP 라이브 시연', status: '준비 중 (D-14)' },
+          { name: 'W9~W12: 교내 100인 파일럿 실증 & 피드백 반영', status: '예정' },
+          { name: 'W13~W16: 산학 캡스톤 페스티벌 출품 & 학점 확정', status: '예정' }
+        ],
+        facultyComment: "정인공 지도교수: '인문사회대와 IT공대 간 다학제 팀 구성 시너지가 훌륭합니다. 기여도 시각화와 피어 리뷰 체계가 잘 잡혀 있어 팀원 간 불화 없이 안정적으로 진행되고 있습니다.'"
+      },
+      w1: {
+        week: 'W1 주차 마일스톤',
+        status: '완료 ✓ (지도교수 승인 완료)',
+        statusClass: 'd-day-badge--mint',
+        title: '팀 빌딩 및 프로젝트 계획서 승인',
+        dday: '2026-09-08 공식 승인 완료',
+        desc: '경상국립대 다속성 가중치 매칭 엔진을 통해 IT공대(개발), 데이터사이언스(AI), 경영대(기획) 학생이 하나의 팀으로 결성되었으며, 지도교수 면담을 통해 프로젝트 계획서 최종 승인을 획득했습니다.',
+        deliverables: [
+          { name: 'GNU 캡스톤디자인 제안서 및 R&R 역할 정의서', status: '제출 완료' },
+          { name: 'GitHub 레포지토리 개설 및 브랜치 전략(Git-Flow) 수립', status: '완료' }
+        ],
+        facultyComment: "정인공 지도교수: '전공 융합 팀플 기획 승인 완료. 다속성 매칭을 통해 구성된 팀인 만큼 완성도 높은 결과물을 기대합니다.'"
+      },
+      w3: {
+        week: 'W3 주차 마일스톤',
+        status: '완료 ✓ (산출물 검토 완료)',
+        statusClass: 'd-day-badge--mint',
+        title: '사용자 요구사항 정의 & 와이어프레임 확정',
+        dday: '2026-09-22 공식 검토 완료',
+        desc: '가좌/칠암 재학생 35명을 대상으로 통학 셔틀 및 학식 이용 불편점에 대한 사용자 리서치를 수행하고, Figma 와이어프레임 18개 화면 및 시스템 아키텍처 다이어그램을 확정했습니다.',
+        deliverables: [
+          { name: 'Figma UI/UX 와이어프레임 v1.2', status: '검토 완료' },
+          { name: 'RESTful API 명세서 (Swagger/OpenAPI)', status: '작성 완료' }
+        ],
+        facultyComment: "정인공 지도교수: '학생 인터뷰 데이터 기반으로 핵심 페인포인트를 잘 도출했습니다. 기여도 시각화 체계가 탄탄합니다.'"
+      },
+      w6: {
+        week: 'W6 주차 마일스톤 (현재)',
+        status: '진행 중 ⚡',
+        statusClass: 'd-day-badge--warm',
+        title: '1차 MVP 프로토타입 구현 및 FGI (현재 진행)',
+        dday: '2026-10-06 D-14',
+        desc: '학식 실시간 식단 파싱 API, 셔틀버스 위치 예측 모듈, 반응형 모바일 웹 프로토타입을 통합하여 1차 완성하고 교내 재학생 15인 대상 포커스 그룹 인터뷰(FGI)를 진행하고 있습니다.',
+        deliverables: [
+          { name: 'GNU Pioneers Hub 모바일 반응형 웹 MVP', status: '배포 완료' },
+          { name: 'WebSocket 실시간 협업 상태 동기화 모듈', status: '테스트 중' },
+          { name: '무임승차 방지 피어 리뷰 & 이상치 조기 탐지 알고리즘', status: '구현 완료' }
+        ],
+        facultyComment: "지도교수 수시 코멘트: 'UI/UX 디자이너 합류 후 프로토타입 완성도가 급상승했습니다. 중간평가 시연 준비에 집중하세요.'"
+      },
+      w8: {
+        week: 'W8 주차 마일스톤',
+        status: '예정 ⏳ (D-14)',
+        statusClass: 'd-day-badge--warm',
+        title: '경상국립대 캡스톤/팀플 중간발표 평가',
+        dday: 'D-14 (10월 중순 예정)',
+        desc: 'IT공과대학 및 융합학부 심사위원단 대상 중간 구두 발표 및 MVP 라이브 시연을 진행합니다. 학기 50% 성적에 반영되는 주요 평가 관문입니다.',
+        deliverables: [
+          { name: '중간발표 슬라이드 및 시연 영상 (3분)', status: '초안 작성 중' },
+          { name: '중간 보고서 및 팀원별 기여도 증빙자료', status: '자동 추출 예정' }
+        ],
+        facultyComment: "심사 주안점: '다학제 팀원 간의 실질적 협업 분담과 코드/산출물 기여도 검증'"
+      },
+      w12: {
+        week: 'W12 주차 마일스톤',
+        status: '예정 ⏳',
+        statusClass: 'd-day-badge--calm',
+        title: '교내 베타 오픈 & 학생 100인 실증 테스트',
+        dday: '11월 중순 예정',
+        desc: '에브리타임 및 학내 게시판을 통해 테스터를 모집하여 실사용자 100인 대상 파일럿 운영을 진행합니다. 시스템 사용성 지수(SUS) 측정 및 실증 데이터를 학술 논문에 수록합니다.',
+        deliverables: [
+          { name: '베타 서비스 릴리즈 및 로그 모니터링', status: '설계 완료' },
+          { name: 'SUS(System Usability Scale) 100인 설문 통계 보고서', status: '설문지 작성' }
+        ],
+        facultyComment: "논문 학술지 투고를 위한 실증 파트 핵심 데이터 확보 단계"
+      },
+      w16: {
+        week: 'W16 주차 마일스톤',
+        status: '최종 평가 ⏳',
+        statusClass: 'd-day-badge--calm',
+        title: '최종 학술제/캡스톤 페스티벌 출품 & 학점 확정',
+        dday: '12월 말 종강',
+        desc: '경상국립대 Pioneer 캡스톤 페스티벌 본선 부스 전시 및 심사위원 평가를 거쳐 최우수상 수상 및 전원 A+ 학점 취득을 목표로 합니다.',
+        deliverables: [
+          { name: '최종 포스터, 완성형 소스코드, 최종 논문 보고서', status: '예정' },
+          { name: '팀 360° 최종 피어리뷰 및 기여도 증명서 발급', status: '시스템 자동 연계' }
+        ],
+        facultyComment: "GNU 우수 캡스톤 디자인 어워드 출품 추천 예정"
+      }
+    };
+
+    const TASK_DETAILS = {
+      'task-1': {
+        id: 'TASK-1',
+        title: '학생 친화적 반응형 메인 UI & 셔틀 노선도 컴포넌트 개발',
+        assignee: '이지원 (FE)',
+        sprint: 'Sprint 3',
+        priority: '보통 (P1)',
+        status: '진행 중',
+        desc: '아이폰 및 안드로이드 등 다양한 모바일 기기 뷰포트에 맞춘 유려한 반응형 레이아웃을 구현하고, 가좌-칠암 간 통학 셔틀버스 실시간 노선도를 SVG 및 인터랙티브 카드로 렌더링합니다.',
+        checklist: [
+          'Tailwind CSS 기반 반응형 섀시 최적화',
+          '터치 스와이프 탭 내비게이션 바 연동',
+          '셔틀버스 정류장별 잔여 좌석 상태 배지 표시'
+        ],
+        commitRef: 'b2d0491 (이지원)'
+      },
+      'task-2': {
+        id: 'TASK-2',
+        title: 'GNU 학생 식당 주간 식단 & 도서관 잔여석 API 연동',
+        assignee: '김개척 (BE)',
+        sprint: 'Sprint 3',
+        priority: '긴급 (P0)',
+        status: '진행 중',
+        desc: '경상국립대 포털의 주간 학생식당(아람관, 교직원식당) 식단표 HTML 크롤링 파서 구축 및 중앙도서관 열람실 잔여 좌석 실시간 API를 캐싱하여 10ms 이내로 응답하도록 최적화합니다.',
+        checklist: [
+          'BeautifulSoup4 기반 식단 파서 데몬 구축',
+          'Redis 캐시 계층 적용으로 응답 속도 향상',
+          '도서관 좌석 점유율 실시간 WebSocket 브로드캐스트'
+        ],
+        commitRef: 'd67f760 (김개척)'
+      },
+      'task-3': {
+        id: 'TASK-3',
+        title: '학생 맞춤 공강 질문 추천 챗봇 프롬프트 튜닝',
+        assignee: '박데이터 (AI)',
+        sprint: 'Sprint 4',
+        priority: '보통 (P2)',
+        status: '할 일',
+        desc: '학생들의 시간표상 공강 시간대에 가좌캠퍼스 인근 스터디 카페, 후문 맛집, 도서관 빈 강의실 정보를 친근하게 추천해주는 경상국립대 특화 LLM 시스템 프롬프트를 설계합니다.',
+        checklist: [
+          'GNU 학내 위치 좌표 벡터 데이터베이스 구축',
+          'few-shot 프롬프트 템플릿 작성 및 테스트',
+          '응답 레이턴시 500ms 이내 달성'
+        ],
+        commitRef: 'a09e512 (박데이터)'
+      }
+    };
+
+    const MEMBERS_DATA = {
+      '김개척': {
+        name: '김개척',
+        role: '팀장 / 백엔드 & PM',
+        dept: 'IT공과대학 컴퓨터공학부 4학년',
+        campus: '가좌 본원 (중앙도서관 대면)',
+        contribPct: '38%',
+        rank: '팀 내 1위 (최우수 기여)',
+        commits: '42회',
+        tasks: '9건',
+        loc: '3.4k LoC',
+        docs: '8건',
+        peerAvg: '4.9 / 5.0 ★',
+        scoreTech: '5.0 ★',
+        scoreComm: '4.8 ★',
+        scoreTeam: '4.9 ★',
+        zScore: 'Z = +0.81 (이상치 위험 0% · 정상 우수)',
+        peerText: '"팀 아키텍처 리딩 및 일정 관리 우수. API를 기한보다 빠르게 배포해주어 프론트 작업이 매우 수월했습니다. 적극적인 소통 덕분에 팀 일정이 앞당겨졌습니다."',
+        commitsList: [
+          'd67f760 feat: auth modal & mypage logout',
+          'c84a19e feat: redis cache layer for cafeteria parser',
+          'f1043bc feat: initial capstone schema & rbac'
+        ]
+      },
+      '이지원': {
+        name: '이지원',
+        role: '프론트엔드 엔지니어',
+        dept: 'IT공과대학 컴퓨터과학과 3학년',
+        campus: '가좌 본원 (공학1호관)',
+        contribPct: '28%',
+        rank: '팀 내 2위 (핵심 기여)',
+        commits: '31회',
+        tasks: '7건',
+        loc: '2.8k LoC',
+        docs: '4건',
+        peerAvg: '4.8 / 5.0 ★',
+        scoreTech: '4.9 ★',
+        scoreComm: '4.8 ★',
+        scoreTeam: '4.7 ★',
+        zScore: 'Z = +0.32 (이상치 위험 0% · 정상)',
+        peerText: '"반응형 UI 마감 기한을 철저히 준수함. 디자인 시안이 나오면 신속하게 컴포넌트화하여 구현해 주었습니다."',
+        commitsList: [
+          'b2d0491 feat: websocket state sync event',
+          'e31f088 feat: responsive mobile chassis & navigation',
+          '7ca3102 feat: kanban board interactive drag cards'
+        ]
+      },
+      '박데이터': {
+        name: '박데이터',
+        role: 'AI & 추천 엔진',
+        dept: '융합기술공과대학 데이터사이언스 3학년',
+        campus: '가좌 본원 (칠암 데이터랩 병행)',
+        contribPct: '20%',
+        rank: '팀 내 3위 (전문 기여)',
+        commits: '22회',
+        tasks: '5건',
+        loc: '1.9k LoC',
+        docs: '5건',
+        peerAvg: '4.7 / 5.0 ★',
+        scoreTech: '4.8 ★',
+        scoreComm: '4.6 ★',
+        scoreTeam: '4.7 ★',
+        zScore: 'Z = -0.15 (이상치 위험 0% · 정상)',
+        peerText: '"FastAPI 알고리즘 배포 적극적 지원. 다속성 매칭 수학 모델 수식화에 큰 기여를 했습니다."',
+        commitsList: [
+          'a09e512 feat: multi-attribute matching weight engine',
+          '942bd10 feat: cosine similarity for skill vector match',
+          '3382fa1 test: outlier z-score statistical unit test'
+        ]
+      },
+      '이경영': {
+        name: '이경영',
+        role: '서비스 기획 / PM & 비즈니스',
+        dept: '경영대학 경영정보학과 3학년',
+        campus: '가좌 본원 (경영대)',
+        contribPct: '14%',
+        rank: '팀 내 4위 (정상 기여)',
+        commits: '12회',
+        tasks: '4건',
+        loc: '480 LoC',
+        docs: '15건',
+        peerAvg: '4.8 / 5.0 ★',
+        scoreTech: '4.5 ★',
+        scoreComm: '5.0 ★',
+        scoreTeam: '4.9 ★',
+        zScore: 'Z = -0.42 (이상치 위험 0% · 정상)',
+        peerText: '"학생 인터뷰 기획 및 협업 원활. 기획 문서 및 발표 자료 작성을 도맡아 진행하여 공대 팀원들의 부담을 크게 덜어주었습니다."',
+        commitsList: [
+          '510e192 docs: user survey questionnaire and fgi analysis',
+          '803ac11 docs: system usability scale 35-person response',
+          '2201fe9 docs: mid-term presentation slide deck v1.0'
+        ]
+      },
+      '최아름': {
+        name: '최아름',
+        role: 'UI/UX 디자이너 (영입 후보)',
+        dept: '사회과학대학 미디어커뮤니케이션 3학년',
+        campus: '가좌 본원 (사회대)',
+        contribPct: '영입 진행 중',
+        rank: '다속성 AI 96% 매칭',
+        commits: '5회',
+        tasks: '2건',
+        loc: 'Figma 18 Screens',
+        docs: '3건',
+        peerAvg: '4.9 ★ (검증됨)',
+        scoreTech: '5.0 ★',
+        scoreComm: '4.9 ★',
+        scoreTeam: '4.8 ★',
+        zScore: 'Z = +0.55 (정상 우수)',
+        peerText: '"Figma 대시보드 컴포넌트 시스템 구축 경험 보유. 가좌 중앙도서관 대면 모임 언제든 가능합니다!"',
+        commitsList: [
+          'design: fgi wireframe and mobile interaction prototype',
+          'design: component system tokens and color palette'
+        ]
+      },
+      '정칠암': {
+        name: '정칠암',
+        role: '스마트 기기 & 센서 제어',
+        dept: '융합기술공과대학 메카트로닉스 4학년',
+        campus: '칠암캠퍼스 메카',
+        contribPct: '인재 풀 (풀타임 가용)',
+        rank: '다속성 AI 93% 매칭',
+        commits: '18회',
+        tasks: '6건',
+        loc: '1.2k LoC',
+        docs: '2건',
+        peerAvg: '4.7 ★',
+        scoreTech: '4.9 ★',
+        scoreComm: '4.5 ★',
+        scoreTeam: '4.6 ★',
+        zScore: 'Z = +0.10 (정상)',
+        peerText: '"칠암캠퍼스 연구실 보유 장비 연계 가능, 하드웨어 센서 프로토콜 전문"',
+        commitsList: [
+          'firmware: esp32 ble beacon scanner daemon',
+          'hardware: gpio pinout spec sheet v1'
+        ]
+      }
+    };
+
+    const COMMITS_DATA = {
+      'd67f760': {
+        hash: 'd67f760',
+        author: '김개척 (pioneer.kim@gnu.ac.kr)',
+        time: '10분 전',
+        message: 'feat: auth modal & mypage logout',
+        branch: 'origin/main',
+        desc: '경상국립대 통합 로그인/회원가입 모달 추가 및 학생 정보 연동, 마이페이지 로그아웃 상태 복원 로직 추가',
+        files: [
+          { name: 'index.html', diff: '+148 lines, -12 lines' },
+          { name: 'server.cjs', diff: '+24 lines, -2 lines' }
+        ]
+      },
+      'b2d0491': {
+        hash: 'b2d0491',
+        author: '이지원 (lee.jw@gnu.ac.kr)',
+        time: '42분 전',
+        message: 'feat: websocket state sync event',
+        branch: 'origin/main',
+        desc: '실시간 칸반 카드 상태 변경 및 팀원 기여도 WebSocket 실시간 브로드캐스트 이벤트 핸들러 연동',
+        files: [
+          { name: 'src/ws.js', diff: '+86 lines, -5 lines' },
+          { name: 'index.html', diff: '+32 lines, -4 lines' }
+        ]
+      },
+      'a09e512': {
+        hash: 'a09e512',
+        author: '박데이터 (data.park@gnu.ac.kr)',
+        time: '1시간 전',
+        message: 'feat: multi-attribute matching weight engine',
+        branch: 'origin/main',
+        desc: '기술 스택(40%), 선호 역할(25%), 가용시간(20%), 캠퍼스 이동(15%) 4대 다속성 가중치 벡터 내적 계산 로직',
+        files: [
+          { name: 'engine/matcher.py', diff: '+210 lines, -18 lines' },
+          { name: 'engine/test_matcher.py', diff: '+54 lines, -0 lines' }
+        ]
+      }
+    };
+
+    let currentSelectedTaskId = 'task-1';
+    let currentSelectedMemberName = '김개척';
+
     function openProjectDetail(id) {
+      openProjectDetailModal(id);
+    }
+
+    function openProjectDetailModal(id) {
+      const p = PROJECTS_DATA[id] || PROJECTS_DATA['p1'];
+      const badgeEl = document.getElementById('proj-detail-badge');
+      const statusEl = document.getElementById('proj-detail-status');
+      const titleEl = document.getElementById('proj-detail-title');
+      const facultyEl = document.getElementById('proj-detail-faculty');
+      const campusEl = document.getElementById('proj-detail-campus');
+      const pctEl = document.getElementById('proj-detail-pct');
+      const barEl = document.getElementById('proj-detail-bar');
+      const weekEl = document.getElementById('proj-detail-week');
+      const teamEl = document.getElementById('proj-detail-team');
+      const descEl = document.getElementById('proj-detail-desc');
+      const stacksContainer = document.getElementById('proj-detail-stacks');
+      const membersContainer = document.getElementById('proj-detail-members');
+
+      if (badgeEl) {
+        badgeEl.innerText = p.badge;
+        badgeEl.className = `px-2 py-0.5 rounded text-[10px] font-black ${p.badgeColor}`;
+      }
+      if (statusEl) statusEl.innerText = p.status;
+      if (titleEl) titleEl.innerText = p.title;
+      if (facultyEl) facultyEl.innerText = `지도: ${p.faculty}`;
+      if (campusEl) campusEl.innerText = `📍 ${p.campus}`;
+      if (pctEl) pctEl.innerText = `${p.pct}%`;
+      if (barEl) barEl.style.width = `${p.pct}%`;
+      if (weekEl) weekEl.innerText = p.week;
+      if (teamEl) teamEl.innerText = p.team;
+      if (descEl) descEl.innerText = p.desc;
+
+      if (stacksContainer) {
+        stacksContainer.innerHTML = p.stacks.map(s =>
+          `<span class="px-2 py-0.5 rounded bg-blue-50 text-[10px] font-bold text-[#069fdb]">${s}</span>`
+        ).join('');
+      }
+
+      if (membersContainer) {
+        membersContainer.innerHTML = p.members.map(m => `
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px] cursor-pointer hover:bg-slate-100 transition-colors" onclick="openMemberDetailModal('${m.name}')">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-black text-[10px] flex items-center justify-center">${m.name.charAt(0)}</span>
+              <div>
+                <span class="font-bold text-slate-800">${m.name}</span>
+                <span class="text-[10px] text-slate-400 block">${m.dept}</span>
+              </div>
+            </div>
+            <span class="text-[10px] font-bold text-[#069fdb] px-2 py-0.5 rounded bg-white border border-slate-200">${m.role}</span>
+          </div>
+        `).join('');
+      }
+
+      const modal = document.getElementById('modal-project-detail');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeProjectDetailModal() {
+      const modal = document.getElementById('modal-project-detail');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function goToKanbanFromProject() {
+      closeProjectDetailModal();
+      switchTabNav('milestones');
+      switchMilestoneSubView('kanban');
+    }
+
+    function goToTeambuildingFromProject() {
+      closeProjectDetailModal();
       switchTabNav('teambuilding');
+    }
+
+    // Milestone Detail Modal
+    function openMilestoneDetailModal(key) {
+      const m = MILESTONES_DATA[key] || MILESTONES_DATA['overview'];
+      const weekEl = document.getElementById('ms-detail-week');
+      const statusEl = document.getElementById('ms-detail-status');
+      const titleEl = document.getElementById('ms-detail-title');
+      const ddayEl = document.getElementById('ms-detail-dday');
+      const descEl = document.getElementById('ms-detail-desc');
+      const delContainer = document.getElementById('ms-detail-deliverables');
+      const facultyCommentEl = document.getElementById('ms-detail-faculty-comment');
+
+      if (weekEl) weekEl.innerText = m.week;
+      if (statusEl) {
+        statusEl.innerText = m.status;
+        statusEl.className = `d-day-badge ${m.statusClass || 'd-day-badge--warm'} text-[10px]`;
+      }
+      if (titleEl) titleEl.innerText = m.title;
+      if (ddayEl) ddayEl.innerText = `📅 ${m.dday}`;
+      if (descEl) descEl.innerText = m.desc;
+
+      if (delContainer) {
+        delContainer.innerHTML = m.deliverables.map(d => `
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px]">
+            <span class="font-medium text-slate-700">${d.name}</span>
+            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">${d.status}</span>
+          </div>
+        `).join('');
+      }
+
+      if (facultyCommentEl) facultyCommentEl.innerText = m.facultyComment;
+
+      const modal = document.getElementById('modal-milestone-detail');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeMilestoneDetailModal() {
+      const modal = document.getElementById('modal-milestone-detail');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Task Detail Modal
+    function openTaskDetailModal(taskId) {
+      currentSelectedTaskId = taskId;
+      const t = TASK_DETAILS[taskId] || {
+        id: taskId.toUpperCase(),
+        title: '신규 팀플 과업',
+        assignee: '김개척 (BE)',
+        sprint: 'Sprint 3',
+        priority: '보통 (P2)',
+        status: '진행 중',
+        desc: '태스크 상세 작업 명세서 및 완료 기준 검토 단계입니다.',
+        checklist: ['요구사항 명세 작성', '기능 구현 및 테스트'],
+        commitRef: 'd67f760 (김개척)'
+      };
+
+      const idEl = document.getElementById('task-detail-id');
+      const priorityEl = document.getElementById('task-detail-priority');
+      const titleEl = document.getElementById('task-detail-title');
+      const assigneeEl = document.getElementById('task-detail-assignee');
+      const sprintEl = document.getElementById('task-detail-sprint');
+      const descEl = document.getElementById('task-detail-desc');
+      const commitEl = document.getElementById('task-detail-commit');
+      const clContainer = document.getElementById('task-detail-checklist');
+
+      if (idEl) idEl.innerText = t.id;
+      if (priorityEl) priorityEl.innerText = t.priority;
+      if (titleEl) titleEl.innerText = t.title;
+      if (assigneeEl) assigneeEl.innerText = `담당자: ${t.assignee}`;
+      if (sprintEl) sprintEl.innerText = t.sprint;
+      if (descEl) descEl.innerText = t.desc;
+      if (commitEl) commitEl.innerText = t.commitRef;
+
+      if (clContainer) {
+        clContainer.innerHTML = t.checklist.map(c => `
+          <div class="p-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 text-[11px]">
+            <span class="text-emerald-500 font-bold">✓</span>
+            <span class="text-slate-700">${c}</span>
+          </div>
+        `).join('');
+      }
+
+      updateTaskModalStatusButtons(t.status);
+      const modal = document.getElementById('modal-task-detail');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function updateTaskModalStatusButtons(status) {
+      const pill = document.getElementById('task-detail-status-pill');
+      const bTodo = document.getElementById('btn-status-todo');
+      const bProg = document.getElementById('btn-status-progress');
+      const bDone = document.getElementById('btn-status-done');
+
+      if (pill) pill.innerText = status;
+      if (bTodo) {
+        bTodo.className = 'py-1.5 rounded-lg border text-[11px] font-bold transition-all cursor-pointer ' +
+          (status.includes('할') ? 'border-amber-400 bg-amber-500 text-white shadow-xs' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-100');
+      }
+      if (bProg) {
+        bProg.className = 'py-1.5 rounded-lg border text-[11px] font-bold transition-all cursor-pointer ' +
+          (status.includes('진행') ? 'border-blue-400 bg-blue-500 text-white shadow-xs' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-100');
+      }
+      if (bDone) {
+        bDone.className = 'py-1.5 rounded-lg border text-[11px] font-bold transition-all cursor-pointer ' +
+          (status.includes('완료') ? 'border-emerald-500 bg-emerald-500 text-white shadow-xs' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-100');
+      }
+
+      if (pill) {
+        if (status.includes('완료')) {
+          pill.className = 'px-2 py-0.5 rounded font-black text-[10px] bg-emerald-100 text-emerald-800';
+        } else if (status.includes('진행')) {
+          pill.className = 'px-2 py-0.5 rounded font-black text-[10px] bg-blue-100 text-[#069fdb]';
+        } else {
+          pill.className = 'px-2 py-0.5 rounded font-black text-[10px] bg-amber-100 text-amber-800';
+        }
+      }
+    }
+
+    function setTaskStatusInModal(newStatus) {
+      if (TASK_DETAILS[currentSelectedTaskId]) {
+        TASK_DETAILS[currentSelectedTaskId].status = newStatus;
+      }
+      updateTaskModalStatusButtons(newStatus);
+    }
+
+    function saveTaskModalChanges() {
+      const pill = document.getElementById('task-detail-status-pill');
+      const currentStatus = pill ? pill.innerText : '진행 중';
+      const badge = document.getElementById(`badge-${currentSelectedTaskId}`);
+      const card = document.getElementById(`card-${currentSelectedTaskId}`);
+
+      if (badge && card) {
+        const actionBtn = card.querySelector('button');
+        if (currentStatus.includes('완료')) {
+          badge.className = 'font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800';
+          badge.innerText = '완료 ✓';
+          if (actionBtn) {
+            actionBtn.innerText = '되돌리기';
+            actionBtn.className = 'px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-bold';
+          }
+        } else if (currentStatus.includes('진행')) {
+          badge.className = 'font-bold px-1.5 py-0.2 rounded bg-blue-100 text-[#069fdb]';
+          badge.innerText = '진행 중';
+          if (actionBtn) {
+            actionBtn.innerText = '완료 처리 ✓';
+            actionBtn.className = 'px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-bold';
+          }
+        } else {
+          badge.className = 'font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-800';
+          badge.innerText = '할 일';
+          if (actionBtn) {
+            actionBtn.innerText = '진행 중 이동 ▶';
+            actionBtn.className = 'px-2 py-0.5 rounded bg-blue-50 text-[#069fdb] text-[10px] font-bold';
+          }
+        }
+      }
+
+      alert(`[${currentSelectedTaskId.toUpperCase()}] 태스크 상태가 '${currentStatus}'(으)로 갱신되었습니다.\n\n(WebSocket 실시간 협업 동기화 완료 · 12ms 지연)`);
+      closeTaskDetailModal();
+    }
+
+    function closeTaskDetailModal() {
+      const modal = document.getElementById('modal-task-detail');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Member Detail Modal
+    function openMemberDetailModal(name) {
+      currentSelectedMemberName = name;
+      const m = MEMBERS_DATA[name] || {
+        name: name,
+        role: '프로젝트 팀원',
+        dept: '경상국립대학교 융합학부',
+        campus: '가좌 본원',
+        contribPct: '20%',
+        rank: '정상 기여',
+        commits: '10회',
+        tasks: '3건',
+        loc: '1.0k LoC',
+        docs: '2건',
+        peerAvg: '4.8 / 5.0 ★',
+        scoreTech: '4.8 ★',
+        scoreComm: '4.8 ★',
+        scoreTeam: '4.8 ★',
+        zScore: 'Z = +0.15 (정상)',
+        peerText: '"성실히 팀 회의에 참여하고 맡은 역할을 완수함."',
+        commitsList: ['feat: capstone initial setup']
+      };
+
+      const avatarBox = document.getElementById('member-avatar-box');
+      const nameEl = document.getElementById('member-detail-name');
+      const roleBadge = document.getElementById('member-detail-role-badge');
+      const deptEl = document.getElementById('member-detail-dept');
+      const contribEl = document.getElementById('member-detail-contrib');
+      const barEl = document.getElementById('member-detail-bar');
+      const commitsEl = document.getElementById('member-detail-commits');
+      const tasksEl = document.getElementById('member-detail-tasks');
+      const locEl = document.getElementById('member-detail-loc');
+      const docsEl = document.getElementById('member-detail-docs');
+      const peerAvgEl = document.getElementById('member-detail-peer-avg');
+      const scoreTechEl = document.getElementById('member-detail-score-tech');
+      const scoreCommEl = document.getElementById('member-detail-score-comm');
+      const scoreTeamEl = document.getElementById('member-detail-score-team');
+      const zScoreEl = document.getElementById('member-detail-zscore');
+      const peerTextEl = document.getElementById('member-detail-peer-text');
+      const rcContainer = document.getElementById('member-detail-recent-commits');
+
+      if (avatarBox) avatarBox.innerText = m.name.charAt(0);
+      if (nameEl) nameEl.innerText = m.name;
+      if (roleBadge) roleBadge.innerText = m.role;
+      if (deptEl) deptEl.innerText = `${m.dept} · 📍 ${m.campus}`;
+      if (contribEl) contribEl.innerText = `${m.contribPct} (${m.rank})`;
+      if (barEl) barEl.style.width = m.contribPct.includes('%') ? m.contribPct : '25%';
+      if (commitsEl) commitsEl.innerText = m.commits;
+      if (tasksEl) tasksEl.innerText = m.tasks;
+      if (locEl) locEl.innerText = m.loc;
+      if (docsEl) docsEl.innerText = m.docs;
+      if (peerAvgEl) peerAvgEl.innerText = m.peerAvg;
+      if (scoreTechEl) scoreTechEl.innerText = m.scoreTech;
+      if (scoreCommEl) scoreCommEl.innerText = m.scoreComm;
+      if (scoreTeamEl) scoreTeamEl.innerText = m.scoreTeam;
+      if (zScoreEl) zScoreEl.innerText = m.zScore;
+      if (peerTextEl) peerTextEl.innerText = m.peerText;
+
+      if (rcContainer) {
+        rcContainer.innerHTML = m.commitsList.map(c => `
+          <div class="p-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 font-mono text-[10px] flex items-center gap-1.5">
+            <span class="text-[#069fdb] font-bold">●</span>
+            <span>${c}</span>
+          </div>
+        `).join('');
+      }
+
+      const modal = document.getElementById('modal-member-detail');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeMemberDetailModal() {
+      const modal = document.getElementById('modal-member-detail');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function openPeerReviewForCurrentMember() {
+      closeMemberDetailModal();
+      const select = document.getElementById('peer-review-target');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.includes(currentSelectedMemberName)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      openPeerReviewModal();
+    }
+
+    // Commit Detail Modal
+    function openCommitDetailModal(hash) {
+      const c = COMMITS_DATA[hash] || {
+        hash: hash,
+        author: 'GNU 개척자',
+        time: '최근',
+        message: '코드 커밋 변경 내역',
+        branch: 'origin/main',
+        desc: 'Git 버전 관리 시스템에 등록된 검증된 커밋입니다.',
+        files: [{ name: 'index.html', diff: '+10 lines, -2 lines' }]
+      };
+
+      const hashEl = document.getElementById('commit-detail-hash');
+      const msgEl = document.getElementById('commit-detail-msg');
+      const authorEl = document.getElementById('commit-detail-author');
+      const branchEl = document.getElementById('commit-detail-branch');
+      const descEl = document.getElementById('commit-detail-desc');
+      const fContainer = document.getElementById('commit-detail-files');
+
+      if (hashEl) hashEl.innerText = c.hash;
+      if (msgEl) msgEl.innerText = c.message;
+      if (authorEl) authorEl.innerText = `${c.author} · ${c.time}`;
+      if (branchEl) branchEl.innerText = `branch: ${c.branch}`;
+      if (descEl) descEl.innerText = c.desc;
+
+      if (fContainer) {
+        fContainer.innerHTML = c.files.map(f => `
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px]">
+            <span class="font-mono font-bold text-slate-800">${f.name}</span>
+            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">${f.diff}</span>
+          </div>
+        `).join('');
+      }
+
+      const modal = document.getElementById('modal-commit-detail');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeCommitDetailModal() {
+      const modal = document.getElementById('modal-commit-detail');
+      if (modal) modal.classList.add('hidden');
     }
 
     function filterCampusPill(campus) {
