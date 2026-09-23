@@ -694,6 +694,38 @@
                       <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-[#069fdb]">캠퍼스 메이트 융합팀</span>
                     </div>
 
+                    <!-- Multi-Attribute Algorithm Matcher Card -->
+                    <div class="p-3 rounded-2xl bg-gradient-to-r from-slate-900 via-[#082f49] to-[#002855] text-white shadow-xs space-y-2">
+                      <div class="flex items-center justify-between text-xs">
+                        <div class="flex items-center gap-1.5">
+                          <span class="px-1.5 py-0.5 rounded bg-cyan-400/20 text-cyan-300 font-black text-[9px]">ALGORITHM</span>
+                          <span class="font-bold text-slate-100">다속성 가중치 매칭 엔진</span>
+                        </div>
+                        <span class="text-[9px] font-mono text-cyan-200">Σ w_k = 1.0</span>
+                      </div>
+                      <p class="text-[10px] text-slate-300 leading-relaxed">
+                        기술 스택(40%) + 선호 역할(25%) + 가용시간(20%) + 캠퍼스 이동(15%) 4대 다속성 가중치 모델로 최적의 융합 팀원을 자동 매칭합니다.
+                      </p>
+                      <div class="grid grid-cols-4 gap-1 pt-0.5 text-center text-[9px] font-bold">
+                        <div class="p-1.5 rounded-lg bg-white/10">
+                          <span class="text-cyan-300 block">스택 40%</span>
+                          <span class="text-white text-[10px]">기술역량</span>
+                        </div>
+                        <div class="p-1.5 rounded-lg bg-white/10">
+                          <span class="text-cyan-300 block">역할 25%</span>
+                          <span class="text-white text-[10px]">R&R 공백</span>
+                        </div>
+                        <div class="p-1.5 rounded-lg bg-white/10">
+                          <span class="text-cyan-300 block">시간 20%</span>
+                          <span class="text-white text-[10px]">주당가용</span>
+                        </div>
+                        <div class="p-1.5 rounded-lg bg-white/10">
+                          <span class="text-cyan-300 block">캠퍼스 15%</span>
+                          <span class="text-white text-[10px]">오프동선</span>
+                        </div>
+                      </div>
+                    </div>
+
                     <!-- 6 Roles Balance Matrix -->
                     <div class="p-3.5 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-2.5">
                       <div class="flex items-center justify-between text-xs">
@@ -735,7 +767,7 @@
                       <div class="flex items-center justify-between">
                         <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-blue-100 text-[#069fdb]">도착한 지원서</span>
                         <div class="text-right">
-                          <span class="text-[9px] text-slate-400 font-bold block leading-tight">AI 시너지</span>
+                          <span class="text-[9px] text-slate-400 font-bold block leading-tight">다속성 AI 시너지</span>
                           <span class="text-base font-black text-[#082f49]">96%</span>
                         </div>
                       </div>
@@ -751,10 +783,51 @@
                         </div>
                       </div>
 
-                      <div class="p-2 rounded-xl bg-white/90 border border-slate-200 text-slate-700 text-[11px] leading-relaxed space-y-0.5">
-                        <p class="font-bold text-[#069fdb]">💡 AI 시너지 심사 의견</p>
+                      <!-- Multi-Attribute Breakdown -->
+                      <div class="p-2.5 rounded-xl bg-white border border-slate-200 space-y-1.5 text-[10px]">
+                        <span class="font-bold text-slate-800 block text-[10px]">📊 4대 속성별 정밀 점수</span>
+                        <div class="space-y-1">
+                          <div class="flex items-center justify-between text-[9px]">
+                            <span class="text-slate-600">기술 스택 (Figma, UX 리서치)</span>
+                            <span class="font-bold text-[#069fdb]">98점 (가중치 40%)</span>
+                          </div>
+                          <div class="w-full bg-slate-100 rounded-full h-1.5">
+                            <div class="bg-[#069fdb] h-1.5 rounded-full" style="width: 98%"></div>
+                          </div>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center justify-between text-[9px]">
+                            <span class="text-slate-600">역할 공백 해결 (UI/UX 100% 충족)</span>
+                            <span class="font-bold text-emerald-600">100점 (가중치 25%)</span>
+                          </div>
+                          <div class="w-full bg-slate-100 rounded-full h-1.5">
+                            <div class="bg-emerald-500 h-1.5 rounded-full" style="width: 100%"></div>
+                          </div>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center justify-between text-[9px]">
+                            <span class="text-slate-600">가용 시간 (주당 16시간)</span>
+                            <span class="font-bold text-indigo-600">92점 (가중치 20%)</span>
+                          </div>
+                          <div class="w-full bg-slate-100 rounded-full h-1.5">
+                            <div class="bg-indigo-500 h-1.5 rounded-full" style="width: 92%"></div>
+                          </div>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center justify-between text-[9px]">
+                            <span class="text-slate-600">캠퍼스 동선 (가좌 중앙도서관 대면)</span>
+                            <span class="font-bold text-cyan-600">95점 (가중치 15%)</span>
+                          </div>
+                          <div class="w-full bg-slate-100 rounded-full h-1.5">
+                            <div class="bg-cyan-500 h-1.5 rounded-full" style="width: 95%"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100 text-slate-700 text-[11px] leading-relaxed space-y-0.5">
+                        <p class="font-bold text-[#069fdb]">💡 AI 심사 소견</p>
                         <p class="text-slate-600">
-                          "현재 팀에 공백인 UI/UX 디자인 및 교내 학생 사용자 리서치 역량을 100% 채워주며, 가좌캠퍼스 중앙도서관 대면 스터디 협업에 완벽히 부합합니다."
+                          "기술 스택과 캠퍼스 동선 일치도가 매우 우수하여 팀 R&R을 즉시 완성할 수 있는 최적의 후보자입니다."
                         </p>
                       </div>
 
@@ -837,13 +910,16 @@
                       <span class="text-[10px] text-slate-400 block">8주차 중간평가까지 D-14 · MVP 프로토타입 시연 준비</span>
                     </div>
 
-                    <!-- Milestone Subtabs: Timeline vs Kanban -->
-                    <div class="flex rounded-xl bg-slate-100 p-1 text-xs font-bold">
-                      <button onclick="switchMilestoneSubView('timeline')" id="subview-btn-timeline" class="flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900">
-                        16주 간트 타임라인
+                    <!-- Milestone Subtabs: Timeline vs Kanban vs Contrib -->
+                    <div class="flex rounded-xl bg-slate-100 p-1 text-xs font-bold gap-1">
+                      <button onclick="switchMilestoneSubView('timeline')" id="subview-btn-timeline" class="flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900 text-[11px]">
+                        16주 타임라인
                       </button>
-                      <button onclick="switchMilestoneSubView('kanban')" id="subview-btn-kanban" class="flex-1 py-1.5 rounded-lg text-slate-500">
-                        실무 칸반보드
+                      <button onclick="switchMilestoneSubView('kanban')" id="subview-btn-kanban" class="flex-1 py-1.5 rounded-lg text-slate-500 text-[11px]">
+                        실무 칸반
+                      </button>
+                      <button onclick="switchMilestoneSubView('contrib')" id="subview-btn-contrib" class="flex-1 py-1.5 rounded-lg text-slate-500 text-[11px]">
+                        📊 기여도/커밋
                       </button>
                     </div>
 
@@ -883,7 +959,7 @@
                     <!-- Subview 2: Kanban Board -->
                     <div id="subview-kanban" class="space-y-2.5 hidden">
                       <div class="flex items-center justify-between text-xs font-bold text-slate-800">
-                        <span>태스크 상태 전환</span>
+                        <span>실시간 칸반 태스크 상태</span>
                         <button onclick="promptNewTask()" class="text-[#069fdb] text-[11px] font-bold">+ 태스크 추가</button>
                       </div>
 
@@ -922,15 +998,221 @@
                         </div>
                       </div>
                     </div>
+
+                    <!-- Subview 3: Contribution & Git Commits -->
+                    <div id="subview-contrib" class="space-y-2.5 hidden">
+                      <!-- WebSocket Real-time Sync Indicator -->
+                      <div class="p-2.5 rounded-xl bg-slate-900 text-white flex items-center justify-between text-[10px] shadow-xs">
+                        <div class="flex items-center gap-1.5">
+                          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                          <span class="font-bold text-slate-100">WebSocket 실시간 협업 동기화</span>
+                        </div>
+                        <span class="font-mono text-cyan-300 text-[9px]">14ms · 12초 전 수신</span>
+                      </div>
+
+                      <!-- Contribution Overview by Member -->
+                      <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+                        <div class="flex items-center justify-between text-xs">
+                          <span class="font-bold text-slate-900">팀원별 정량 기여도 분석</span>
+                          <span class="text-[10px] font-bold text-[#069fdb]">총 4명 활동 중</span>
+                        </div>
+
+                        <div class="space-y-2.5 text-xs">
+                          <!-- Member 1: 김개척 -->
+                          <div class="space-y-1">
+                            <div class="flex items-center justify-between text-[11px]">
+                              <div class="flex items-center gap-1.5">
+                                <span class="font-bold text-slate-800">김개척 (BE/PM)</span>
+                                <span class="text-[9px] text-slate-400">커밋 42회 · 태스크 9건</span>
+                              </div>
+                              <span class="font-black text-[#069fdb]">38%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                              <div class="bg-[#069fdb] h-2 rounded-full" style="width: 38%"></div>
+                            </div>
+                          </div>
+
+                          <!-- Member 2: 이지원 -->
+                          <div class="space-y-1">
+                            <div class="flex items-center justify-between text-[11px]">
+                              <div class="flex items-center gap-1.5">
+                                <span class="font-bold text-slate-800">이지원 (FE)</span>
+                                <span class="text-[9px] text-slate-400">커밋 31회 · 태스크 7건</span>
+                              </div>
+                              <span class="font-black text-indigo-600">28%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                              <div class="bg-indigo-500 h-2 rounded-full" style="width: 28%"></div>
+                            </div>
+                          </div>
+
+                          <!-- Member 3: 박데이터 -->
+                          <div class="space-y-1">
+                            <div class="flex items-center justify-between text-[11px]">
+                              <div class="flex items-center gap-1.5">
+                                <span class="font-bold text-slate-800">박데이터 (AI)</span>
+                                <span class="text-[9px] text-slate-400">커밋 22회 · 태스크 5건</span>
+                              </div>
+                              <span class="font-black text-cyan-600">20%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                              <div class="bg-cyan-500 h-2 rounded-full" style="width: 20%"></div>
+                            </div>
+                          </div>
+
+                          <!-- Member 4: 이경영 -->
+                          <div class="space-y-1">
+                            <div class="flex items-center justify-between text-[11px]">
+                              <div class="flex items-center gap-1.5">
+                                <span class="font-bold text-slate-800">이경영 (기획)</span>
+                                <span class="text-[9px] text-slate-400">산출물 15건 · 태스크 4건</span>
+                              </div>
+                              <span class="font-black text-emerald-600">14%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                              <div class="bg-emerald-500 h-2 rounded-full" style="width: 14%"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <p class="text-[10px] text-slate-400 pt-1 border-t border-slate-100">
+                          * 깃허브 커밋 수(30%), 칸반 태스크 완료율(35%), 기획 문서(20%), 코드 볼륨(15%)이 실시간 합성됩니다.
+                        </p>
+                      </div>
+
+                      <!-- Git Recent Commit Logs -->
+                      <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                          <span class="font-bold text-slate-900">최신 깃허브 커밋 활동</span>
+                          <span class="text-[10px] font-mono text-slate-400">branch: main</span>
+                        </div>
+                        <div class="space-y-1.5 text-[11px]">
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                            <div>
+                              <div class="flex items-center gap-1">
+                                <span class="font-mono text-[10px] text-[#069fdb] font-bold">d67f760</span>
+                                <span class="font-semibold text-slate-800">feat: auth modal & mypage logout</span>
+                              </div>
+                              <span class="text-[9px] text-slate-400">김개척 · 10분 전</span>
+                            </div>
+                            <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified</span>
+                          </div>
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                            <div>
+                              <div class="flex items-center gap-1">
+                                <span class="font-mono text-[10px] text-[#069fdb] font-bold">b2d0491</span>
+                                <span class="font-semibold text-slate-800">feat: websocket state sync event</span>
+                              </div>
+                              <span class="text-[9px] text-slate-400">이지원 · 42분 전</span>
+                            </div>
+                            <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified</span>
+                          </div>
+                          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                            <div>
+                              <div class="flex items-center gap-1">
+                                <span class="font-mono text-[10px] text-[#069fdb] font-bold">a09e512</span>
+                                <span class="font-semibold text-slate-800">feat: multi-attribute matching weight engine</span>
+                              </div>
+                              <span class="text-[9px] text-slate-400">박데이터 · 1시간 전</span>
+                            </div>
+                            <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Verified</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <!-- TAB 4: 지도교수 멘토링 평가 (ADVISOR) -->
+                  <!-- TAB 4: 지도교수 멘토링 & 피어 리뷰 (ADVISOR & PEER REVIEW) -->
                   <div id="screen-advisor" class="p-4 space-y-3.5 hidden">
-                    <div>
-                      <p class="text-[10px] font-extrabold text-[#069fdb] uppercase tracking-wider">FACULTY MENTORING</p>
-                      <h2 class="text-lg font-black text-[#082f49]">지도교수 피드백</h2>
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-[10px] font-extrabold text-[#069fdb] uppercase tracking-wider">MENTORING & PEER REVIEW</p>
+                        <h2 class="text-lg font-black text-[#082f49]">멘토링 & 피어 리뷰</h2>
+                      </div>
+                      <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">무임승차 지수: 정상</span>
                     </div>
 
+                    <!-- Peer Review 360 Card -->
+                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between text-xs">
+                        <div class="flex items-center gap-1.5">
+                          <span class="font-bold text-slate-900">동료 피어 리뷰 (360° 상호 평가)</span>
+                        </div>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-[#069fdb]">팀 평균 4.8 / 5.0</span>
+                      </div>
+
+                      <div class="grid grid-cols-2 gap-2 text-xs">
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                          <div class="flex items-center justify-between">
+                            <span class="font-bold text-slate-800 text-[11px]">이지원 (FE)</span>
+                            <span class="text-[#069fdb] font-bold text-[10px]">4.8 ★</span>
+                          </div>
+                          <span class="text-[9px] text-slate-500 block leading-tight">"반응형 UI 마감 기한을 철저히 준수함"</span>
+                        </div>
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                          <div class="flex items-center justify-between">
+                            <span class="font-bold text-slate-800 text-[11px]">박데이터 (AI)</span>
+                            <span class="text-[#069fdb] font-bold text-[10px]">4.7 ★</span>
+                          </div>
+                          <span class="text-[9px] text-slate-500 block leading-tight">"FastAPI 알고리즘 배포 적극적 지원"</span>
+                        </div>
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                          <div class="flex items-center justify-between">
+                            <span class="font-bold text-slate-800 text-[11px]">이경영 (기획)</span>
+                            <span class="text-[#069fdb] font-bold text-[10px]">4.8 ★</span>
+                          </div>
+                          <span class="text-[9px] text-slate-500 block leading-tight">"학생 인터뷰 기획 및 협업 원활"</span>
+                        </div>
+                        <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                          <div class="flex items-center justify-between">
+                            <span class="font-bold text-slate-800 text-[11px]">김개척 (BE)</span>
+                            <span class="text-[#069fdb] font-bold text-[10px]">4.9 ★</span>
+                          </div>
+                          <span class="text-[9px] text-slate-500 block leading-tight">"팀 아키텍처 리딩 및 일정 관리 우수"</span>
+                        </div>
+                      </div>
+
+                      <button onclick="openPeerReviewModal()" class="w-full py-2 rounded-xl bg-[#069fdb] hover:bg-[#004b91] text-white text-xs font-bold transition-all shadow-xs flex items-center justify-center gap-1">
+                        <span>✍️</span>
+                        <span>팀원 상호 피어 리뷰 평가 작성하기</span>
+                      </button>
+                    </div>
+
+                    <!-- Free-Rider & Outlier Detection Card -->
+                    <div class="p-3.5 rounded-2xl bg-gradient-to-br from-white via-emerald-50/20 to-emerald-50/50 border border-emerald-200 shadow-xs space-y-2.5">
+                      <div class="flex items-center justify-between text-xs">
+                        <div class="flex items-center gap-1.5">
+                          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                          <span class="font-bold text-slate-900">무임승차 이상치(Outlier) 조기 탐지</span>
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">안전 (이상치 없음)</span>
+                      </div>
+
+                      <p class="text-[11px] text-slate-600 leading-relaxed">
+                        통계 모델 <code class="font-mono text-[10px] bg-slate-100 px-1 rounded text-slate-800">Z = (C_i - μ) / σ</code> 기반으로 태스크 완료율·커밋·피어리뷰가 하위 5%(Z &lt; -1.65)로 이탈하는 이상치를 조기 탐지합니다.
+                      </p>
+
+                      <div class="p-2.5 rounded-xl bg-white border border-emerald-100 space-y-1 text-[10px]">
+                        <div class="flex justify-between items-center font-semibold text-slate-700">
+                          <span>전체 팀원 참여도 상태 분포</span>
+                          <span class="text-emerald-600 font-bold">100% 정상 범위 활동</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2 flex overflow-hidden">
+                          <div class="bg-emerald-500 h-2" style="width: 100%" title="정상 활동"></div>
+                        </div>
+                        <div class="flex justify-between text-[9px] text-slate-400">
+                          <span>위험도 지수: 0.02 (안전)</span>
+                          <span>자동 개입 기준: Z &lt; -1.65</span>
+                        </div>
+                      </div>
+
+                      <button onclick="simulateOutlierDetection()" class="w-full py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold transition-all flex items-center justify-center gap-1.5">
+                        <span>🔍</span>
+                        <span>이상치 감지 및 비공개 지도교수 알림 시뮬레이션</span>
+                      </button>
+                    </div>
+
+                    <!-- Faculty Mentoring Feedback Card -->
                     <div class="p-4 rounded-2xl bg-white border border-[var(--color-border)] shadow-xs space-y-3">
                       <div class="flex items-center justify-between pb-2 border-b border-slate-100">
                         <div>
@@ -943,7 +1225,7 @@
                       <div class="p-3 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-slate-700 leading-relaxed space-y-1">
                         <span class="font-bold text-[#069fdb] block">3주차 MVP 기획 점검 코멘트</span>
                         <p class="text-[11px]">
-                          "인문사회대(미디어커뮤니케이션)와 IT공대 간 다학제 팀 구성 시너지가 훌륭합니다. 가좌-칠암 캠퍼스 간 이동 학생들의 실제 통학 불편을 해소하는 서비스 지향점이 명확합니다. 8주차 중간평가 때 교내 학생처와의 연계를 적극 권장합니다."
+                          "인문사회대(미디어커뮤니케이션)와 IT공대 간 다학제 팀 구성 시너지가 훌륭합니다. 기여도 시각화와 피어 리뷰 체계가 잘 잡혀 있어 팀원 간 불화 없이 안정적으로 진행되고 있습니다."
                         </p>
                         <span class="text-[9px] text-slate-400 block pt-1">2026-09-28 작성 · 공식 승인 완료</span>
                       </div>
@@ -951,9 +1233,10 @@
                       <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed space-y-1">
                         <span class="font-bold text-slate-800 block">1주차 팀플 제안서 승인</span>
                         <p class="text-[11px]">
-                          "전공 융합 팀플 기획 승인 완료. 다양한 전공의 학생들이 머리를 맞대어 GNU 학생들의 삶의 질을 높이는 완성도 높은 결과물을 기대합니다."
+                          "전공 융합 팀플 기획 승인 완료. 다속성 매칭을 통해 구성된 팀인 만큼 완성도 높은 결과물을 기대합니다."
                         </p>
                       </div>
+                    </div>
                     </div>
                   </div>
 
@@ -1078,7 +1361,7 @@
                     </button>
                     <button onclick="switchTabNav('advisor')" id="nav-btn-advisor" class="bottom-nav-btn">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
-                      <span>멘토링</span>
+                      <span>멘토링·리뷰</span>
                     </button>
                     <button onclick="switchTabNav('profile')" id="nav-btn-profile" class="bottom-nav-btn">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -1196,6 +1479,65 @@
                       <div class="pt-1">
                         <button type="submit" class="w-full py-2.5 rounded-xl bg-[#069fdb] hover:bg-[#004b91] text-white text-xs font-bold shadow-md active:scale-[0.99] transition-all flex items-center justify-center gap-1">
                           <span>GNU 개척자 회원가입 완료</span>
+                          <span class="text-xs">✓</span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- In-App Modal: Peer Review Form Sheet -->
+                <div id="modal-peer-review" class="in-app-modal-backdrop hidden" onclick="if(event.target === this) closePeerReviewModal()">
+                  <div class="in-app-modal-sheet space-y-3" onclick="event.stopPropagation()">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+                      <div class="flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-[11px]">360°</span>
+                        <h4 class="text-xs font-black text-slate-900">팀원 상호 피어 리뷰 (익명 보장)</h4>
+                      </div>
+                      <button type="button" onclick="closePeerReviewModal()" class="w-6 h-6 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center text-xs font-bold transition-colors">✕</button>
+                    </div>
+
+                    <form onsubmit="handlePeerReviewSubmit(event)" class="space-y-2.5">
+                      <div class="space-y-1">
+                        <label class="text-[10px] font-bold text-slate-700">평가 대상 팀원 선택</label>
+                        <select id="peer-review-target" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800">
+                          <option value="이지원 (FE)">이지원 (프론트엔드 엔지니어)</option>
+                          <option value="박데이터 (AI)">박데이터 (AI 데이터 엔지니어)</option>
+                          <option value="이경영 (기획)">이경영 (서비스 기획 / PM)</option>
+                          <option value="최아름 (UI/UX)">최아름 (UI/UX 디자이너)</option>
+                        </select>
+                      </div>
+
+                      <div class="space-y-1">
+                        <label class="text-[10px] font-bold text-slate-700">① 기술적 기여도 및 마감 기한 준수 (1~5점)</label>
+                        <select id="peer-score-1" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800">
+                          <option value="5">⭐⭐⭐⭐⭐ 5점 (매우 우수 - 맡은 모듈 완벽 완수)</option>
+                          <option value="4" selected>⭐⭐⭐⭐ 4점 (우수 - 성실히 마감 일정 준수)</option>
+                          <option value="3">⭐⭐⭐ 3점 (보통 - 기여도 평균 수준)</option>
+                          <option value="2">⭐⭐ 2점 (미흡 - 일정 지연 발생)</option>
+                          <option value="1">⭐ 1점 (매우 미흡 - 참여 부족)</option>
+                        </select>
+                      </div>
+
+                      <div class="space-y-1">
+                        <label class="text-[10px] font-bold text-slate-700">② 소통 및 적극적 회의 참여 (1~5점)</label>
+                        <select id="peer-score-2" class="w-full px-2.5 py-1.5 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800">
+                          <option value="5" selected>⭐⭐⭐⭐⭐ 5점 (매우 적극적 - 회의 주도 및 공유)</option>
+                          <option value="4">⭐⭐⭐⭐ 4점 (원활한 소통 - 피드백 수용 빠름)</option>
+                          <option value="3">⭐⭐⭐ 3점 (보통 수준)</option>
+                          <option value="2">⭐⭐ 2점 (연락 지연 빈번)</option>
+                          <option value="1">⭐ 1점 (소통 불가 / 무응답)</option>
+                        </select>
+                      </div>
+
+                      <div class="space-y-1">
+                        <label class="text-[10px] font-bold text-slate-700">비공개 정성 코멘트 (이상치 분석 및 멘토링용)</label>
+                        <textarea id="peer-comment" rows="2" placeholder="팀원의 협업 태도와 기여도에 대한 솔직한 의견을 남겨주세요 (타 팀원에게 익명 처리)" class="w-full p-2 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#069fdb] focus:outline-hidden text-slate-800"></textarea>
+                      </div>
+
+                      <div class="pt-1">
+                        <button type="submit" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-[#069fdb] text-white text-xs font-bold shadow-md hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-1.5">
+                          <span>피어 리뷰 제출 완료 (익명 암호화)</span>
                           <span class="text-xs">✓</span>
                         </button>
                       </div>
@@ -1477,17 +1819,41 @@
 
     // Milestones subview
     function switchMilestoneSubView(type) {
-      if (type === 'timeline') {
-        document.getElementById('subview-timeline').classList.remove('hidden');
-        document.getElementById('subview-kanban').classList.add('hidden');
-        document.getElementById('subview-btn-timeline').className = 'flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900';
-        document.getElementById('subview-btn-kanban').className = 'flex-1 py-1.5 rounded-lg text-slate-500';
-      } else {
-        document.getElementById('subview-timeline').classList.add('hidden');
-        document.getElementById('subview-kanban').classList.remove('hidden');
-        document.getElementById('subview-btn-timeline').className = 'flex-1 py-1.5 rounded-lg text-slate-500';
-        document.getElementById('subview-btn-kanban').className = 'flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900';
-      }
+      ['timeline', 'kanban', 'contrib'].forEach(v => {
+        const el = document.getElementById('subview-' + v);
+        const btn = document.getElementById('subview-btn-' + v);
+        if (el && btn) {
+          if (v === type) {
+            el.classList.remove('hidden');
+            btn.className = 'flex-1 py-1.5 rounded-lg bg-white shadow-xs text-slate-900 text-[11px] font-bold';
+          } else {
+            el.classList.add('hidden');
+            btn.className = 'flex-1 py-1.5 rounded-lg text-slate-500 text-[11px] font-bold';
+          }
+        }
+      });
+    }
+
+    // Peer Review & Outlier Actions
+    function openPeerReviewModal() {
+      const modal = document.getElementById('modal-peer-review');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closePeerReviewModal() {
+      const modal = document.getElementById('modal-peer-review');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function handlePeerReviewSubmit(e) {
+      if (e) e.preventDefault();
+      const target = document.getElementById('peer-review-target')?.value || '팀원';
+      alert(`[${target}] 학생에 대한 360° 피어 리뷰가 암호화되어 전송되었습니다.\n\n해당 평가는 실시간 무임승차 이상치(Outlier) 탐지 모델 및 학기말 기여도 분석에 반영됩니다.`);
+      closePeerReviewModal();
+    }
+
+    function simulateOutlierDetection() {
+      alert(`[무임승차 이상치(Outlier) 조기 탐지 시뮬레이션]\n\n현재 전체 4명 팀원의 Z-Score 정량 분석 결과:\n• 김개척 (BE/PM): Z = +0.81 (정상 우수)\n• 이지원 (FE): Z = +0.32 (정상)\n• 박데이터 (AI): Z = -0.15 (정상)\n• 이경영 (기획): Z = -0.42 (정상)\n\n※ 모든 팀원이 Z > -1.65 (신뢰구간 95%) 내에 위치하여 이상치 없는 '안전' 상태입니다.\n만약 특정 팀원의 지표가 Z < -1.65로 하락할 경우 지도교수 및 팀장에게 비공개 상담 알림이 자동 발송됩니다.`);
     }
 
     function toggleMobileTask(btn) {
